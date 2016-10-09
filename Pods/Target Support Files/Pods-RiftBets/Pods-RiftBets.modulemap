@@ -1,0 +1,6 @@
+framework module Pods_RiftBets {
+  umbrella header "Pods-RiftBets-umbrella.h"
+
+  export *
+  module * { export * }
+}

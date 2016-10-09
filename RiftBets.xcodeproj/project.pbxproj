@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B16F9C7C1DAA09F600ED03D7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F9C781DAA09F600ED03D7 /* Bolts.framework */; };
+		B16F9C7D1DAA09F600ED03D7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F9C791DAA09F600ED03D7 /* FBSDKCoreKit.framework */; };
+		B16F9C7E1DAA09F600ED03D7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F9C7A1DAA09F600ED03D7 /* FBSDKLoginKit.framework */; };
+		B16F9C7F1DAA09F600ED03D7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F9C7B1DAA09F600ED03D7 /* FBSDKShareKit.framework */; };
 		B1E39CA3D240DF34014C0B20 /* Pods_RiftBets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0886AB75FE84F0BCDA8DEF43 /* Pods_RiftBets.framework */; };
 		B87A347E1DAA05F000601B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A347D1DAA05F000601B90 /* AppDelegate.swift */; };
 		B87A34801DAA05F000601B90 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A347F1DAA05F000601B90 /* FirstViewController.swift */; };
@@ -20,6 +24,12 @@
 		0886AB75FE84F0BCDA8DEF43 /* Pods_RiftBets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RiftBets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		789A826A52746D1540EC8CDD /* Pods-RiftBets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiftBets.release.xcconfig"; path = "Pods/Target Support Files/Pods-RiftBets/Pods-RiftBets.release.xcconfig"; sourceTree = "<group>"; };
 		813FDC87E746BC4944072101 /* Pods-RiftBets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiftBets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RiftBets/Pods-RiftBets.debug.xcconfig"; sourceTree = "<group>"; };
+		B16F9C781DAA09F600ED03D7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/Bolts.framework"; sourceTree = "<group>"; };
+		B16F9C791DAA09F600ED03D7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		B16F9C7A1DAA09F600ED03D7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		B16F9C7B1DAA09F600ED03D7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		B16F9C801DAA0BB100ED03D7 /* FBIntegrationWithSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBIntegrationWithSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RiftBets-Bridging-Header.h"; sourceTree = "<group>"; };
 		B87A347A1DAA05F000601B90 /* RiftBets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiftBets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87A347D1DAA05F000601B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B87A347F1DAA05F000601B90 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +46,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1E39CA3D240DF34014C0B20 /* Pods_RiftBets.framework in Frameworks */,
+				B16F9C7D1DAA09F600ED03D7 /* FBSDKCoreKit.framework in Frameworks */,
+				B16F9C7F1DAA09F600ED03D7 /* FBSDKShareKit.framework in Frameworks */,
+				B16F9C7E1DAA09F600ED03D7 /* FBSDKLoginKit.framework in Frameworks */,
+				B16F9C7C1DAA09F600ED03D7 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +72,7 @@
 				B87A347B1DAA05F000601B90 /* Products */,
 				7A1B6E5BF0EFF03DB0DC65CC /* Pods */,
 				C01AC0628FC8705A6F4A68D0 /* Frameworks */,
+				B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +94,7 @@
 				B87A34861DAA05F000601B90 /* Assets.xcassets */,
 				B87A34881DAA05F000601B90 /* LaunchScreen.storyboard */,
 				B87A348B1DAA05F000601B90 /* Info.plist */,
+				B16F9C801DAA0BB100ED03D7 /* FBIntegrationWithSwift-Bridging-Header.h */,
 			);
 			path = RiftBets;
 			sourceTree = "<group>";
@@ -86,6 +102,10 @@
 		C01AC0628FC8705A6F4A68D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B16F9C781DAA09F600ED03D7 /* Bolts.framework */,
+				B16F9C791DAA09F600ED03D7 /* FBSDKCoreKit.framework */,
+				B16F9C7A1DAA09F600ED03D7 /* FBSDKLoginKit.framework */,
+				B16F9C7B1DAA09F600ED03D7 /* FBSDKShareKit.framework */,
 				0886AB75FE84F0BCDA8DEF43 /* Pods_RiftBets.framework */,
 			);
 			name = Frameworks;
@@ -343,10 +363,13 @@
 			baseConfigurationReference = 813FDC87E746BC4944072101 /* Pods-RiftBets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RiftBets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradbernard.RiftBets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RiftBets-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -355,10 +378,12 @@
 			baseConfigurationReference = 789A826A52746D1540EC8CDD /* Pods-RiftBets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RiftBets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradbernard.RiftBets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RiftBets-Bridging-Header.h";
 			};
 			name = Release;
 		};

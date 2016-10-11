@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B16F9C7C1DAA09F600ED03D7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F9C781DAA09F600ED03D7 /* Bolts.framework */; };
-		B16F9C7D1DAA09F600ED03D7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F9C791DAA09F600ED03D7 /* FBSDKCoreKit.framework */; };
-		B16F9C7E1DAA09F600ED03D7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F9C7A1DAA09F600ED03D7 /* FBSDKLoginKit.framework */; };
-		B16F9C7F1DAA09F600ED03D7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F9C7B1DAA09F600ED03D7 /* FBSDKShareKit.framework */; };
 		B1E39CA3D240DF34014C0B20 /* Pods_RiftBets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0886AB75FE84F0BCDA8DEF43 /* Pods_RiftBets.framework */; };
+		B800FBB51DACC5E5002E449F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B800FBB31DACC5E5002E449F /* FBSDKCoreKit.framework */; };
+		B800FBB61DACC5E5002E449F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B800FBB41DACC5E5002E449F /* FBSDKLoginKit.framework */; };
+		B800FBB81DACC614002E449F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B800FBB71DACC614002E449F /* FBSDKShareKit.framework */; };
+		B800FBBC1DACCAF1002E449F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800FBBB1DACCAF1002E449F /* API.swift */; };
+		B800FBC21DACCE2A002E449F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800FBC11DACCE2A002E449F /* Device.swift */; };
+		B800FBC51DACCE55002E449F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800FBC41DACCE55002E449F /* Config.swift */; };
+		B800FBC71DACCE73002E449F /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800FBC61DACCE73002E449F /* Keychain.swift */; };
+		B800FBC91DACD420002E449F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B800FBC81DACD420002E449F /* Bolts.framework */; };
 		B87A347E1DAA05F000601B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A347D1DAA05F000601B90 /* AppDelegate.swift */; };
-		B87A34801DAA05F000601B90 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A347F1DAA05F000601B90 /* FirstViewController.swift */; };
-		B87A34821DAA05F000601B90 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A34811DAA05F000601B90 /* SecondViewController.swift */; };
+		B87A34801DAA05F000601B90 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A347F1DAA05F000601B90 /* HomeViewController.swift */; };
 		B87A34851DAA05F000601B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B87A34831DAA05F000601B90 /* Main.storyboard */; };
 		B87A34871DAA05F000601B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87A34861DAA05F000601B90 /* Assets.xcassets */; };
 		B87A348A1DAA05F000601B90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B87A34881DAA05F000601B90 /* LaunchScreen.storyboard */; };
@@ -24,16 +27,18 @@
 		0886AB75FE84F0BCDA8DEF43 /* Pods_RiftBets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RiftBets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		789A826A52746D1540EC8CDD /* Pods-RiftBets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiftBets.release.xcconfig"; path = "Pods/Target Support Files/Pods-RiftBets/Pods-RiftBets.release.xcconfig"; sourceTree = "<group>"; };
 		813FDC87E746BC4944072101 /* Pods-RiftBets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiftBets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RiftBets/Pods-RiftBets.debug.xcconfig"; sourceTree = "<group>"; };
-		B16F9C781DAA09F600ED03D7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/Bolts.framework"; sourceTree = "<group>"; };
-		B16F9C791DAA09F600ED03D7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		B16F9C7A1DAA09F600ED03D7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
-		B16F9C7B1DAA09F600ED03D7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
-		B16F9C801DAA0BB100ED03D7 /* FBIntegrationWithSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBIntegrationWithSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RiftBets-Bridging-Header.h"; sourceTree = "<group>"; };
+		B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RiftBets-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		B800FBB31DACC5E5002E449F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B800FBB41DACC5E5002E449F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B800FBB71DACC614002E449F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		B800FBBB1DACCAF1002E449F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B800FBC11DACCE2A002E449F /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		B800FBC41DACCE55002E449F /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		B800FBC61DACCE73002E449F /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		B800FBC81DACD420002E449F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B87A347A1DAA05F000601B90 /* RiftBets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiftBets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87A347D1DAA05F000601B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B87A347F1DAA05F000601B90 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		B87A34811DAA05F000601B90 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B87A347F1DAA05F000601B90 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B87A34841DAA05F000601B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B87A34861DAA05F000601B90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B87A34891DAA05F000601B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,11 +50,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B800FBC91DACD420002E449F /* Bolts.framework in Frameworks */,
 				B1E39CA3D240DF34014C0B20 /* Pods_RiftBets.framework in Frameworks */,
-				B16F9C7D1DAA09F600ED03D7 /* FBSDKCoreKit.framework in Frameworks */,
-				B16F9C7F1DAA09F600ED03D7 /* FBSDKShareKit.framework in Frameworks */,
-				B16F9C7E1DAA09F600ED03D7 /* FBSDKLoginKit.framework in Frameworks */,
-				B16F9C7C1DAA09F600ED03D7 /* Bolts.framework in Frameworks */,
+				B800FBB51DACC5E5002E449F /* FBSDKCoreKit.framework in Frameworks */,
+				B800FBB81DACC614002E449F /* FBSDKShareKit.framework in Frameworks */,
+				B800FBB61DACC5E5002E449F /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,46 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B800FBB91DACC770002E449F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B87A347F1DAA05F000601B90 /* HomeViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B800FBBA1DACCADE002E449F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B800FBBB1DACCAF1002E449F /* API.swift */,
+				B800FBC61DACCE73002E449F /* Keychain.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		B800FBBD1DACCB5D002E449F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		B800FBC01DACCE22002E449F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B800FBC11DACCE2A002E449F /* Device.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B800FBC31DACCE4F002E449F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B800FBC41DACCE55002E449F /* Config.swift */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		B87A34711DAA05F000601B90 = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +117,6 @@
 				B87A347B1DAA05F000601B90 /* Products */,
 				7A1B6E5BF0EFF03DB0DC65CC /* Pods */,
 				C01AC0628FC8705A6F4A68D0 /* Frameworks */,
-				B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,14 +131,17 @@
 		B87A347C1DAA05F000601B90 /* RiftBets */ = {
 			isa = PBXGroup;
 			children = (
+				B800FBC31DACCE4F002E449F /* Config */,
+				B800FBC01DACCE22002E449F /* Helpers */,
+				B800FBBD1DACCB5D002E449F /* Libraries */,
+				B800FBBA1DACCADE002E449F /* Managers */,
+				B800FBB91DACC770002E449F /* ViewControllers */,
 				B87A347D1DAA05F000601B90 /* AppDelegate.swift */,
-				B87A347F1DAA05F000601B90 /* FirstViewController.swift */,
-				B87A34811DAA05F000601B90 /* SecondViewController.swift */,
 				B87A34831DAA05F000601B90 /* Main.storyboard */,
 				B87A34861DAA05F000601B90 /* Assets.xcassets */,
 				B87A34881DAA05F000601B90 /* LaunchScreen.storyboard */,
 				B87A348B1DAA05F000601B90 /* Info.plist */,
-				B16F9C801DAA0BB100ED03D7 /* FBIntegrationWithSwift-Bridging-Header.h */,
+				B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */,
 			);
 			path = RiftBets;
 			sourceTree = "<group>";
@@ -102,10 +149,10 @@
 		C01AC0628FC8705A6F4A68D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B16F9C781DAA09F600ED03D7 /* Bolts.framework */,
-				B16F9C791DAA09F600ED03D7 /* FBSDKCoreKit.framework */,
-				B16F9C7A1DAA09F600ED03D7 /* FBSDKLoginKit.framework */,
-				B16F9C7B1DAA09F600ED03D7 /* FBSDKShareKit.framework */,
+				B800FBC81DACD420002E449F /* Bolts.framework */,
+				B800FBB71DACC614002E449F /* FBSDKShareKit.framework */,
+				B800FBB31DACC5E5002E449F /* FBSDKCoreKit.framework */,
+				B800FBB41DACC5E5002E449F /* FBSDKLoginKit.framework */,
 				0886AB75FE84F0BCDA8DEF43 /* Pods_RiftBets.framework */,
 			);
 			name = Frameworks;
@@ -247,9 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B87A34821DAA05F000601B90 /* SecondViewController.swift in Sources */,
 				B87A347E1DAA05F000601B90 /* AppDelegate.swift in Sources */,
-				B87A34801DAA05F000601B90 /* FirstViewController.swift in Sources */,
+				B800FBBC1DACCAF1002E449F /* API.swift in Sources */,
+				B800FBC51DACCE55002E449F /* Config.swift in Sources */,
+				B87A34801DAA05F000601B90 /* HomeViewController.swift in Sources */,
+				B800FBC21DACCE2A002E449F /* Device.swift in Sources */,
+				B800FBC71DACCE73002E449F /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +414,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = RiftBets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradbernard.RiftBets;
@@ -379,6 +433,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = RiftBets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradbernard.RiftBets;

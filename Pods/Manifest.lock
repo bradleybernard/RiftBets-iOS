@@ -2,7 +2,7 @@ PODS:
   - Alamofire (3.5.0)
   - AlamofireImage (2.5.0):
     - Alamofire (~> 3.5)
-  - Crashlytics (3.8.1):
+  - Crashlytics (3.8.2):
     - Fabric (~> 1.6.3)
   - Device (1.0.3)
   - Fabric (1.6.8)
@@ -21,7 +21,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
   AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
-  Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
+  Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
   Device: bcf333c7c497edabe6df9560fd64f1e255d45b2b
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   KeychainSwift: a5bb85cd498ce2217b55e055ec59e9268d83384c

@@ -29,7 +29,7 @@
 		813FDC87E746BC4944072101 /* Pods-RiftBets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiftBets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RiftBets/Pods-RiftBets.debug.xcconfig"; sourceTree = "<group>"; };
 		B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RiftBets-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		B800FBB31DACC5E5002E449F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		B800FBB41DACC5E5002E449F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B800FBB41DACC5E5002E449F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../../../../Desktop/CMPS115/RiftBets-iOS/FBSDKLoginKit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B800FBB71DACC614002E449F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		B800FBBB1DACCAF1002E449F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B800FBC11DACCE2A002E449F /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };

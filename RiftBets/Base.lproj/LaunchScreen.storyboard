@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Title Screen-->
+        <!--Title Screen Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" userLabel="Title Screen" sceneMemberID="viewController">
+                <viewController id="01J-lp-oVM" userLabel="Title Screen Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
@@ -38,6 +38,9 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="prz-O9-fZd" kind="show" id="pvk-ew-ZqX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13409880849329622" green="0.13646311752651802" blue="0.14088811528497414" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,24 +50,73 @@
             </objects>
             <point key="canvasLocation" x="-149" y="265"/>
         </scene>
-        <!--Match Schedule-->
-        <scene sceneID="nK6-nK-aRx">
+        <!--Match Date Controller-->
+        <scene sceneID="oUF-0r-hAn">
             <objects>
-                <tableViewController title="Matches" id="am6-W9-mZg" userLabel="Match Schedule" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="36" sectionHeaderHeight="28" sectionFooterHeight="28" id="QUz-qh-EPT" userLabel="Match Schedule">
+                <tableViewController id="prz-O9-fZd" userLabel="Match Date Controller" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lwz-lC-d6y" userLabel="Match Date Table">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="heP-5Q-vkm" userLabel="Match">
-                                <rect key="frame" x="0.0" y="28" width="600" height="36"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Voc-eQ-Dbw" userLabel="Date Cell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="heP-5Q-vkm" id="gww-zP-PA6">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="35.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Voc-eQ-Dbw" id="1U3-y8-yyN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="am6-W9-mZg" kind="show" id="OoM-Qf-Ik4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="prz-O9-fZd" id="99A-Ly-4Bt"/>
+                            <outlet property="delegate" destination="prz-O9-fZd" id="qqS-Dm-19N"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDV-dM-Xlg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="273"/>
+        </scene>
+        <!--Match Schedule Controller-->
+        <scene sceneID="nK6-nK-aRx">
+            <objects>
+                <tableViewController title="Matches" id="am6-W9-mZg" userLabel="Match Schedule Controller" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="QUz-qh-EPT" userLabel="Match Schedule">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="heP-5Q-vkm" userLabel="Match">
+                                <rect key="frame" x="0.0" y="28" width="600" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="heP-5Q-vkm" id="gww-zP-PA6">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IC6-sB-QIy">
+                                            <rect key="frame" x="536" y="10" width="46" height="30"/>
+                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                            <state key="normal" title="Bet"/>
+                                            <connections>
+                                                <segue destination="yam-4a-wJv" kind="show" id="lY3-8h-Uwr"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="Match#1">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <connections>
+                                    <segue destination="kuW-79-4lS" kind="show" id="fj1-Jx-1vv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="am6-W9-mZg" id="bdx-U2-FWX"/>
                             <outlet property="delegate" destination="am6-W9-mZg" id="ex4-zz-zjl"/>
@@ -76,12 +128,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zbf-aB-4aY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="541" y="265"/>
+            <point key="canvasLocation" x="1109" y="265"/>
         </scene>
-        <!--Match Details -->
+        <!--Match Details Controller-->
         <scene sceneID="dtQ-6m-tMW">
             <objects>
-                <viewController id="kuW-79-4lS" userLabel="Match Details " sceneMemberID="viewController">
+                <viewController id="kuW-79-4lS" userLabel="Match Details Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9es-G6-NYd"/>
                         <viewControllerLayoutGuide type="bottom" id="PQu-7H-w28"/>
@@ -96,12 +148,6 @@
                                 <color key="textColor" red="0.81353222150259064" green="0.81353222150259064" blue="0.81353222150259064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJl-76-w65">
-                                <rect key="frame" x="495" y="105" width="66" height="53"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.81353222150259064" green="0.81353222150259064" blue="0.81353222150259064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q40-lO-zTO" userLabel="Team 1 Stats">
                                 <rect key="frame" x="38" y="295" width="240" height="206"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,31 +157,25 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GuX-8u-LGf" userLabel="Team 1 logo">
-                                <rect key="frame" x="113" y="94" width="99" height="64"/>
+                                <rect key="frame" x="98" y="100" width="135" height="119"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t91-ca-kuU" userLabel="Team 2 logo">
-                                <rect key="frame" x="393" y="94" width="99" height="64"/>
+                                <rect key="frame" x="367" y="100" width="135" height="119"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpo-Gc-nNG">
-                                <rect key="frame" x="38" y="99" width="70" height="53"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.81353222150259064" green="0.81353222150259064" blue="0.81353222150259064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3z0-s1-UbX" userLabel="VS">
-                                <rect key="frame" x="278" y="221" width="44" height="38"/>
+                                <rect key="frame" x="278" y="154" width="44" height="38"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <color key="textColor" red="0.87299627590673579" green="0.67393389610224441" blue="0.11762024396849383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxK-xD-XBc">
-                                <rect key="frame" x="121" y="208" width="91" height="64"/>
+                                <rect key="frame" x="120" y="223" width="91" height="64"/>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="29"/>
                                 <color key="textColor" red="0.26742942002575587" green="0.52047604531214797" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGA-KP-kBk">
-                                <rect key="frame" x="393" y="208" width="99" height="62.5"/>
+                                <rect key="frame" x="391" y="223" width="99" height="62.5"/>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="29"/>
                                 <color key="textColor" red="0.91319219559585496" green="0.39162780542137898" blue="0.34661873573410978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -146,7 +186,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aep-tr-iWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321" y="265"/>
+            <point key="canvasLocation" x="1769" y="681"/>
+        </scene>
+        <!--Bet Fields Controller-->
+        <scene sceneID="oUH-60-wYj">
+            <objects>
+                <viewController id="yam-4a-wJv" userLabel="Bet Fields Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HDt-Uc-hiZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="oH3-hH-Gsj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5dV-Wd-4Hr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nzi-RO-0kQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769" y="-71"/>
         </scene>
     </scenes>
 </document>

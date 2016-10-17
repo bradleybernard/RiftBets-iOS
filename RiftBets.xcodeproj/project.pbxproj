@@ -138,8 +138,8 @@
 				B800FBB91DACC770002E449F /* ViewControllers */,
 				B87A347D1DAA05F000601B90 /* AppDelegate.swift */,
 				B87A34831DAA05F000601B90 /* Main.storyboard */,
-				B87A34861DAA05F000601B90 /* Assets.xcassets */,
 				B87A34881DAA05F000601B90 /* LaunchScreen.storyboard */,
+				B87A34861DAA05F000601B90 /* Assets.xcassets */,
 				B87A348B1DAA05F000601B90 /* Info.plist */,
 				B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */,
 			);

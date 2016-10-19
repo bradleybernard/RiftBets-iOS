@@ -88,7 +88,7 @@ class RemoteManager {
                     return completion(json: json, error: NSError(domain: self.firstError(errors), code: (response.response?.statusCode)!, userInfo: nil))
                 }
                 
-                print(json)
+                //print(json)
                 
                 return completion(json: json, error: nil)
         }
@@ -134,9 +134,11 @@ class RemoteManager {
             return completion(json: json, error: error)
         }
         
-        guard json["token"].string != nil else {
+        guard let token = json["token"].string else {
             return completion(json: json, error: NSError(domain: again("Facebook auth failed."), code: 10002, userInfo: nil))
         }
+        
+        KeychainManager.sharedInstance.loginWithToken(token)
         
         return completion(json: json, error: nil)
     }
@@ -155,6 +157,23 @@ class RemoteManager {
             
             self.afterFacebook(json, error: error, completion: completion)
             
+        })
+    }
+    
+    private func afterMatchSchedule(json: JSON, error: NSError?, completion: JSONCompletion){
+        
+        if let error = error {
+            return completion(json: json, error: error)
+        }
+        
+        return completion(json: json, error: nil)
+    }
+    
+    func matchSchedule(completion: JSONCompletion){
+        
+        get("schedule", parameters: [:], completion: { (json, error) -> Void in
+            
+            self.afterMatchSchedule(json, error: error, completion: completion)
         })
     }
 }

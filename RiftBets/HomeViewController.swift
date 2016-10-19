@@ -8,12 +8,41 @@
 
 import UIKit
 import FBSDKLoginKit
+import SwiftyJSON
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var matchLabel: UILabel!
+    
+    @IBAction func testButtonPressed(sender: AnyObject) {
+        print(KeychainManager.sharedInstance.getLoggedIn())
+        print(KeychainManager.sharedInstance.getToken())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
+    }
+    
+    func getData() {
+        RemoteManager.sharedInstance.matchSchedule({ (json, error) -> Void in
+            
+            var matches = [ScheduleMatch]()
+            
+            for (key, subJson) : (String, JSON) in json {
+                for (keyT, subJsonT) : (String, JSON) in subJson {
+                    guard let name = subJsonT["name"].string else {
+                        continue
+                    }
+                    
+                    matches.append(ScheduleMatch(name: name))
+                }
+            }
+            
+            self.matchLabel.text = matches.last?.name
+            
+        })
     }
     
     func setup() {
@@ -29,6 +58,7 @@ extension HomeViewController: FBSDKLoginButtonDelegate {
 
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         print("User Logged In")
+     //   print("I can also switch here")
         
         if error != nil || result.isCancelled {
             print("ERROR"); return
@@ -43,6 +73,9 @@ extension HomeViewController: FBSDKLoginButtonDelegate {
             if error != nil {
                 print("Errror")
             }
+            
+            (UIApplication.sharedApplication().delegate as! AppDelegate).mainTabbar()
+
         })
         
     }

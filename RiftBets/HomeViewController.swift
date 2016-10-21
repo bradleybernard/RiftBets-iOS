@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     @IBAction func testButtonPressed(sender: AnyObject) {
         print(KeychainManager.sharedInstance.getLoggedIn())
         print(KeychainManager.sharedInstance.getToken())
+       // getData()
     }
     
     override func viewDidLoad() {
@@ -24,27 +25,33 @@ class HomeViewController: UIViewController {
         
         setup()
     }
-    
+
     func getData() {
         RemoteManager.sharedInstance.matchSchedule({ (json, error) -> Void in
             
             var matches = [ScheduleMatch]()
             
             for (key, subJson) : (String, JSON) in json {
+               print(key)
                 for (keyT, subJsonT) : (String, JSON) in subJson {
                     guard let name = subJsonT["name"].string else {
                         continue
                     }
-                    
-                    matches.append(ScheduleMatch(name: name))
+                   
+                    //matches.append(ScheduleMatch(name: name))
                 }
+                
+               // matches.append(ScheduleMatch(date: key))
+               //ScheduleMatch.date.insert(key, atIndex: 0)
+                
             }
             
-            self.matchLabel.text = matches.last?.name
-            
+            //self.matchLabel.text = matches.last?.name
+           
         })
     }
-    
+
+
     func setup() {
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)
@@ -57,8 +64,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController: FBSDKLoginButtonDelegate {
 
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        getData()
         print("User Logged In")
-     //   print("I can also switch here")
         
         if error != nil || result.isCancelled {
             print("ERROR"); return

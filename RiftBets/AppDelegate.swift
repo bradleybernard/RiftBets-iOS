@@ -15,11 +15,12 @@ import FBSDKCoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
-//        KeychainManager.sharedInstance.logout()
+       // KeychainManager.sharedInstance.logout()
+     
         chooseFirstController()
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
@@ -80,14 +81,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func chooseFirstController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+ 
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         
         var viewController : UIViewController = storyboard.instantiateViewControllerWithIdentifier("HomeView") as! HomeViewController
         
         if (KeychainManager.sharedInstance.getLoggedIn()) {
-            viewController = storyboard.instantiateViewControllerWithIdentifier("InitialViewController") as! HomeScreenViewController
+            viewController = storyboard.instantiateViewControllerWithIdentifier("InitialViewController") as! TabbedViewController
+           
         }
         
         window?.rootViewController = viewController

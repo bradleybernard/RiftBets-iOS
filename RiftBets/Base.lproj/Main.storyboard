@@ -71,16 +71,17 @@
                         <viewControllerLayoutGuide type="bottom" id="MX5-vb-ycl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FW6-bg-eXU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7fL-8v-kaW"/>
+                    <tabBarItem key="tabBarItem" title="Debug" id="7fL-8v-kaW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzt-zb-hsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="489.75"/>
         </scene>
-        <!--Item 2-->
+        <!--Twitch-->
         <scene sceneID="h3j-lZ-Eqg">
             <objects>
                 <viewController id="X4Q-mY-RnB" sceneMemberID="viewController">
@@ -93,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="bt0-Ak-Mf6"/>
+                    <tabBarItem key="tabBarItem" title="Twitch" id="bt0-Ak-Mf6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjT-Xk-rSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +103,7 @@
         <!--MatchDates Controller-->
         <scene sceneID="w5u-5S-nsV">
             <objects>
-                <viewController id="PIM-fu-Biz" userLabel="MatchDates Controller" sceneMemberID="viewController">
+                <viewController id="PIM-fu-Biz" userLabel="MatchDates Controller" customClass="MatchDateViewController" customModule="RiftBets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wwC-MS-2h6"/>
                         <viewControllerLayoutGuide type="bottom" id="qFo-Pf-7iC"/>
@@ -115,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="558"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uF8-g7-Hkf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customcell" id="uF8-g7-Hkf">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uF8-g7-Hkf" id="wan-bb-ADv">
@@ -123,31 +124,58 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="lxH-2M-mbj" kind="show" id="evy-fW-e06"/>
+                                            <segue destination="lxH-2M-mbj" kind="show" id="rS8-fV-qia"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="751"/>
+                                    <rect key="frame" x="0.0" y="70" width="400" height="681"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="PIM-fu-Biz" id="eeN-tm-AU8"/>
+                                    <outlet property="delegate" destination="u69-ef-Hvr" id="flt-2a-taH"/>
+                                </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-3z-vAM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="308" y="28" width="58" height="34"/>
+                                </variation>
+                                <connections>
+                                    <action selector="Refresh:" destination="PIM-fu-Biz" eventType="touchUpInside" id="5IW-YL-QHE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" button="YES"/>
                             <bool key="isElement" value="NO"/>
                         </accessibility>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KBo-3z-vAM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="KBo-3z-vAM"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="yPv-xp-VFj"/>
+                    <tabBarItem key="tabBarItem" title="Match Dates" id="yPv-xp-VFj" userLabel="Match Dates"/>
+                    <connections>
+                        <outlet property="dateTable" destination="X6I-iA-yO7" id="3hx-bi-hyL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWM-cg-SPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="-198"/>
+            <point key="canvasLocation" x="867" y="-198"/>
         </scene>
-        <!--HomeScreen Controller-->
+        <!--TabbedView Controller-->
         <scene sceneID="ySc-ie-xtr">
             <objects>
-                <tabBarController storyboardIdentifier="InitialViewController" id="XYn-ry-Mph" userLabel="HomeScreen Controller" customClass="HomeScreenViewController" customModule="RiftBets" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="InitialViewController" id="XYn-ry-Mph" userLabel="TabbedView Controller" customClass="TabbedViewController" customModule="RiftBets" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="AFk-kx-vis">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -253,7 +281,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vxk-dK-S6d">
-                                        <rect key="frame" x="0.0" y="204" width="240" height="44"/>
+                                        <rect key="frame" x="0.0" y="160" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vxk-dK-S6d" id="A4X-rs-ycf">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
@@ -261,7 +289,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zUE-lz-9BM">
-                                        <rect key="frame" x="0.0" y="160" width="240" height="44"/>
+                                        <rect key="frame" x="0.0" y="204" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zUE-lz-9BM" id="Wkx-8C-KYS">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>

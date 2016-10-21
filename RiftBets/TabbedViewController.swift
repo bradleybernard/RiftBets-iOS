@@ -8,11 +8,16 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
-class HomeScreenViewController: UITabBarController {
+class TabbedViewController: UITabBarController {
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
     }
+   
+    
 }

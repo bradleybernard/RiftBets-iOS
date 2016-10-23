@@ -20,9 +20,10 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var dateTable: UITableView!
     
-    
+     var matches = [ScheduleMatch]()
     
     var dates = [String]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         
         RemoteManager.sharedInstance.matchSchedule({ (json, error) -> Void in
             
-            var matches = [ScheduleMatch]()
+           
             
             for (key, subJson) : (String, JSON) in json {
 
@@ -47,7 +48,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                         continue
                     }
                     //print(subJsonT["scheduled_time"].stringValue)(
-                    matches.append(
+                    self.matches.append(
                         ScheduleMatch(
                             name                    : name,
                             date                    : subJsonT["scheduled_time"].stringValue,
@@ -76,13 +77,16 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                             team_Two_Alt_Logo_Url   : subJsonT["resources"]["two"]["alt_logo_url"].stringValue,
                             team_Two_Slug           : subJsonT["resources"]["two"]["slug"].stringValue
                     ))
-
-                   // print(subJsonT["resources"]["two"]["name"].stringValue)
+                    self.dates.append(subJsonT["scheduled_time"].stringValue)
+                    
+                    print(subJsonT["name"].stringValue)
                 }
                 
             }
+            self.reload()
    
         })
+        
     }
 
     
@@ -95,7 +99,11 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("customcell", forIndexPath: indexPath)
-        cell.textLabel?.text = dates[indexPath.item]
+        let match_schedule = matches[indexPath.row]
+        
+        cell.textLabel?.text = dates[indexPath.row] // not sure how to convert NSDate type to string
+        
+        cell.detailTextLabel?.text = match_schedule.name
         
         return cell
     }

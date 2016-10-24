@@ -19,8 +19,8 @@ struct ScheduleMatch {
     var api_Resource_Id_One     : String? 
     var api_Resource_Id_Two     : String? 
     var resource_Type           : String?
-    var score_One               : Int
-    var score_Two               : Int
+    var score_One               : Int?
+    var score_Two               : Int?
     var match_Identifier        : String?
     var match_Best_Of           : Int?
     var team_One_Api_Id_Long    : String?

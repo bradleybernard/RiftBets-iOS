@@ -92,8 +92,8 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                     self.team_one_s.append(subJsonT["score_one"].intValue)
                     self.team_two_s.append(subJsonT["score_two"].intValue)
                     self.best.append(subJsonT["match_best_of"].intValue)
-                    print(subJsonT["score_one"].intValue)
-                    print(subJsonT["resources"]["one"]["name"].stringValue)
+                    print(subJsonT["name"].stringValue)
+                    print(subJsonT["match_best_of"].intValue)
                 }
                 
             }
@@ -134,8 +134,12 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         
         cell.matchDate.text = formatter.stringFromDate(match_schedule.date!)
         
+        
         if(match_schedule.match_Best_Of > 1){
-            cell.matchName.text = "Best of " + String(best[indexPath.item])
+            if let best_of = match_schedule.match_Best_Of{
+                cell.matchName.text = "Best of " + String(best_of)
+            }
+            
         }
         
         cell.team_one_short.text = match_schedule.team_One_Acronym
@@ -143,12 +147,14 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         cell.team_two_short.text = match_schedule.team_Two_Acronym
         
         if(match_schedule.state == "resolved"){
-            if(team_one_s[indexPath.item] == 1){
-                cell.team_one_score.text = "Victory"
-                cell.team_two_score.text = "Defeat"
-            }else if(team_one_s[indexPath.item] == 0){
-                cell.team_one_score.text = "Defeat"
-                cell.team_two_score.text = "Victory"
+            if let score = match_schedule.score_One{
+                if(score == 1){
+                    cell.team_one_score.text = "Victory"
+                    cell.team_two_score.text = "Defeat"
+                }else if(score == 0){
+                    cell.team_one_score.text = "Defeat"
+                    cell.team_two_score.text = "Victory"
+                }
             }
         }
         let team_one_url = NSURL(string: match_schedule.team_One_Logo_Url!)

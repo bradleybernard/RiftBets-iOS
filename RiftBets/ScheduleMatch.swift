@@ -19,8 +19,10 @@ struct ScheduleMatch {
     var api_Resource_Id_One     : String? 
     var api_Resource_Id_Two     : String? 
     var resource_Type           : String?
-    var score_One               : Int?
-    var score_Two               : Int?
+    var score_One               : Int
+    var score_Two               : Int
+    var match_Identifier        : String?
+    var match_Best_Of           : Int?
     var team_One_Api_Id_Long    : String?
     var team_One_Name           : String? 
     var team_One_Team_Photo_Url : String? 
@@ -48,6 +50,8 @@ struct ScheduleMatch {
          resource_Type: String,
          score_One: Int,
          score_Two: Int,
+         match_Identifier: String,
+         match_Best_Of: Int,
          team_One_Api_Id_Long: String,
          team_One_Name: String,
          team_One_Team_Photo_Url: String,
@@ -80,6 +84,8 @@ struct ScheduleMatch {
         self.resource_Type              = resource_Type
         self.score_One                  = score_One
         self.score_Two                  = score_Two
+        self.match_Identifier           = match_Identifier
+        self.match_Best_Of              = match_Best_Of
         self.team_One_Api_Id_Long       = team_One_Api_Id_Long
         self.team_One_Name              = team_One_Name
         self.team_One_Team_Photo_Url    = team_One_Team_Photo_Url

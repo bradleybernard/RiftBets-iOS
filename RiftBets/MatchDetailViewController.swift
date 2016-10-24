@@ -10,6 +10,17 @@ import Foundation
 import UIKit
 
 class MatchDetailViewController: UIViewController{
+    
+    @IBOutlet weak var matchTitle: UILabel!
+    
+    @IBOutlet weak var team_one_logo: UIImageView!
+    
+    @IBOutlet weak var team_two_logo: UIImageView!
+    
+    @IBOutlet weak var team_one_stats: UITableView!
+
+    @IBOutlet weak var team_two_stats: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

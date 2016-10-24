@@ -9,6 +9,8 @@
 
 import SwiftyJSON
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class MatchDateViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -20,10 +22,17 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var dateTable: UITableView!
     
-     var matches = [ScheduleMatch]()
+
+    
+    var matches = [ScheduleMatch]()
     
     var dates = [String]()
-
+    
+    var team_one_s = [Int]()
+    
+    var team_two_s = [Int]()
+    
+    var best = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +71,8 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                             resource_Type           : subJsonT["resource_type"].stringValue,
                             score_One               : subJsonT["score_one"].intValue,
                             score_Two               : subJsonT["score_two"].intValue,
+                            match_Identifier        : subJsonT["match_identifier"].stringValue,
+                            match_Best_Of           :subJsonT["match_best_of"].intValue,
                             team_One_Api_Id_Long    : subJsonT["resources"]["one"]["api_id_long"].stringValue,
                             team_One_Name           : subJsonT["resources"]["one"]["name"].stringValue,
                             team_One_Team_Photo_Url : subJsonT["resources"]["one"]["team_photo_url"].stringValue,
@@ -78,8 +89,11 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                             team_Two_Slug           : subJsonT["resources"]["two"]["slug"].stringValue
                     ))
                     self.dates.append(subJsonT["scheduled_time"].stringValue)
-                    
-                    print(subJsonT["name"].stringValue)
+                    self.team_one_s.append(subJsonT["score_one"].intValue)
+                    self.team_two_s.append(subJsonT["score_two"].intValue)
+                    self.best.append(subJsonT["match_best_of"].intValue)
+                    print(subJsonT["score_one"].intValue)
+                    print(subJsonT["resources"]["one"]["name"].stringValue)
                 }
                 
             }
@@ -98,13 +112,50 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCellWithIdentifier("customcell", forIndexPath: indexPath)
-        let match_schedule = matches[indexPath.row]
+        let cell:MatchDateCustomCell = tableView.dequeueReusableCellWithIdentifier("customcell") as! MatchDateCustomCell
+        let match_schedule = matches[indexPath.item]
         
-        cell.textLabel?.text = dates[indexPath.row] // not sure how to convert NSDate type to string
+        let dateArr = dates[indexPath.item].componentsSeparatedByString(" ")
         
-        cell.detailTextLabel?.text = match_schedule.name
+        let date: String = dateArr[0]
         
+        
+        
+        
+        
+        
+        
+        let formatter = NSDateFormatter()
+        
+       // let usDateFormat = NSDateFormatter.dateFormatFromTemplate("YYYY-MM-DD", options: 0, locale: NSLocale(localeIdentifier: "en-US"))
+        
+        formatter.dateStyle = .NoStyle
+        formatter.timeStyle = .ShortStyle
+        
+        cell.matchDate.text = formatter.stringFromDate(match_schedule.date!)
+        
+        if(match_schedule.match_Best_Of > 1){
+            cell.matchName.text = "Best of " + String(best[indexPath.item])
+        }
+        
+        cell.team_one_short.text = match_schedule.team_One_Acronym
+        
+        cell.team_two_short.text = match_schedule.team_Two_Acronym
+        
+        if(match_schedule.state == "resolved"){
+            if(team_one_s[indexPath.item] == 1){
+                cell.team_one_score.text = "Victory"
+                cell.team_two_score.text = "Defeat"
+            }else if(team_one_s[indexPath.item] == 0){
+                cell.team_one_score.text = "Defeat"
+                cell.team_two_score.text = "Victory"
+            }
+        }
+        let team_one_url = NSURL(string: match_schedule.team_One_Logo_Url!)
+        let team_two_url = NSURL(string: match_schedule.team_Two_Logo_Url!)
+        
+        cell.team_one_logo.af_setImageWithURL(team_one_url!)
+        cell.team_two_logo.af_setImageWithURL(team_two_url!)
         return cell
     }
     func reload(){

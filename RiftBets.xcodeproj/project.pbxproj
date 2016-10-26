@@ -91,11 +91,8 @@
 		B800FBB91DACC770002E449F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B87A347F1DAA05F000601B90 /* HomeViewController.swift */,
-				B1E3FA981DB7177C00592E41 /* TabbedViewController.swift */,
-				B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */,
-				B1E3FAA11DB96F9300592E41 /* MatchDateViewController.swift */,
-				B1E3FAA31DBDBF6000592E41 /* MatchDateCustomCell.swift */,
+				B8BBBA0B1DC05E840058C470 /* Auth */,
+				B8BBBA091DC05E470058C470 /* TabBar */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +150,7 @@
 		B87A347C1DAA05F000601B90 /* RiftBets */ = {
 			isa = PBXGroup;
 			children = (
+				B8BBBA0C1DC05E950058C470 /* Cells */,
 				B1E3FA9E1DB7465400592E41 /* Models */,
 				B800FBC31DACCE4F002E449F /* Config */,
 				B800FBC01DACCE22002E449F /* Helpers */,
@@ -167,6 +165,40 @@
 				B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */,
 			);
 			path = RiftBets;
+			sourceTree = "<group>";
+		};
+		B8BBBA091DC05E470058C470 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B1E3FA981DB7177C00592E41 /* TabbedViewController.swift */,
+				B8BBBA0A1DC05E520058C470 /* Schedule */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		B8BBBA0A1DC05E520058C470 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */,
+				B1E3FAA11DB96F9300592E41 /* MatchDateViewController.swift */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
+		B8BBBA0B1DC05E840058C470 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B87A347F1DAA05F000601B90 /* HomeViewController.swift */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
+		B8BBBA0C1DC05E950058C470 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B1E3FAA31DBDBF6000592E41 /* MatchDateCustomCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		C01AC0628FC8705A6F4A68D0 /* Frameworks */ = {

@@ -12,12 +12,8 @@ import SwiftyJSON
 
 class TabbedViewController: UITabBarController {
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
        
     }
-   
-    
 }

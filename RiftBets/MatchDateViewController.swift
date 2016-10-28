@@ -10,17 +10,27 @@ import SwiftyJSON
 import UIKit
 import Alamofire
 import AlamofireImage
+import HMSegmentedControl
 
 class MatchDateViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+   
+    
+    
     
     @IBOutlet weak var dateTable: UITableView!
     
+    @IBOutlet weak var segment: HMSegmentedControl!
     var matches = [ScheduleMatch]()
+    
+    var segmentedControl: HMSegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupSegmentedControl()
         getData()
+        
     }
     
     @IBAction func Refresh(sender: AnyObject) {
@@ -72,6 +82,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                             team_Two_Alt_Logo_Url   : matchJson["resources"]["two"]["alt_logo_url"].stringValue,
                             team_Two_Slug           : matchJson["resources"]["two"]["slug"].stringValue
                     ))
+                    
                 }
                 
             }
@@ -95,6 +106,25 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         cell.formatCell(match_schedule)
         
         return cell
+    }
+    func setupSegmentedControl() {
+        self.segmentedControl = HMSegmentedControl(sectionTitles: ["Login", "Register"])
+         // segmentedControl.addTarget(self, action: "segmentedControlChangedValue:", forControlEvents: .AllEvents)
+        self.segmentedControl.frame = CGRectMake(0, view.frame.height - 55, view.frame.width, 55)
+        segmentedControl.selectionIndicatorHeight = 5.0
+        segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.grayColor(), NSFontAttributeName: UIFont(name: "Avenir-Heavy", size: 20)!]
+        segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0,10,0,10)
+        // segmentedControl.selectionIndicatorColor = UIColor(red: 253.0/255.0, green: 81.0/255.0, blue: 116.0/255.0, alpha: 0.8)
+        segmentedControl.selectionIndicatorColor = UIColor(red: 0.141, green: 0.165, blue: 0.224, alpha: 0.8)
+        //segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe
+        //segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationUp
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.backgroundColor = UIColor(red: 74.0/255.0, green: 106.0/255.0, blue: 145.0/255.0, alpha: 0.3)
+        
+        self.segment = segmentedControl
+        
+        self.view.addSubview(segment)
+        self.view.bringSubviewToFront(segment)
     }
 
 }

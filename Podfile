@@ -13,4 +13,5 @@ target 'RiftBets' do
   pod 'KeychainSwift', '~> 3.0'
   pod 'Device', '~> 1.0.1'
   pod 'AlamofireImage', '~> 2.0'
+  pod 'HMSegmentedControl'
 end

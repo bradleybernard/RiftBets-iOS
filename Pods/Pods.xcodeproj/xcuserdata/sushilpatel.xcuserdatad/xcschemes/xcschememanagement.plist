@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HMSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KeychainSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>398A791FDA5C0A9C3A3D1796BBA7F58A</key>
+		<key>4C698C648EE4D43C6B8BE0BE1FE91737</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C698C648EE4D43C6B8BE0BE1FE91737</key>
+		<key>4E05F6662799A9B8F88836FFCD5E4BED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52790C1A7EE7895992D3C71EB1AFF752</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>71C1DF39EE1271EA1147F993CA1439A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE56A65ACE4AF61AC79D27501EACAA81</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

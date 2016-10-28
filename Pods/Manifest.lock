@@ -6,6 +6,7 @@ PODS:
     - Fabric (~> 1.6.3)
   - Device (1.0.3)
   - Fabric (1.6.8)
+  - HMSegmentedControl (1.5.3)
   - KeychainSwift (3.0.16)
   - SwiftyJSON (2.4.0)
 
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - Crashlytics
   - Device (~> 1.0.1)
   - Fabric
+  - HMSegmentedControl
   - KeychainSwift (~> 3.0)
   - SwiftyJSON (= 2.4.0)
 
@@ -24,9 +26,10 @@ SPEC CHECKSUMS:
   Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
   Device: bcf333c7c497edabe6df9560fd64f1e255d45b2b
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
   KeychainSwift: a5bb85cd498ce2217b55e055ec59e9268d83384c
   SwiftyJSON: 96918c1bf505efa50c4f72957018dd3452090c9c
 
-PODFILE CHECKSUM: 040da1c61af601527ecd0116c7b7d0bb7be90c4a
+PODFILE CHECKSUM: 92ea47a4763fe4e8811df1f4f40329c561aad3c5
 
 COCOAPODS: 1.0.1

@@ -14,4 +14,6 @@ target 'RiftBets' do
   pod 'Device', '~> 1.0.1'
   pod 'AlamofireImage', '~> 2.0'
   pod 'HMSegmentedControl'
+  pod 'SnapKit', '~> 0.22.0'
+  pod 'EasyAnimation', '~> 1.0.5'
 end

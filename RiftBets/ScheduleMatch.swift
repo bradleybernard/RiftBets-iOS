@@ -66,14 +66,13 @@ struct ScheduleMatch {
          team_Two_Acronym: String,
          team_Two_Alt_Logo_Url: String,
          team_Two_Slug: String
-         ) {
-        self.name = name
+    )
+    {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        self.date = dateFormatter.dateFromString(date)
-        //print(dateFormatter.dateFromString(date))
-        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
-      //  print(dateFormatter.stringFromDate(self.date!))
+        
+        self.name                       = name
+        self.date                       = dateFormatter.dateFromString(date)
         self.state                      = state
         self.block_Prefix               = block_Prefix
         self.block_Label                = block_Label
@@ -100,9 +99,6 @@ struct ScheduleMatch {
         self.team_Two_Acronym           = team_Two_Acronym
         self.team_Two_Alt_Logo_Url      = team_Two_Alt_Logo_Url
         self.team_Two_Slug              = team_Two_Slug
-        
-        
-        
     }
 
 }

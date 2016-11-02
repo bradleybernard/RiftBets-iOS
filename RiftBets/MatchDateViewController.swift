@@ -11,37 +11,55 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import HMSegmentedControl
+import SnapKit
+import EasyAnimation
 
 class MatchDateViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-   
-    
-    
-    
     @IBOutlet weak var dateTable: UITableView!
     
-    @IBOutlet weak var segment: HMSegmentedControl!
     var matches = [ScheduleMatch]()
-    
+    var filteredMatches = [ScheduleMatch]()
     var segmentedControl: HMSegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSegmentedControl()
-        getData()
-        
+        fetchSchedule()
     }
     
-    @IBAction func Refresh(sender: AnyObject) {
-        getData()
+    @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {
+        filterMatches(getDateFromSegment())
     }
     
-    func getData() {
+    func getDateFromSegment() -> NSDate {
         
-        matches.removeAll()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMM d"
+        
+        var date = formatter.dateFromString(segmentedControl.sectionTitles[segmentedControl.selectedSegmentIndex] as! String)!
+        
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: date)
+        
+        components.year = 2016
+        date = calendar.dateFromComponents(components)!
+        
+        return date
+    }
+    
+    func fetchSchedule() {
         
         RemoteManager.sharedInstance.matchSchedule({ (json, error) -> Void in
+            
+            if error != nil {
+                print("Error: " + error!.description)
+                return
+            }
+            
+            self.matches = [ScheduleMatch]()
+            self.filteredMatches = [ScheduleMatch]()
             
             for (_, subJson) : (String, JSON) in json {
 
@@ -66,7 +84,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                             score_One               : matchJson["score_one"].intValue,
                             score_Two               : matchJson["score_two"].intValue,
                             match_Identifier        : matchJson["match_identifier"].stringValue,
-                            match_Best_Of           :matchJson["match_best_of"].intValue,
+                            match_Best_Of           : matchJson["match_best_of"].intValue,
                             team_One_Api_Id_Long    : matchJson["resources"]["one"]["api_id_long"].stringValue,
                             team_One_Name           : matchJson["resources"]["one"]["name"].stringValue,
                             team_One_Team_Photo_Url : matchJson["resources"]["one"]["team_photo_url"].stringValue,
@@ -81,50 +99,108 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                             team_Two_Acronym        : matchJson["resources"]["two"]["acronym"].stringValue,
                             team_Two_Alt_Logo_Url   : matchJson["resources"]["two"]["alt_logo_url"].stringValue,
                             team_Two_Slug           : matchJson["resources"]["two"]["slug"].stringValue
-                    ))
-                    
+                        )
+                    )
                 }
-                
             }
             
+            self.setSegmentDates()
+            self.filterMatches(self.getDateFromSegment())
+            
+            self.segmentedControl.hidden = false
             self.dateTable.reloadData()
-   
         })
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return matches.count
+        return filteredMatches.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell : MatchDateCustomCell = tableView.dequeueReusableCellWithIdentifier("MatchDateCustomCell") as! MatchDateCustomCell
-        let match_schedule = matches[indexPath.item]
+        let match_schedule = filteredMatches[indexPath.item]
         
         cell.formatCell(match_schedule)
         
         return cell
     }
+    
+    func setSegmentDates() {
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMM d"
+        
+        var dates : [String] = []
+        
+        for match in matches.sort({ $0.date!.compare($1.date!) == NSComparisonResult.OrderedAscending }) {
+            if let date = match.date {
+                let dateString = formatter.stringFromDate(date)
+                print(dateString)
+                if !dates.contains(dateString) {
+                    dates.append(dateString)
+                }
+            }
+        }
+        
+        segmentedControl.sectionTitles = dates
+        // FIX: Needs to select the one closest to todays date instead of last one
+        segmentedControl.setSelectedSegmentIndex(UInt(dates.count - 1), animated: true)
+    }
+    
+    func filterMatches(date: NSDate = NSDate()) {
+        
+        filteredMatches = [ScheduleMatch]()
+        
+        for match in matches {
+            print("MatchDate: \(match.date!)  Date: \(date)")
+            if NSCalendar.currentCalendar().isDate(date, inSameDayAsDate: match.date!) {
+                filteredMatches.append(match)
+            }
+        }
+        
+        self.dateTable.reloadData()
+    }
+    
     func setupSegmentedControl() {
-        self.segmentedControl = HMSegmentedControl(sectionTitles: ["Login", "Register"])
-         // segmentedControl.addTarget(self, action: "segmentedControlChangedValue:", forControlEvents: .AllEvents)
-        self.segmentedControl.frame = CGRectMake(0, view.frame.height - 55, view.frame.width, 55)
+        
+        segmentedControl = HMSegmentedControl(sectionTitles: ["DatesList"])
+        segmentedControl.addTarget(self, action: #selector(MatchDateViewController.segmentedControlChangedValue(_:)), forControlEvents: .AllEvents)
+        segmentedControl.frame = CGRectMake(0, 0, view.frame.width, 55)
         segmentedControl.selectionIndicatorHeight = 5.0
         segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.grayColor(), NSFontAttributeName: UIFont(name: "Avenir-Heavy", size: 20)!]
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0,10,0,10)
-        // segmentedControl.selectionIndicatorColor = UIColor(red: 253.0/255.0, green: 81.0/255.0, blue: 116.0/255.0, alpha: 0.8)
-        segmentedControl.selectionIndicatorColor = UIColor(red: 0.141, green: 0.165, blue: 0.224, alpha: 0.8)
-        //segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe
-        //segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationUp
+        segmentedControl.selectionIndicatorColor = UIColor(red: 253.0/255.0, green: 81.0/255.0, blue: 116.0/255.0, alpha: 0.8)
+        segmentedControl.selectionIndicatorColor = UIColor.redColor()
+        segmentedControl.selectionStyle = .FullWidthStripe
+        segmentedControl.selectionIndicatorLocation = .Down
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.backgroundColor = UIColor(red: 74.0/255.0, green: 106.0/255.0, blue: 145.0/255.0, alpha: 0.3)
+        segmentedControl.hidden = true
         
-        self.segment = segmentedControl
-        
-        self.view.addSubview(segment)
-        self.view.bringSubviewToFront(segment)
+        self.view.addSubview(segmentedControl)
+        self.view.bringSubviewToFront(segmentedControl)
+        self.constraintsSegment()
+        self.constraintsTableView()
+    }
+    
+    func constraintsTableView() {
+        dateTable.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(segmentedControl.snp_bottom)
+            make.left.equalTo(view)
+            make.bottom.equalTo(view)
+            make.right.equalTo(view)
+        }
+    }
+    
+    func constraintsSegment() {
+        segmentedControl.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(view).offset(self.navigationController!.navigationBar.frame.height + segmentedControl.frame.height/2)
+            make.left.equalTo(view)
+            make.bottom.equalTo(view.snp_top).offset(self.navigationController!.navigationBar.frame.height  + segmentedControl.frame.height)
+            make.right.equalTo(view)
+        }
     }
 
 }

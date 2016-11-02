@@ -19,12 +19,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EasyAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>HMSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KeychainSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-RiftBets.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,11 +57,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>398A791FDA5C0A9C3A3D1796BBA7F58A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4C698C648EE4D43C6B8BE0BE1FE91737</key>
 		<dict>
 			<key>primary</key>
@@ -57,12 +67,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>71C1DF39EE1271EA1147F993CA1439A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7489D94A37583D60152764F0E0A6D6DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE56A65ACE4AF61AC79D27501EACAA81</key>
+		<key>7E2536467ED06CADFC1A4A7CA0EA3FF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E736F408CE28E19411AD9DA5E96DC92</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A376E868ED408EE8EEBD1DDBCE639EF5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

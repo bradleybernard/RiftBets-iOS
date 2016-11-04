@@ -169,6 +169,15 @@ class RemoteManager {
         return completion(json: json, error: nil)
     }
     
+    private func afterMatchDetail(json: JSON, error: NSError?, completion: JSONCompletion){
+        
+        if let error = error {
+            return completion(json: json, error: error)
+        }
+        
+        return completion(json: json, error: nil)
+    }
+    
     func matchSchedule(completion: JSONCompletion){
         
         get("schedule", parameters: [:], completion: { (json, error) -> Void in
@@ -176,4 +185,16 @@ class RemoteManager {
             self.afterMatchSchedule(json, error: error, completion: completion)
         })
     }
+    func matchDetail(matchid:String, completion: JSONCompletion){
+        let params = [
+            "matchid":matchid
+        ]
+        get("matchdetails", parameters: params, completion: { (json, error) -> Void in
+            
+            self.afterMatchDetail(json, error: error, completion: completion)
+        })
+    }
+    
+    
+    
 }

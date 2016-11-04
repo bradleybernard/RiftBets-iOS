@@ -11,6 +11,9 @@ import UIKit
 
 class MatchDetailViewController: UIViewController {
     
+    internal var matchName : String = " "
+    var match : ScheduleMatch?
+    
     @IBOutlet weak var matchTitle: UILabel!
     
     @IBOutlet weak var team_one_logo: UIImageView!
@@ -21,6 +24,8 @@ class MatchDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        matchTitle.text = matchName
     }
     
 }

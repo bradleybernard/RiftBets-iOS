@@ -13,6 +13,7 @@
 		B1E3FAA01DB7466200592E41 /* ScheduleMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E3FA9F1DB7466200592E41 /* ScheduleMatch.swift */; };
 		B1E3FAA21DB96F9300592E41 /* MatchDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E3FAA11DB96F9300592E41 /* MatchDateViewController.swift */; };
 		B1E3FAA41DBDBF6000592E41 /* MatchDateCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E3FAA31DBDBF6000592E41 /* MatchDateCustomCell.swift */; };
+		B1E3FAA81DCC8E5800592E41 /* MatchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E3FAA71DCC8E5800592E41 /* MatchDetail.swift */; };
 		B800FBB51DACC5E5002E449F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B800FBB31DACC5E5002E449F /* FBSDKCoreKit.framework */; };
 		B800FBB61DACC5E5002E449F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B800FBB41DACC5E5002E449F /* FBSDKLoginKit.framework */; };
 		B800FBB81DACC614002E449F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B800FBB71DACC614002E449F /* FBSDKShareKit.framework */; };
@@ -39,6 +40,7 @@
 		B1E3FA9F1DB7466200592E41 /* ScheduleMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleMatch.swift; sourceTree = "<group>"; };
 		B1E3FAA11DB96F9300592E41 /* MatchDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDateViewController.swift; sourceTree = "<group>"; };
 		B1E3FAA31DBDBF6000592E41 /* MatchDateCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDateCustomCell.swift; sourceTree = "<group>"; };
+		B1E3FAA71DCC8E5800592E41 /* MatchDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetail.swift; sourceTree = "<group>"; };
 		B800FBB31DACC5E5002E449F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B800FBB41DACC5E5002E449F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../../../../Desktop/CMPS115/RiftBets-iOS/FBSDKLoginKit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B800FBB71DACC614002E449F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E3FA9F1DB7466200592E41 /* ScheduleMatch.swift */,
+				B1E3FAA71DCC8E5800592E41 /* MatchDetail.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				B800FBBC1DACCAF1002E449F /* API.swift in Sources */,
 				B1E3FA991DB7177C00592E41 /* TabbedViewController.swift in Sources */,
 				B800FBC51DACCE55002E449F /* Config.swift in Sources */,
+				B1E3FAA81DCC8E5800592E41 /* MatchDetail.swift in Sources */,
 				B1E3FAA41DBDBF6000592E41 /* MatchDateCustomCell.swift in Sources */,
 				B1E3FAA21DB96F9300592E41 /* MatchDateViewController.swift in Sources */,
 				B87A34801DAA05F000601B90 /* HomeViewController.swift in Sources */,

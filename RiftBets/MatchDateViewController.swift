@@ -85,6 +85,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                             score_Two               : matchJson["score_two"].intValue,
                             match_Identifier        : matchJson["match_identifier"].stringValue,
                             match_Best_Of           : matchJson["match_best_of"].intValue,
+                            api_Id_Long             : matchJson["api_id_long"].stringValue,
                             team_One_Api_Id_Long    : matchJson["resources"]["one"]["api_id_long"].stringValue,
                             team_One_Name           : matchJson["resources"]["one"]["name"].stringValue,
                             team_One_Team_Photo_Url : matchJson["resources"]["one"]["team_photo_url"].stringValue,
@@ -125,6 +126,19 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         cell.formatCell(match_schedule)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("didSelect")
+        let match_Detail = filteredMatches[indexPath.row]
+        RemoteManager.sharedInstance.matchDetail(match_Detail.api_Id_Long!, completion: { (json, error) -> Void in
+            print(json)
+            
+        })
+       // let matchDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("MatchDetailViewController") as! MatchDetailViewController
+        //matchDetailVC.match = match_Detail
+        
+       // self.navigationController?.pushViewController(matchDetailVC, animated: true)
     }
     
     func setSegmentDates() {

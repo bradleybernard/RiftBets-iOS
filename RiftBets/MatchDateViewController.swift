@@ -130,15 +130,193 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("didSelect")
+        var matchDetail : MatchDetail?
         let match_Detail = filteredMatches[indexPath.row]
         RemoteManager.sharedInstance.matchDetail(match_Detail.api_Id_Long!, completion: { (json, error) -> Void in
-            print(json)
+           // print(json)
+            
+
+            var playerNum : String = " "
+            var game : String = " "
+            var current_game = 1
+            
+            for(_,detailJson) : (String, JSON) in json{
+                matchDetail = MatchDetail(
+                    api_Id_Long: detailJson["api_id_long"].stringValue,
+                    name: detailJson["name"].stringValue,
+                    resource_Type: detailJson["resource_type"].stringValue,
+                    api_Resource_Id_One: detailJson["api_resource_id_one"].stringValue,
+                    api_Resource_Id_Two: detailJson["api_resource_id_two"].stringValue,
+                    score_One: detailJson["score_one"].intValue,
+                    score_Two: detailJson["score_two"].intValue,
+                    team_One_Api_Id_Long: detailJson["resouces"]["one"]["api_id_long"].stringValue,
+                    team_One_Name: detailJson["resouces"]["one"]["name"].stringValue,
+                    team_One_Photo_Url: detailJson["resouces"]["one"]["team_photo_url"].stringValue,
+                    team_One_Logo_Url: detailJson["resouces"]["one"]["logo_url"].stringValue,
+                    team_One_Acronym: detailJson["resouces"]["one"]["acronym"].stringValue,
+                    team_One_Alt_Logo_Url: detailJson["resouces"]["one"]["alt_logo_url"].stringValue,
+                    team_One_Slug: detailJson["resouces"]["one"]["slug"].stringValue,
+                    team_Two_Api_Id_Long: detailJson["resouces"]["two"]["api_id_long"].stringValue,
+                    team_Two_Name: detailJson["resouces"]["two"]["name"].stringValue,
+                    team_Two_Photo_Url: detailJson["resouces"]["team_photo_url"].stringValue,
+                    team_Two_Logo_Url: detailJson["resouces"]["two"]["logo_url"].stringValue,
+                    team_Two_Acronym: detailJson["resouces"]["two"]["acronym"].stringValue,
+                    team_Two_Alt_Logo_Url: detailJson["resouces"]["two"]["alt_logo_url"].stringValue,
+                    team_Two_Slug: detailJson["resouces"]["two"]["slug"].stringValue
+                )
+                
+                
+                //let total_games = (matchDetail?.score_One)! + (matchDetail?.score_Two)!
+                
+                
+               
+                for current_game in 1...5 {
+                    
+                    if(current_game == 1){
+                        game = "game_one"
+                    }else if(current_game == 2){
+                        game = "game_two"
+                    }else if(current_game == 3){
+                        game = "game_three"
+                    }else if(current_game == 4){
+                        game = "game_four"
+                    }else if(current_game == 5){
+                        game = "game_five"
+                    }
+                    if(detailJson[game] != nil){
+                    matchDetail?.gameDetail.append(
+                        GameDetail(
+                            game_Name: detailJson[game]["game_name"].stringValue,
+                            game_Id: detailJson[game]["game_id"].stringValue,
+                            generated_Name: detailJson[game]["generated_name"].stringValue,
+                            teamOne : TeamOne(
+                                team_Id: detailJson[game]["team_one"]["team_id"].stringValue,
+                                win: detailJson[game]["team_one"]["win"].intValue,
+                                first_Blood: detailJson[game]["team_one"]["first_blood"].intValue,
+                                first_Inhibitor: detailJson[game]["team_one"]["first_inhibitor"].intValue,
+                                first_Baron: detailJson[game]["team_one"]["first_baron"].intValue,
+                                first_Dragon: detailJson[game]["team_one"]["first_dragon"].intValue,
+                                first_Rift_Herald: detailJson[game]["team_one"]["first_rift_herald"].intValue,
+                                tower_Kills: detailJson[game]["team_one"]["tower_kills"].intValue,
+                                inhibitor_Kills: detailJson[game]["team_one"]["inhibitor_kills"].intValue,
+                                baron_Kills: detailJson[game]["team_one"]["baron_kills"].intValue,
+                                dragon_Kills: detailJson[game]["team_one"]["dragon_kills"].intValue,
+                                rift_Herald_Kills: detailJson[game]["team_one"]["rift_herald_kills"].intValue,
+                                ban_1: detailJson[game]["team_one"]["ban_1"].stringValue,
+                                ban_2: detailJson[game]["team_one"]["ban_2"].stringValue,
+                                ban_3: detailJson[game]["team_one"]["ban_3"].stringValue
+                                
+                            ),
+                            
+                            teamTwo : TeamTwo(
+                                team_Id: detailJson[game]["team_two"]["team_id"].stringValue,
+                                win: detailJson[game]["team_two"]["win"].intValue,
+                                first_Blood: detailJson[game]["team_two"]["first_blood"].intValue,
+                                first_Inhibitor: detailJson[game]["team_two"]["first_inhibitor"].intValue,
+                                first_Baron: detailJson[game]["team_two"]["first_baron"].intValue,
+                                first_Dragon: detailJson[game]["team_two"]["first_dragon"].intValue,
+                                first_Rift_Herald: detailJson[game]["team_two"]["first_rift_herald"].intValue,
+                                tower_Kills: detailJson[game]["team_two"]["tower_kills"].intValue,
+                                inhibitor_Kills: detailJson[game]["team_two"]["inhibitor_kills"].intValue,
+                                baron_Kills: detailJson[game]["team_two"]["baron_kills"].intValue,
+                                dragon_Kills: detailJson[game]["team_two"]["dragon_kills"].intValue,
+                                rift_Herald_Kills: detailJson[game]["team_two"]["rift_herald_kills"].intValue,
+                                ban_1: detailJson[game]["team_two"]["ban_1"].stringValue,
+                                ban_2: detailJson[game]["team_two"]["ban_2"].stringValue,
+                                ban_3: detailJson[game]["team_two"]["ban_3"].stringValue
+                            )
+                        )
+                        
+                    )
+                    print(game)
+                    for playerNumber in 1...10{
+                       // print(playerNum)
+                        if(playerNumber == 1){
+                            playerNum = "1"
+                        }else if(playerNumber == 2){
+                            playerNum = "2"
+                        }else if(playerNumber == 3){
+                            playerNum = "3"
+                        }else if(playerNumber == 4){
+                            playerNum = "4"
+                        }else if(playerNumber == 5){
+                            playerNum = "5"
+                        }else if(playerNumber == 6){
+                            playerNum = "6"
+                        }else if(playerNumber == 7){
+                            playerNum = "7"
+                        }else if(playerNumber == 8){
+                            playerNum = "8"
+                        }else if(playerNumber == 9){
+                            playerNum = "9"
+                        }else if(playerNumber == 10){
+                            playerNum = "10"
+                        }
+                        if( playerNumber < 6){
+                            matchDetail?.gameDetail[current_game-1].teamOne?.players.append(Players(
+                                participant_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["participant_id"].intValue,
+                                team_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["team_id"].intValue,
+                                champion_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["champion_id"].stringValue,
+                                spell1_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["spell1_id"].stringValue,
+                                spell2_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["spell2_id"].stringValue,
+                                item_1: detailJson[game]["team_one"]["player_stats"][playerNum]["item_1"].stringValue,
+                                item_2: detailJson[game]["team_one"]["player_stats"][playerNum]["item_2"].stringValue,
+                                item_3: detailJson[game]["team_one"]["player_stats"][playerNum]["item_3"].stringValue,
+                                item_4: detailJson[game]["team_one"]["player_stats"][playerNum]["item_4"].stringValue,
+                                item_5: detailJson[game]["team_one"]["player_stats"][playerNum]["item_5"].stringValue,
+                                item_6: detailJson[game]["team_one"]["player_stats"][playerNum]["item_6"].stringValue,
+                                kills: detailJson[game]["team_one"]["player_stats"][playerNum]["kills"].intValue,
+                                deaths: detailJson[game]["team_one"]["player_stats"][playerNum]["kills"].intValue,
+                                assists: detailJson[game]["team_one"]["player_stats"][playerNum]["assists"].intValue,
+                                gold_Earned: detailJson[game]["team_one"]["player_stats"][playerNum]["gold_earned"].intValue,
+                                minions_Killed: detailJson[game]["team_one"]["player_stats"][playerNum]["minions_killed"].intValue,
+                                champ_Level: detailJson[game]["team_one"]["player_stats"][playerNum]["champ_level"].intValue,
+                                summoner_Name: detailJson[game]["team_one"]["player_stats"][playerNum]["summoner_name"].stringValue
+                                )
+                            )
+                            print(detailJson[game]["team_one"]["player_stats"][playerNum]["summoner_name"].stringValue)
+                        }
+                        else if( playerNumber > 5 ){
+                            
+                            matchDetail?.gameDetail[current_game-1].teamTwo?.players.append(Players(
+                                participant_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["participant_id"].intValue,
+                                team_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["team_id"].intValue,
+                                champion_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["champion_id"].stringValue,
+                                spell1_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["spell1_id"].stringValue,
+                                spell2_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["spell2_id"].stringValue,
+                                item_1: detailJson[game]["team_two"]["players_stats"][playerNum]["item_1"].stringValue,
+                                item_2: detailJson[game]["team_two"]["players_stats"][playerNum]["item_2"].stringValue,
+                                item_3: detailJson[game]["team_two"]["players_stats"][playerNum]["item_3"].stringValue,
+                                item_4: detailJson[game]["team_two"]["players_stats"][playerNum]["item_4"].stringValue,
+                                item_5: detailJson[game]["team_two"]["players_stats"][playerNum]["item_5"].stringValue,
+                                item_6: detailJson[game]["team_two"]["players_stats"][playerNum]["item_6"].stringValue,
+                                kills: detailJson[game]["team_two"]["players_stats"][playerNum]["kills"].intValue,
+                                deaths: detailJson[game]["team_two"]["players_stats"][playerNum]["kills"].intValue,
+                                assists: detailJson[game]["team_two"]["players_stats"][playerNum]["assists"].intValue,
+                                gold_Earned: detailJson[game]["team_two"]["players_stats"][playerNum]["gold_earned"].intValue,
+                                minions_Killed: detailJson[game]["team_two"]["players_stats"][playerNum]["minions_killed"].intValue,
+                                champ_Level: detailJson[game]["team_two"]["players_stats"][playerNum]["champ_level"].intValue,
+                                summoner_Name: detailJson[game]["team_two"]["players_stats"][playerNum]["summoner_name"].stringValue
+                                )
+                            )
+                            print(detailJson[game]["team_two"]["players_stats"][playerNum]["summoner_name"].stringValue)
+                        }
+                    }
+                //may need to replace indexPath.row
+                }
+                }
+                current_game = current_game + 1
+            }
+            
+           //print(matchDetail?.gameDetail[0].teamTwo?.players[1].summoner_Name)
             
         })
-       // let matchDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("MatchDetailViewController") as! MatchDetailViewController
-        //matchDetailVC.match = match_Detail
+       //let matchDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("MatchDetailViewController") as! MatchDetailViewController
+       // matchDetailVC.match = match_Detail
         
-       // self.navigationController?.pushViewController(matchDetailVC, animated: true)
+        //matchDetailVC.matchDetails = matchDetail
+        
+       //self.navigationController?.pushViewController(matchDetailVC, animated: true)
     }
     
     func setSegmentDates() {

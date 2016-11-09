@@ -920,15 +920,6 @@
                                     <rect key="frame" x="20" y="613" width="105" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team#1 vs Team#2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ui-D2-xgz">
-                                <rect key="frame" x="101" y="42" width="159" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <color key="textColor" red="0.77123975712269821" green="0.79864654430557325" blue="0.81733727331606221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="38" width="360" height="32"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
@@ -976,7 +967,6 @@
                                 <exclude reference="jVj-da-PWG"/>
                                 <exclude reference="A72-Wc-eUf"/>
                                 <exclude reference="IIt-Zt-dvE"/>
-                                <exclude reference="3ui-D2-xgz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1024,12 +1014,10 @@
                                 <include reference="jVj-da-PWG"/>
                                 <include reference="A72-Wc-eUf"/>
                                 <include reference="IIt-Zt-dvE"/>
-                                <include reference="3ui-D2-xgz"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="matchTitle" destination="3ui-D2-xgz" id="uGq-BQ-QEg"/>
                         <outlet property="team_one_logo" destination="gwa-4P-mml" id="3dh-5h-5Xh"/>
                         <outlet property="team_one_stats" destination="fKE-5C-X1G" id="p2w-tG-xlV"/>
                         <outlet property="team_two_logo" destination="Uhz-sC-aMZ" id="Z85-Ih-d9F"/>

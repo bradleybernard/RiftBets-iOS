@@ -88,21 +88,84 @@ struct GameDetail{
     var game_Name       : String?
     var game_Id         : String?
     var generated_Name  : String?
-    var teams           = [Teams]()
+    var teamOne         : TeamOne?
+    var teamTwo         : TeamTwo?
+    
 
     init(game_Name      : String,
          game_Id        : String,
-         generated_Name : String
+         generated_Name : String,
+         teamOne        : TeamOne,
+         teamTwo        : TeamTwo
     )
     {
         self.game_Name      = game_Name
         self.game_Id        = game_Id
         self.generated_Name = generated_Name
+        self.teamOne        = teamOne
+        self.teamTwo        = teamTwo
     }
     
 }
 
-struct Teams{
+struct TeamOne{
+    var players             = [Players]()
+    var team_Id             : String?
+    var win                 : Int?
+    var first_Blood         : Int?
+    var first_Inhibitor     : Int?
+    var first_Baron         : Int?
+    var first_Dragon        : Int?
+    var first_Rift_Herald   : Int?
+    var tower_Kills         : Int?
+    var inhibitor_Kills     : Int?
+    var baron_Kills         : Int?
+    var dragon_Kills        : Int?
+    var rift_Herald_Kills   : Int?
+    var ban_1               : String?
+    var ban_2               : String?
+    var ban_3               : String?
+    
+    
+    init(team_Id            : String,
+         win: Int,
+         first_Blood        : Int,
+         first_Inhibitor    : Int,
+         first_Baron        : Int,
+         first_Dragon       : Int,
+         first_Rift_Herald  : Int,
+         tower_Kills        : Int,
+         inhibitor_Kills    : Int,
+         baron_Kills        : Int,
+         dragon_Kills       : Int,
+         rift_Herald_Kills  : Int,
+         ban_1              : String,
+         ban_2              : String,
+         ban_3              : String
+ 
+        )
+    {
+        self.team_Id            = team_Id
+        self.win                = win
+        self.first_Blood        = first_Blood
+        self.first_Inhibitor    = first_Inhibitor
+        self.first_Baron        = first_Baron
+        self.first_Dragon       = first_Dragon
+        self.first_Rift_Herald  = first_Rift_Herald
+        self.tower_Kills        = tower_Kills
+        self.inhibitor_Kills    = inhibitor_Kills
+        self.baron_Kills        = baron_Kills
+        self.dragon_Kills       = dragon_Kills
+        self.rift_Herald_Kills  = rift_Herald_Kills
+        self.ban_1              = ban_1
+        self.ban_2              = ban_2
+        self.ban_3              = ban_3
+
+    }
+    
+}
+
+struct TeamTwo{
     var team_Id             : String?
     var win                 : Int?
     var first_Blood         : Int?
@@ -135,6 +198,7 @@ struct Teams{
          ban_1              : String,
          ban_2              : String,
          ban_3              : String
+
         )
     {
         self.team_Id            = team_Id
@@ -152,6 +216,7 @@ struct Teams{
         self.ban_1              = ban_1
         self.ban_2              = ban_2
         self.ban_3              = ban_3
+
     }
     
 }

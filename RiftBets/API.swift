@@ -187,9 +187,10 @@ class RemoteManager {
     }
     func matchDetail(matchid:String, completion: JSONCompletion){
         let params = [
-            "matchid":matchid
+            "match_id": matchid
         ]
-        get("matchdetails", parameters: params, completion: { (json, error) -> Void in
+        print(params)
+        get("match", parameters: params, completion: { (json, error) -> Void in
             
             self.afterMatchDetail(json, error: error, completion: completion)
         })

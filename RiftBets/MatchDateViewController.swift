@@ -21,6 +21,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     var matches = [ScheduleMatch]()
     var filteredMatches = [ScheduleMatch]()
     var segmentedControl: HMSegmentedControl!
+    var matchDetail : MatchDetail?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,9 +130,11 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("didSelect")
-        var matchDetail : MatchDetail?
+       // print("didSelect")
+        
         let match_Detail = filteredMatches[indexPath.row]
+        let matchDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("MatchDetailViewController") as! MatchDetailViewController
+        
         RemoteManager.sharedInstance.matchDetail(match_Detail.api_Id_Long!, completion: { (json, error) -> Void in
            // print(json)
             
@@ -141,7 +144,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
             var current_game = 1
             
             for(_,detailJson) : (String, JSON) in json{
-                matchDetail = MatchDetail(
+                self.matchDetail = MatchDetail(
                     api_Id_Long: detailJson["api_id_long"].stringValue,
                     name: detailJson["name"].stringValue,
                     resource_Type: detailJson["resource_type"].stringValue,
@@ -149,20 +152,20 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                     api_Resource_Id_Two: detailJson["api_resource_id_two"].stringValue,
                     score_One: detailJson["score_one"].intValue,
                     score_Two: detailJson["score_two"].intValue,
-                    team_One_Api_Id_Long: detailJson["resouces"]["one"]["api_id_long"].stringValue,
-                    team_One_Name: detailJson["resouces"]["one"]["name"].stringValue,
-                    team_One_Photo_Url: detailJson["resouces"]["one"]["team_photo_url"].stringValue,
-                    team_One_Logo_Url: detailJson["resouces"]["one"]["logo_url"].stringValue,
-                    team_One_Acronym: detailJson["resouces"]["one"]["acronym"].stringValue,
-                    team_One_Alt_Logo_Url: detailJson["resouces"]["one"]["alt_logo_url"].stringValue,
-                    team_One_Slug: detailJson["resouces"]["one"]["slug"].stringValue,
-                    team_Two_Api_Id_Long: detailJson["resouces"]["two"]["api_id_long"].stringValue,
-                    team_Two_Name: detailJson["resouces"]["two"]["name"].stringValue,
-                    team_Two_Photo_Url: detailJson["resouces"]["team_photo_url"].stringValue,
-                    team_Two_Logo_Url: detailJson["resouces"]["two"]["logo_url"].stringValue,
-                    team_Two_Acronym: detailJson["resouces"]["two"]["acronym"].stringValue,
-                    team_Two_Alt_Logo_Url: detailJson["resouces"]["two"]["alt_logo_url"].stringValue,
-                    team_Two_Slug: detailJson["resouces"]["two"]["slug"].stringValue
+                    team_One_Api_Id_Long: detailJson["resources"]["one"]["api_id_long"].stringValue,
+                    team_One_Name: detailJson["resources"]["one"]["name"].stringValue,
+                    team_One_Photo_Url: detailJson["resources"]["one"]["team_photo_url"].stringValue,
+                    team_One_Logo_Url: detailJson["resources"]["one"]["logo_url"].stringValue,
+                    team_One_Acronym: detailJson["resources"]["one"]["acronym"].stringValue,
+                    team_One_Alt_Logo_Url: detailJson["resources"]["one"]["alt_logo_url"].stringValue,
+                    team_One_Slug: detailJson["resources"]["one"]["slug"].stringValue,
+                    team_Two_Api_Id_Long: detailJson["resources"]["two"]["api_id_long"].stringValue,
+                    team_Two_Name: detailJson["resources"]["two"]["name"].stringValue,
+                    team_Two_Photo_Url: detailJson["resources"]["team_photo_url"].stringValue,
+                    team_Two_Logo_Url: detailJson["resources"]["two"]["logo_url"].stringValue,
+                    team_Two_Acronym: detailJson["resources"]["two"]["acronym"].stringValue,
+                    team_Two_Alt_Logo_Url: detailJson["resources"]["two"]["alt_logo_url"].stringValue,
+                    team_Two_Slug: detailJson["resources"]["two"]["slug"].stringValue
                 )
                 
                 
@@ -184,7 +187,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                         game = "game_five"
                     }
                     if(detailJson[game] != nil){
-                        matchDetail?.gameDetail.append(
+                        self.matchDetail?.gameDetail.append(
                             GameDetail(
                                 game_Name: detailJson[game]["game_name"].stringValue,
                                 game_Id: detailJson[game]["game_id"].stringValue,
@@ -253,7 +256,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                                 playerNum = "10"
                             }
                             if( playerNumber < 6){
-                                matchDetail?.gameDetail[current_game-1].teamOne?.players.append(Players(
+                                self.matchDetail?.gameDetail[current_game-1].teamOne?.players.append(Players(
                                     participant_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["participant_id"].intValue,
                                     team_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["team_id"].intValue,
                                     champion_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["champion_id"].stringValue,
@@ -274,11 +277,11 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                                     summoner_Name: detailJson[game]["team_one"]["player_stats"][playerNum]["summoner_name"].stringValue
                                     )
                                 )
-                                print(detailJson[game]["team_one"]["player_stats"][playerNum]["summoner_name"].stringValue)
+                                
                             }
                             else if( playerNumber > 5 ){
                                 
-                                matchDetail?.gameDetail[current_game-1].teamTwo?.players.append(Players(
+                                self.matchDetail?.gameDetail[current_game-1].teamTwo?.players.append(Players(
                                     participant_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["participant_id"].intValue,
                                     team_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["team_id"].intValue,
                                     champion_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["champion_id"].stringValue,
@@ -299,7 +302,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                                     summoner_Name: detailJson[game]["team_two"]["players_stats"][playerNum]["summoner_name"].stringValue
                                     )
                                 )
-                                print(detailJson[game]["team_two"]["players_stats"][playerNum]["summoner_name"].stringValue)
+                                
                             }
                         }
                         //may need to replace indexPath.row
@@ -307,16 +310,15 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                 }
                 current_game = current_game + 1
             }
-            
+
+            if let matchDets : MatchDetail = self.matchDetail {
+                matchDetailVC.formatDetails(matchDets)
+            }
            //print(matchDetail?.gameDetail[0].teamTwo?.players[1].summoner_Name)
             
         })
-       //let matchDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("MatchDetailViewController") as! MatchDetailViewController
-       // matchDetailVC.match = match_Detail
-        
-        //matchDetailVC.matchDetails = matchDetail
-        
-       //self.navigationController?.pushViewController(matchDetailVC, animated: true)
+
+       self.navigationController?.pushViewController(matchDetailVC, animated: true)
     }
     
     func setSegmentDates() {

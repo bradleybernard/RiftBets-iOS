@@ -11,9 +11,13 @@ import UIKit
 
 class MatchDetailViewController: UIViewController {
     
-    internal var matchName : String = " "
+
+    @IBOutlet weak var teamTwoName: UILabel!
+    @IBOutlet weak var teamOneName: UILabel!
     var match : ScheduleMatch?
     internal var matchDetails : MatchDetail?
+    
+    //var teamOneN : String = "didnt fucking work"
     
     @IBOutlet weak var team_one_logo: UIImageView!
     @IBOutlet weak var team_two_logo: UIImageView!
@@ -23,6 +27,14 @@ class MatchDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    
+    func formatDetails(matchDetail: MatchDetail){
+        //these values are ok for overall match purposes but for individual game not so much
+        teamOneName.text = matchDetail.team_One_Name
+        teamTwoName.text = matchDetail.team_Two_Name
         
         
     }

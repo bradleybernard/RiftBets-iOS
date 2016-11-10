@@ -1018,6 +1018,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="TeamTwoName" destination="hOv-ew-pkJ" id="y3n-be-xs6"/>
+                        <outlet property="teamOneName" destination="Tgh-1u-zf6" id="89Y-CR-SGT"/>
+                        <outlet property="teamTwoName" destination="hOv-ew-pkJ" id="LNT-FJ-LxR"/>
                         <outlet property="team_one_logo" destination="gwa-4P-mml" id="3dh-5h-5Xh"/>
                         <outlet property="team_one_stats" destination="fKE-5C-X1G" id="p2w-tG-xlV"/>
                         <outlet property="team_two_logo" destination="Uhz-sC-aMZ" id="Z85-Ih-d9F"/>

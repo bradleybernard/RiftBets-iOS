@@ -231,7 +231,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                             )
                             
                         )
-                        print(game)
+            
                         for playerNumber in 1...10{
                             // print(playerNum)
                             if(playerNumber == 1){

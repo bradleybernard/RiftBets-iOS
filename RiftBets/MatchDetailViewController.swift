@@ -37,16 +37,7 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var teamTwoBanOne: UIImageView!
     @IBOutlet weak var teamTwoBanTwo: UIImageView!
     @IBOutlet weak var teamTwoBanThree: UIImageView!
-    @IBOutlet weak var teamOneTop: UIImageView!
-    @IBOutlet weak var teamOneJungle: UIImageView!
-    @IBOutlet weak var teamOneMid: UIImageView!
-    @IBOutlet weak var teamOneADC: UIImageView!
-    @IBOutlet weak var teamOneSupport: UIImageView!
-    @IBOutlet weak var teamTwoTop: UIImageView!
-    @IBOutlet weak var teamTwoJungle: UIImageView!
-    @IBOutlet weak var teamTwoMid: UIImageView!
-    @IBOutlet weak var teamTwoADC: UIImageView!
-    @IBOutlet weak var teamTwoSupport: UIImageView!
+
     
     //match stats vars -done
     
@@ -121,16 +112,33 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
         var team2Kills : Int = 0
         var team1Gold : Int = 0
         var team2Gold : Int = 0
+ 
         for index in 0...4{
             team1Kills = team1Kills + (matchDetail.gameDetail[0].teamOne?.players[index].kills)!
             team1Gold = team1Gold + (matchDetail.gameDetail[0].teamOne?.players[index].gold_Earned)!
             team2Kills = team2Kills + (matchDetail.gameDetail[0].teamTwo?.players[index].kills)!
             team2Gold = team2Gold + (matchDetail.gameDetail[0].teamTwo?.players[index].gold_Earned)!
+
         }
         teamOneGold.text = String(team1Gold)
         teamOneKills.text = String(team1Kills)
         teamTwoKills.text = String(team2Kills)
         teamTwoGold.text = String(team2Gold)
+        
+        let teamOneBan_1Url = NSURL(string: (matchDetail.gameDetail[0].teamOne?.ban_1)!)
+        let teamOneBan_2Url = NSURL(string: (matchDetail.gameDetail[0].teamOne?.ban_2)!)
+        let teamOneBan_3Url = NSURL(string: (matchDetail.gameDetail[0].teamOne?.ban_3)!)
+        let teamTwoBan_1Url = NSURL(string: (matchDetail.gameDetail[0].teamTwo?.ban_1)!)
+        let teamTwoBan_2Url = NSURL(string: (matchDetail.gameDetail[0].teamTwo?.ban_2)!)
+        let teamTwoBan_3Url = NSURL(string: (matchDetail.gameDetail[0].teamTwo?.ban_3)!)
+        teamOneBanOne.af_setImageWithURL(teamOneBan_1Url!)
+        teamOneBanTwo.af_setImageWithURL(teamOneBan_2Url!)
+        teamOneBanThree.af_setImageWithURL(teamOneBan_3Url!)
+        teamTwoBanOne.af_setImageWithURL(teamTwoBan_1Url!)
+        teamTwoBanTwo.af_setImageWithURL(teamTwoBan_2Url!)
+        teamTwoBanThree.af_setImageWithURL(teamTwoBan_3Url!)
+        
+
         
     }
     
@@ -143,28 +151,90 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if let t1player : Players = matchDetails?.gameDetail[0].teamOne?.players[indexPath.item]{
             cell.teamOnePlayerName.text = t1player.summoner_Name
             if let kills : Int = t1player.kills{
-                cell.teamOnePlayerKills.text = String(kills)
+                if let deaths : Int = t1player.deaths{
+                    if let assists : Int = t1player.assists{
+                        cell.teamOnePlayerKills.text = String(kills) + "/" + String(deaths) + "/" + String(assists)
+                    }
+                }
             }
-            if let deaths : Int = t1player.deaths{
-                cell.teamOnePlayerDeaths.text = String(deaths)
-            }
-            if let assists : Int = t1player.assists{
-                cell.teamOnePlayerAssists.text = String(assists)
-            }
+          
+           
+            let champUrl = NSURL(string: t1player.champion_Id!)
+            cell.teamOnePlayerChamp.af_setImageWithURL(champUrl!)
             
+            if(t1player.item_1 != nil){
+                let item1Url = NSURL(string: t1player.item_1!)
+                cell.teamOnePlayerItem1.af_setImageWithURL(item1Url!)
+            }
+            if(t1player.item_2 != nil){
+                let item2Url = NSURL(string: t1player.item_2!)
+                cell.teamOnePlayerItem2.af_setImageWithURL(item2Url!)
+            }
+            if(t1player.item_3 != nil){
+                let item3Url = NSURL(string: t1player.item_3!)
+                cell.teamOnePlayerItem3.af_setImageWithURL(item3Url!)
+            }
+            if(t1player.item_4 != nil){
+                let item4Url = NSURL(string: t1player.item_4!)
+                cell.teamOnePlayerItem4.af_setImageWithURL(item4Url!)
+            }
+            if(t1player.item_5 != nil){
+                let item5Url = NSURL(string: t1player.item_5!)
+                cell.teamOnePlayerItem5.af_setImageWithURL(item5Url!)
+            }
+            if(t1player.item_6 != nil){
+                let item6Url = NSURL(string: t1player.item_6!)
+                cell.teamOnePlayerItem6.af_setImageWithURL(item6Url!)
+            }
+            let teamOneSS1Url = NSURL(string: t1player.spell1_Id!)
+            let teamOneSS2Url = NSURL(string: t1player.spell2_Id!)
+            cell.teamOnePlayerSS1.af_setImageWithURL(teamOneSS1Url!)
+            cell.teamOnePlayerSS2.af_setImageWithURL(teamOneSS2Url!)
         }
+        
         if let t2player : Players = matchDetails?.gameDetail[0].teamTwo?.players[indexPath.item]{
             cell.teamTwoPlayerName.text = t2player.summoner_Name
             if let kills : Int = t2player.kills{
-                cell.teamTwoPlayerKills.text = String(kills)
+                if let deaths : Int = t2player.deaths{
+                    if let assists : Int = t2player.assists{
+                        cell.teamTwoPlayerKills.text = String(kills) + "/" + String(deaths) + "/" + String(assists)
+                    }
+                }
             }
-            if let deaths : Int = t2player.deaths{
-                cell.teamTwoPlayerDeaths.text = String(deaths)
+            let champUrl = NSURL(string: t2player.champion_Id!)
+            cell.teamTwoPlayerChamp.af_setImageWithURL(champUrl!)
+            
+            if(t2player.item_1 != nil){
+                let item1Url = NSURL(string: t2player.item_1!)
+                cell.teamTwoPlayerItem1.af_setImageWithURL(item1Url!)
             }
-            if let assists : Int = t2player.assists{
-                cell.teamTwoPlayerAssists.text = String(assists)
+            if(t2player.item_2 != nil){
+                let item2Url = NSURL(string: t2player.item_2!)
+                cell.teamTwoPlayerItem2.af_setImageWithURL(item2Url!)
             }
+            if(t2player.item_3 != nil){
+                let item3Url = NSURL(string: t2player.item_3!)
+                cell.teamTwoPlayerItem3.af_setImageWithURL(item3Url!)
+            }
+            if(t2player.item_4 != nil){
+                let item4Url = NSURL(string: t2player.item_4!)
+                cell.teamTwoPlayerItem4.af_setImageWithURL(item4Url!)
+            }
+            if(t2player.item_5 != nil){
+                let item5Url = NSURL(string: t2player.item_5!)
+                cell.teamTwoPlayerItem5.af_setImageWithURL(item5Url!)
+            }
+            if(t2player.item_6 != nil){
+                let item6Url = NSURL(string: t2player.item_6!)
+                cell.teamTwoPlayerItem6.af_setImageWithURL(item6Url!)
+            }
+            let teamTwoSS1Url = NSURL(string: t2player.spell1_Id!)
+            let teamTwoSS2Url = NSURL(string: t2player.spell2_Id!)
+            cell.teamTwoPlayerSS1.af_setImageWithURL(teamTwoSS1Url!)
+            cell.teamTwoPlayerSS2.af_setImageWithURL(teamTwoSS2Url!)
+
         }
+        
         
         return cell
     }

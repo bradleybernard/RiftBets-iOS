@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1BF6BD71DD58C2C00F95E60 /* PlayerStatsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BF6BD61DD58C2C00F95E60 /* PlayerStatsCustomCell.swift */; };
 		B1E39CA3D240DF34014C0B20 /* Pods_RiftBets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0886AB75FE84F0BCDA8DEF43 /* Pods_RiftBets.framework */; };
 		B1E3FA991DB7177C00592E41 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E3FA981DB7177C00592E41 /* TabbedViewController.swift */; };
 		B1E3FA9D1DB717DE00592E41 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */; };
@@ -35,6 +36,7 @@
 		789A826A52746D1540EC8CDD /* Pods-RiftBets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiftBets.release.xcconfig"; path = "Pods/Target Support Files/Pods-RiftBets/Pods-RiftBets.release.xcconfig"; sourceTree = "<group>"; };
 		813FDC87E746BC4944072101 /* Pods-RiftBets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiftBets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RiftBets/Pods-RiftBets.debug.xcconfig"; sourceTree = "<group>"; };
 		B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RiftBets-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		B1BF6BD61DD58C2C00F95E60 /* PlayerStatsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatsCustomCell.swift; sourceTree = "<group>"; };
 		B1E3FA981DB7177C00592E41 /* TabbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
 		B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		B1E3FA9F1DB7466200592E41 /* ScheduleMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleMatch.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E3FAA31DBDBF6000592E41 /* MatchDateCustomCell.swift */,
+				B1BF6BD61DD58C2C00F95E60 /* PlayerStatsCustomCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				B1E3FAA41DBDBF6000592E41 /* MatchDateCustomCell.swift in Sources */,
 				B1E3FAA21DB96F9300592E41 /* MatchDateViewController.swift in Sources */,
 				B87A34801DAA05F000601B90 /* HomeViewController.swift in Sources */,
+				B1BF6BD71DD58C2C00F95E60 /* PlayerStatsCustomCell.swift in Sources */,
 				B800FBC21DACCE2A002E449F /* Device.swift in Sources */,
 				B1E3FA9D1DB717DE00592E41 /* MatchDetailViewController.swift in Sources */,
 				B8AF95FF1DC9994B00D87558 /* ScheduleNavigationController.swift in Sources */,

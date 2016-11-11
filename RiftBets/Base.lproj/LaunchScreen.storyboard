@@ -19,7 +19,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RiftBets" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXf-Co-MP7" userLabel="RiftBets" colorLabel="IBBuiltInLabel-Red" propertyAccessControl="none">
                                 <rect key="frame" x="184" y="65" width="232" height="66"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.53350387181158698" green="0.54406238017355846" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="52"/>
                                 <color key="textColor" red="0.41465414192988637" green="0.44088094751645751" blue="0.97923413212435229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

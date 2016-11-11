@@ -305,7 +305,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                                 
                             }
                         }
-                        //may need to replace indexPath.row
+                        
                     }
                 }
                 current_game = current_game + 1

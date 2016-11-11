@@ -45,10 +45,11 @@ class MatchDateCustomCell: UITableViewCell {
         
         if(match_schedule.state == "resolved"){
             if let score = match_schedule.score_One{
-                if(score == 1){
+                let score2 = match_schedule.score_Two
+                if(score > score2){
                     team_one_score.text = "Victory"
                     team_two_score.text = "Defeat"
-                }else if(score == 0){
+                }else if(score < score2){
                     team_one_score.text = "Defeat"
                     team_two_score.text = "Victory"
                 }

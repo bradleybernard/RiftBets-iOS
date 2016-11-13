@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zpe-n9-0Va">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zpe-n9-0Va">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -62,29 +62,10 @@
             </objects>
             <point key="canvasLocation" x="-486" y="-219"/>
         </scene>
-        <!--Debug Controller-->
-        <scene sceneID="KgT-Kw-1B8">
-            <objects>
-                <viewController id="2iC-eD-ZRI" userLabel="Debug Controller" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="whY-da-N4c"/>
-                        <viewControllerLayoutGuide type="bottom" id="MX5-vb-ycl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FW6-bg-eXU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Debug" id="7fL-8v-kaW"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mzt-zb-hsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="198" y="527.25"/>
-        </scene>
         <!--Twitch-->
         <scene sceneID="h3j-lZ-Eqg">
             <objects>
-                <viewController id="X4Q-mY-RnB" sceneMemberID="viewController">
+                <viewController title="Twitch" id="X4Q-mY-RnB" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vux-UJ-mkt"/>
                         <viewControllerLayoutGuide type="bottom" id="Hiy-hW-eXL"/>
@@ -98,12 +79,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjT-Xk-rSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081.5" y="804.75"/>
+            <point key="canvasLocation" x="975" y="-504.75"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="xbm-V0-8Ha">
+            <objects>
+                <viewController title="Profile" id="OzZ-He-aHA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jSi-ny-bNo"/>
+                        <viewControllerLayoutGuide type="bottom" id="HGK-Ys-8kx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J9c-vA-Vm1">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="9NR-3P-mPj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eMJ-o4-Jyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="808.5"/>
         </scene>
         <!--MatchDates Controller-->
         <scene sceneID="w5u-5S-nsV">
             <objects>
-                <viewController id="PIM-fu-Biz" userLabel="MatchDates Controller" customClass="MatchDateViewController" customModule="RiftBets" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Schedule" id="PIM-fu-Biz" userLabel="MatchDates Controller" customClass="MatchDateViewController" customModule="RiftBets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wwC-MS-2h6"/>
                         <viewControllerLayoutGuide type="bottom" id="qFo-Pf-7iC"/>
@@ -116,7 +115,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="558"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MatchDateCustomCell" rowHeight="83" id="uF8-g7-Hkf" customClass="MatchDateCustomCell" customModule="RiftBets" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MatchDateCustomCell" rowHeight="83" id="uF8-g7-Hkf" customClass="MatchDateCustomCell" customModule="RiftBets" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uF8-g7-Hkf" id="wan-bb-ADv">
@@ -125,14 +124,14 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOd-3d-W6z">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="238" y="22" width="100" height="52.5"/>
+                                                        <rect key="frame" x="240" y="20" width="55" height="55"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl0-sl-x3M">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="62" y="48" width="55" height="24"/>
@@ -141,6 +140,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lo9-el-tcE">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="62" y="24" width="55" height="20.5"/>
@@ -148,14 +148,14 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NzI-FY-pVP">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="120" y="21" width="100" height="53.5"/>
+                                                        <rect key="frame" x="152" y="20" width="55" height="55"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-Zz-NVu">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="340" y="24" width="56" height="22"/>
@@ -164,22 +164,16 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUF-hC-bRL">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="153" y="3" width="140" height="18"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUh-lw-Zuw">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="184" y="54" width="91" height="20.5"/>
+                                                        <rect key="frame" x="152" y="0.0" width="140" height="18"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpm-0k-Kqk">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="340" y="49" width="56" height="23"/>
@@ -188,9 +182,19 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-ee-vsS">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="4" y="24" width="55" height="48"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUh-lw-Zuw">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="177" y="54" width="91" height="21"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -202,9 +206,9 @@
                                                     <exclude reference="NzI-FY-pVP"/>
                                                     <exclude reference="fVE-Zz-NVu"/>
                                                     <exclude reference="GUF-hC-bRL"/>
-                                                    <exclude reference="DUh-lw-Zuw"/>
                                                     <exclude reference="Mpm-0k-Kqk"/>
                                                     <exclude reference="aj5-ee-vsS"/>
+                                                    <exclude reference="DUh-lw-Zuw"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -215,9 +219,9 @@
                                                     <include reference="NzI-FY-pVP"/>
                                                     <include reference="fVE-Zz-NVu"/>
                                                     <include reference="GUF-hC-bRL"/>
-                                                    <include reference="DUh-lw-Zuw"/>
                                                     <include reference="Mpm-0k-Kqk"/>
                                                     <include reference="aj5-ee-vsS"/>
+                                                    <include reference="DUh-lw-Zuw"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -258,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWM-cg-SPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1675.5" y="-393.75"/>
+            <point key="canvasLocation" x="1704" y="-1160.25"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="hTN-Yg-HBu">
@@ -275,7 +279,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJI-yh-Qmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="-393.75"/>
+            <point key="canvasLocation" x="975" y="-1160.25"/>
         </scene>
         <!--TabbedView Controller-->
         <scene sceneID="ySc-ie-xtr">
@@ -290,17 +294,17 @@
                         <segue destination="A57-Cr-4KB" kind="relationship" relationship="viewControllers" id="lRq-gp-QWI"/>
                         <segue destination="X4Q-mY-RnB" kind="relationship" relationship="viewControllers" id="0rb-0I-CR4"/>
                         <segue destination="wAH-GH-eLV" kind="relationship" relationship="viewControllers" id="HWl-Ja-5Ox"/>
-                        <segue destination="2iC-eD-ZRI" kind="relationship" relationship="viewControllers" id="Fak-D2-xU5"/>
+                        <segue destination="OzZ-He-aHA" kind="relationship" relationship="viewControllers" id="idg-6P-oiM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mdp-Be-Qea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="207" y="-198"/>
+            <point key="canvasLocation" x="201" y="-219"/>
         </scene>
         <!--LeaderBoard-->
         <scene sceneID="43J-0Z-AQT">
             <objects>
-                <viewController id="wAH-GH-eLV" userLabel="LeaderBoard" sceneMemberID="viewController">
+                <viewController title="Leaderboards" id="wAH-GH-eLV" userLabel="LeaderBoard" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0XY-V7-0EU"/>
                         <viewControllerLayoutGuide type="bottom" id="7F1-GY-F4B"/>
@@ -310,11 +314,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Leader Board" id="u6Y-Fg-GOc"/>
+                    <tabBarItem key="tabBarItem" title="Leaderboards" id="u6Y-Fg-GOc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Hn-gO-1gM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="249.75"/>
+            <point key="canvasLocation" x="975" y="148.5"/>
         </scene>
         <!--Match Detail Controller-->
         <scene sceneID="9kV-02-YN3">
@@ -346,7 +350,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerStatsCustomCell" rowHeight="83" id="aPl-TY-DMT" customClass="PlayerStatsCustomCell" customModule="RiftBets" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerStatsCustomCell" rowHeight="83" id="aPl-TY-DMT" customClass="PlayerStatsCustomCell" customModule="RiftBets" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49" width="240" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aPl-TY-DMT" id="KBN-32-mZg">
@@ -959,7 +963,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3P-hr-vSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2422.5" y="-413.25"/>
+            <point key="canvasLocation" x="2407.5" y="-1160.25"/>
         </scene>
     </scenes>
 </document>

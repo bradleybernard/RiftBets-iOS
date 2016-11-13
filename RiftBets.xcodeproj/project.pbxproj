@@ -136,6 +136,13 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		B84CF2121DD83B5400FEA310 /* Twitch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Twitch;
+			sourceTree = "<group>";
+		};
 		B87A34711DAA05F000601B90 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +184,7 @@
 		B8BBBA091DC05E470058C470 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				B84CF2121DD83B5400FEA310 /* Twitch */,
 				B1E3FA981DB7177C00592E41 /* TabbedViewController.swift */,
 				B8BBBA0A1DC05E520058C470 /* Schedule */,
 			);

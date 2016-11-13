@@ -32,9 +32,8 @@ class MatchDateCustomCell: UITableViewCell {
         
         matchDate.text = formatter.stringFromDate(match_schedule.date!)
         
-        
         if(match_schedule.match_Best_Of > 1) {
-            if let best_of = match_schedule.match_Best_Of{
+            if let best_of = match_schedule.match_Best_Of {
                 matchName.text = "Best of " + String(best_of)
             }
             
@@ -43,13 +42,13 @@ class MatchDateCustomCell: UITableViewCell {
         team_one_short.text = match_schedule.team_One_Acronym
         team_two_short.text = match_schedule.team_Two_Acronym
         
-        if(match_schedule.state == "resolved"){
-            if let score = match_schedule.score_One{
+        if(match_schedule.state == "resolved") {
+            if let score = match_schedule.score_One {
                 let score2 = match_schedule.score_Two
-                if(score > score2){
+                if(score > score2) {
                     team_one_score.text = "Victory"
                     team_two_score.text = "Defeat"
-                }else if(score < score2){
+                } else if(score < score2) {
                     team_one_score.text = "Defeat"
                     team_two_score.text = "Victory"
                 }
@@ -61,6 +60,8 @@ class MatchDateCustomCell: UITableViewCell {
         
         team_one_logo.af_setImageWithURL(team_one_url!)
         team_two_logo.af_setImageWithURL(team_two_url!)
+        
+        self.backgroundColor = UIColor(red: 0.0627, green: 0.0627, blue: 0.0627, alpha: 1)
     }
     
 }

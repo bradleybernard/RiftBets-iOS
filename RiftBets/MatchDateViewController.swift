@@ -21,11 +21,12 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     var matches = [ScheduleMatch]()
     var filteredMatches = [ScheduleMatch]()
     var segmentedControl: HMSegmentedControl!
-    var matchDetail : MatchDetail?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dateTable.backgroundColor = UIColor(red: 0.0627, green: 0.0627, blue: 0.0627, alpha: 1)
+        self.title = "Schedule"
         setupSegmentedControl()
         fetchSchedule()
     }
@@ -35,7 +36,6 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     }
     
     func getDateFromSegment() -> NSDate {
-        
         let formatter = NSDateFormatter()
         formatter.dateFormat = "MMM d"
         
@@ -130,195 +130,194 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       // print("didSelect")
         
         let match_Detail = filteredMatches[indexPath.row]
-        let matchDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("MatchDetailViewController") as! MatchDetailViewController
         
         RemoteManager.sharedInstance.matchDetail(match_Detail.api_Id_Long!, completion: { (json, error) -> Void in
-           // print(json)
-            
 
+            if error != nil {
+                print("Error: " + error!.description)
+                return
+            }
+            
             var playerNum : String = " "
             var game : String = " "
             var current_game = 1
             
-            for(_,detailJson) : (String, JSON) in json{
-                self.matchDetail = MatchDetail(
-                    api_Id_Long: detailJson["api_id_long"].stringValue,
-                    name: detailJson["name"].stringValue,
-                    resource_Type: detailJson["resource_type"].stringValue,
-                    api_Resource_Id_One: detailJson["api_resource_id_one"].stringValue,
-                    api_Resource_Id_Two: detailJson["api_resource_id_two"].stringValue,
-                    score_One: detailJson["score_one"].intValue,
-                    score_Two: detailJson["score_two"].intValue,
-                    team_One_Api_Id_Long: detailJson["resources"]["one"]["api_id_long"].stringValue,
-                    team_One_Name: detailJson["resources"]["one"]["name"].stringValue,
-                    team_One_Photo_Url: detailJson["resources"]["one"]["team_photo_url"].stringValue,
-                    team_One_Logo_Url: detailJson["resources"]["one"]["logo_url"].stringValue,
-                    team_One_Acronym: detailJson["resources"]["one"]["acronym"].stringValue,
-                    team_One_Alt_Logo_Url: detailJson["resources"]["one"]["alt_logo_url"].stringValue,
-                    team_One_Slug: detailJson["resources"]["one"]["slug"].stringValue,
-                    team_Two_Api_Id_Long: detailJson["resources"]["two"]["api_id_long"].stringValue,
-                    team_Two_Name: detailJson["resources"]["two"]["name"].stringValue,
-                    team_Two_Photo_Url: detailJson["resources"]["team_photo_url"].stringValue,
-                    team_Two_Logo_Url: detailJson["resources"]["two"]["logo_url"].stringValue,
-                    team_Two_Acronym: detailJson["resources"]["two"]["acronym"].stringValue,
-                    team_Two_Alt_Logo_Url: detailJson["resources"]["two"]["alt_logo_url"].stringValue,
-                    team_Two_Slug: detailJson["resources"]["two"]["slug"].stringValue
-                )
+            var matchDetail = MatchDetail(
+                api_Id_Long: json["api_id_long"].stringValue,
+                name: json["name"].stringValue,
+                resource_Type: json["resource_type"].stringValue,
+                api_Resource_Id_One: json["api_resource_id_one"].stringValue,
+                api_Resource_Id_Two: json["api_resource_id_two"].stringValue,
+                score_One: json["score_one"].intValue,
+                score_Two: json["score_two"].intValue,
+                team_One_Api_Id_Long: json["resources"]["one"]["api_id_long"].stringValue,
+                team_One_Name: json["resources"]["one"]["name"].stringValue,
+                team_One_Photo_Url: json["resources"]["one"]["team_photo_url"].stringValue,
+                team_One_Logo_Url: json["resources"]["one"]["logo_url"].stringValue,
+                team_One_Acronym: json["resources"]["one"]["acronym"].stringValue,
+                team_One_Alt_Logo_Url: json["resources"]["one"]["alt_logo_url"].stringValue,
+                team_One_Slug: json["resources"]["one"]["slug"].stringValue,
+                team_Two_Api_Id_Long: json["resources"]["two"]["api_id_long"].stringValue,
+                team_Two_Name: json["resources"]["two"]["name"].stringValue,
+                team_Two_Photo_Url: json["resources"]["team_photo_url"].stringValue,
+                team_Two_Logo_Url: json["resources"]["two"]["logo_url"].stringValue,
+                team_Two_Acronym: json["resources"]["two"]["acronym"].stringValue,
+                team_Two_Alt_Logo_Url: json["resources"]["two"]["alt_logo_url"].stringValue,
+                team_Two_Slug: json["resources"]["two"]["slug"].stringValue
+            )
+            
+                       
+            for current_game in 1...5 {
                 
+                if(current_game == 1) {
+                    game = "game_one"
+                } else if(current_game == 2) {
+                    game = "game_two"
+                } else if(current_game == 3) {
+                    game = "game_three"
+                } else if(current_game == 4) {
+                    game = "game_four"
+                } else if(current_game == 5) {
+                    game = "game_five"
+                }
                 
-                //let total_games = (matchDetail?.score_One)! + (matchDetail?.score_Two)!
-                
-                
-               
-                for current_game in 1...5 {
-                    
-                    if(current_game == 1){
-                        game = "game_one"
-                    }else if(current_game == 2){
-                        game = "game_two"
-                    }else if(current_game == 3){
-                        game = "game_three"
-                    }else if(current_game == 4){
-                        game = "game_four"
-                    }else if(current_game == 5){
-                        game = "game_five"
-                    }
-                    if(detailJson[game] != nil){
-                        self.matchDetail?.gameDetail.append(
-                            GameDetail(
-                                game_Name: detailJson[game]["game_name"].stringValue,
-                                game_Id: detailJson[game]["game_id"].stringValue,
-                                generated_Name: detailJson[game]["generated_name"].stringValue,
-                                teamOne : TeamOne(
-                                    team_Id: detailJson[game]["team_one"]["team_id"].stringValue,
-                                    win: detailJson[game]["team_one"]["win"].intValue,
-                                    first_Blood: detailJson[game]["team_one"]["first_blood"].intValue,
-                                    first_Inhibitor: detailJson[game]["team_one"]["first_inhibitor"].intValue,
-                                    first_Baron: detailJson[game]["team_one"]["first_baron"].intValue,
-                                    first_Dragon: detailJson[game]["team_one"]["first_dragon"].intValue,
-                                    first_Rift_Herald: detailJson[game]["team_one"]["first_rift_herald"].intValue,
-                                    tower_Kills: detailJson[game]["team_one"]["tower_kills"].intValue,
-                                    inhibitor_Kills: detailJson[game]["team_one"]["inhibitor_kills"].intValue,
-                                    baron_Kills: detailJson[game]["team_one"]["baron_kills"].intValue,
-                                    dragon_Kills: detailJson[game]["team_one"]["dragon_kills"].intValue,
-                                    rift_Herald_Kills: detailJson[game]["team_one"]["rift_herald_kills"].intValue,
-                                    ban_1: detailJson[game]["team_one"]["ban_1"]["image_url"].stringValue,
-                                    ban_2: detailJson[game]["team_one"]["ban_2"]["image_url"].stringValue,
-                                    ban_3: detailJson[game]["team_one"]["ban_3"]["image_url"].stringValue
-                                    
-                                ),
+                if(json[game] != nil) {
+                    matchDetail.gameDetail.append(
+                        GameDetail(
+                            game_Name: json[game]["game_name"].stringValue,
+                            game_Id: json[game]["game_id"].stringValue,
+                            generated_Name: json[game]["generated_name"].stringValue,
+                            teamOne : TeamOne(
+                                team_Id: json[game]["team_one"]["team_id"].stringValue,
+                                win: json[game]["team_one"]["win"].intValue,
+                                first_Blood: json[game]["team_one"]["first_blood"].intValue,
+                                first_Inhibitor: json[game]["team_one"]["first_inhibitor"].intValue,
+                                first_Baron: json[game]["team_one"]["first_baron"].intValue,
+                                first_Dragon: json[game]["team_one"]["first_dragon"].intValue,
+                                first_Rift_Herald: json[game]["team_one"]["first_rift_herald"].intValue,
+                                tower_Kills: json[game]["team_one"]["tower_kills"].intValue,
+                                inhibitor_Kills: json[game]["team_one"]["inhibitor_kills"].intValue,
+                                baron_Kills: json[game]["team_one"]["baron_kills"].intValue,
+                                dragon_Kills: json[game]["team_one"]["dragon_kills"].intValue,
+                                rift_Herald_Kills: json[game]["team_one"]["rift_herald_kills"].intValue,
+                                ban_1: json[game]["team_one"]["ban_1"]["image_url"].stringValue,
+                                ban_2: json[game]["team_one"]["ban_2"]["image_url"].stringValue,
+                                ban_3: json[game]["team_one"]["ban_3"]["image_url"].stringValue
                                 
-                                teamTwo : TeamTwo(
-                                    team_Id: detailJson[game]["team_two"]["team_id"].stringValue,
-                                    win: detailJson[game]["team_two"]["win"].intValue,
-                                    first_Blood: detailJson[game]["team_two"]["first_blood"].intValue,
-                                    first_Inhibitor: detailJson[game]["team_two"]["first_inhibitor"].intValue,
-                                    first_Baron: detailJson[game]["team_two"]["first_baron"].intValue,
-                                    first_Dragon: detailJson[game]["team_two"]["first_dragon"].intValue,
-                                    first_Rift_Herald: detailJson[game]["team_two"]["first_rift_herald"].intValue,
-                                    tower_Kills: detailJson[game]["team_two"]["tower_kills"].intValue,
-                                    inhibitor_Kills: detailJson[game]["team_two"]["inhibitor_kills"].intValue,
-                                    baron_Kills: detailJson[game]["team_two"]["baron_kills"].intValue,
-                                    dragon_Kills: detailJson[game]["team_two"]["dragon_kills"].intValue,
-                                    rift_Herald_Kills: detailJson[game]["team_two"]["rift_herald_kills"].intValue,
-                                    ban_1: detailJson[game]["team_two"]["ban_1"]["image_url"].stringValue,
-                                    ban_2: detailJson[game]["team_two"]["ban_2"]["image_url"].stringValue,
-                                    ban_3: detailJson[game]["team_two"]["ban_3"]["image_url"].stringValue
+                            ),
+                            
+                            teamTwo : TeamTwo(
+                                team_Id: json[game]["team_two"]["team_id"].stringValue,
+                                win: json[game]["team_two"]["win"].intValue,
+                                first_Blood: json[game]["team_two"]["first_blood"].intValue,
+                                first_Inhibitor: json[game]["team_two"]["first_inhibitor"].intValue,
+                                first_Baron: json[game]["team_two"]["first_baron"].intValue,
+                                first_Dragon: json[game]["team_two"]["first_dragon"].intValue,
+                                first_Rift_Herald: json[game]["team_two"]["first_rift_herald"].intValue,
+                                tower_Kills: json[game]["team_two"]["tower_kills"].intValue,
+                                inhibitor_Kills: json[game]["team_two"]["inhibitor_kills"].intValue,
+                                baron_Kills: json[game]["team_two"]["baron_kills"].intValue,
+                                dragon_Kills: json[game]["team_two"]["dragon_kills"].intValue,
+                                rift_Herald_Kills: json[game]["team_two"]["rift_herald_kills"].intValue,
+                                ban_1: json[game]["team_two"]["ban_1"]["image_url"].stringValue,
+                                ban_2: json[game]["team_two"]["ban_2"]["image_url"].stringValue,
+                                ban_3: json[game]["team_two"]["ban_3"]["image_url"].stringValue
+                            )
+                        )
+                        
+                    )
+        
+                    for playerNumber in 1...10 {
+                        
+                        if(playerNumber == 1) {
+                            playerNum = "1"
+                        } else if(playerNumber == 2) {
+                            playerNum = "2"
+                        } else if(playerNumber == 3) {
+                            playerNum = "3"
+                        } else if(playerNumber == 4) {
+                            playerNum = "4"
+                        } else if(playerNumber == 5) {
+                            playerNum = "5"
+                        } else if(playerNumber == 6) {
+                            playerNum = "6"
+                        } else if(playerNumber == 7) {
+                            playerNum = "7"
+                        } else if(playerNumber == 8) {
+                            playerNum = "8"
+                        } else if(playerNumber == 9) {
+                            playerNum = "9"
+                        } else if(playerNumber == 10) {
+                            playerNum = "10"
+                        }
+                        
+                        if(playerNumber < 6) {
+                            matchDetail.gameDetail[current_game-1].teamOne?.players.append(
+                                Players(
+                                    participant_Id: json[game]["team_one"]["player_stats"][playerNum]["participant_id"].intValue,
+                                    team_Id: json[game]["team_one"]["player_stats"][playerNum]["team_id"].intValue,
+                                    champion_Id: json[game]["team_one"]["player_stats"][playerNum]["champion"]["image_url"].stringValue,
+                                    spell1_Id: json[game]["team_one"]["player_stats"][playerNum]["spell_1"]["image_url"].stringValue,
+                                    spell2_Id: json[game]["team_one"]["player_stats"][playerNum]["spell_2"]["image_url"].stringValue,
+                                    item_1: json[game]["team_one"]["player_stats"][playerNum]["item_1"]["image_url"].stringValue,
+                                    item_2: json[game]["team_one"]["player_stats"][playerNum]["item_2"]["image_url"].stringValue,
+                                    item_3: json[game]["team_one"]["player_stats"][playerNum]["item_3"]["image_url"].stringValue,
+                                    item_4: json[game]["team_one"]["player_stats"][playerNum]["item_4"]["image_url"].stringValue,
+                                    item_5: json[game]["team_one"]["player_stats"][playerNum]["item_5"]["image_url"].stringValue,
+                                    item_6: json[game]["team_one"]["player_stats"][playerNum]["item_6"]["image_url"].stringValue,
+                                    kills: json[game]["team_one"]["player_stats"][playerNum]["kills"].intValue,
+                                    deaths: json[game]["team_one"]["player_stats"][playerNum]["deaths"].intValue,
+                                    assists: json[game]["team_one"]["player_stats"][playerNum]["assists"].intValue,
+                                    gold_Earned: json[game]["team_one"]["player_stats"][playerNum]["gold_earned"].intValue,
+                                    minions_Killed: json[game]["team_one"]["player_stats"][playerNum]["minions_killed"].intValue,
+                                    champ_Level: json[game]["team_one"]["player_stats"][playerNum]["champ_level"].intValue,
+                                    summoner_Name: json[game]["team_one"]["player_stats"][playerNum]["summoner_name"].stringValue
                                 )
                             )
                             
-                        )
-            
-                        for playerNumber in 1...10{
-                            // print(playerNum)
-                            if(playerNumber == 1){
-                                playerNum = "1"
-                            }else if(playerNumber == 2){
-                                playerNum = "2"
-                            }else if(playerNumber == 3){
-                                playerNum = "3"
-                            }else if(playerNumber == 4){
-                                playerNum = "4"
-                            }else if(playerNumber == 5){
-                                playerNum = "5"
-                            }else if(playerNumber == 6){
-                                playerNum = "6"
-                            }else if(playerNumber == 7){
-                                playerNum = "7"
-                            }else if(playerNumber == 8){
-                                playerNum = "8"
-                            }else if(playerNumber == 9){
-                                playerNum = "9"
-                            }else if(playerNumber == 10){
-                                playerNum = "10"
-                            }
-                            if( playerNumber < 6){
-                                self.matchDetail?.gameDetail[current_game-1].teamOne?.players.append(Players(
-                                    participant_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["participant_id"].intValue,
-                                    team_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["team_id"].intValue,
-                                    champion_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["champion"]["image_url"].stringValue,
-                                    spell1_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["spell_1"]["image_url"].stringValue,
-                                    spell2_Id: detailJson[game]["team_one"]["player_stats"][playerNum]["spell_2"]["image_url"].stringValue,
-                                    item_1: detailJson[game]["team_one"]["player_stats"][playerNum]["item_1"]["image_url"].stringValue,
-                                    item_2: detailJson[game]["team_one"]["player_stats"][playerNum]["item_2"]["image_url"].stringValue,
-                                    item_3: detailJson[game]["team_one"]["player_stats"][playerNum]["item_3"]["image_url"].stringValue,
-                                    item_4: detailJson[game]["team_one"]["player_stats"][playerNum]["item_4"]["image_url"].stringValue,
-                                    item_5: detailJson[game]["team_one"]["player_stats"][playerNum]["item_5"]["image_url"].stringValue,
-                                    item_6: detailJson[game]["team_one"]["player_stats"][playerNum]["item_6"]["image_url"].stringValue,
-                                    kills: detailJson[game]["team_one"]["player_stats"][playerNum]["kills"].intValue,
-                                    deaths: detailJson[game]["team_one"]["player_stats"][playerNum]["deaths"].intValue,
-                                    assists: detailJson[game]["team_one"]["player_stats"][playerNum]["assists"].intValue,
-                                    gold_Earned: detailJson[game]["team_one"]["player_stats"][playerNum]["gold_earned"].intValue,
-                                    minions_Killed: detailJson[game]["team_one"]["player_stats"][playerNum]["minions_killed"].intValue,
-                                    champ_Level: detailJson[game]["team_one"]["player_stats"][playerNum]["champ_level"].intValue,
-                                    summoner_Name: detailJson[game]["team_one"]["player_stats"][playerNum]["summoner_name"].stringValue
-                                    )
+                        } else if(playerNumber > 5) {
+                            
+                            matchDetail.gameDetail[current_game-1].teamTwo?.players.append(
+                                Players(
+                                    participant_Id: json[game]["team_two"]["players_stats"][playerNum]["participant_id"].intValue,
+                                    team_Id: json[game]["team_two"]["players_stats"][playerNum]["team_id"].intValue,
+                                    champion_Id: json[game]["team_two"]["players_stats"][playerNum]["champion"]["image_url"].stringValue,
+                                    spell1_Id: json[game]["team_two"]["players_stats"][playerNum]["spell_1"]["image_url"].stringValue,
+                                    spell2_Id: json[game]["team_two"]["players_stats"][playerNum]["spell_2"]["image_url"].stringValue,
+                                    item_1: json[game]["team_two"]["players_stats"][playerNum]["item_1"]["image_url"].stringValue,
+                                    item_2: json[game]["team_two"]["players_stats"][playerNum]["item_2"]["image_url"].stringValue,
+                                    item_3: json[game]["team_two"]["players_stats"][playerNum]["item_3"]["image_url"].stringValue,
+                                    item_4: json[game]["team_two"]["players_stats"][playerNum]["item_4"]["image_url"].stringValue,
+                                    item_5: json[game]["team_two"]["players_stats"][playerNum]["item_5"]["image_url"].stringValue,
+                                    item_6: json[game]["team_two"]["players_stats"][playerNum]["item_6"]["image_url"].stringValue,
+                                    kills: json[game]["team_two"]["players_stats"][playerNum]["kills"].intValue,
+                                    deaths: json[game]["team_two"]["players_stats"][playerNum]["deaths"].intValue,
+                                    assists: json[game]["team_two"]["players_stats"][playerNum]["assists"].intValue,
+                                    gold_Earned: json[game]["team_two"]["players_stats"][playerNum]["gold_earned"].intValue,
+                                    minions_Killed: json[game]["team_two"]["players_stats"][playerNum]["minions_killed"].intValue,
+                                    champ_Level: json[game]["team_two"]["players_stats"][playerNum]["champ_level"].intValue,
+                                    summoner_Name: json[game]["team_two"]["players_stats"][playerNum]["summoner_name"].stringValue
                                 )
-                                
-                            }
-                            else if( playerNumber > 5 ){
-                                
-                                self.matchDetail?.gameDetail[current_game-1].teamTwo?.players.append(Players(
-                                    participant_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["participant_id"].intValue,
-                                    team_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["team_id"].intValue,
-                                    champion_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["champion"]["image_url"].stringValue,
-                                    spell1_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["spell_1"]["image_url"].stringValue,
-                                    spell2_Id: detailJson[game]["team_two"]["players_stats"][playerNum]["spell_2"]["image_url"].stringValue,
-                                    item_1: detailJson[game]["team_two"]["players_stats"][playerNum]["item_1"]["image_url"].stringValue,
-                                    item_2: detailJson[game]["team_two"]["players_stats"][playerNum]["item_2"]["image_url"].stringValue,
-                                    item_3: detailJson[game]["team_two"]["players_stats"][playerNum]["item_3"]["image_url"].stringValue,
-                                    item_4: detailJson[game]["team_two"]["players_stats"][playerNum]["item_4"]["image_url"].stringValue,
-                                    item_5: detailJson[game]["team_two"]["players_stats"][playerNum]["item_5"]["image_url"].stringValue,
-                                    item_6: detailJson[game]["team_two"]["players_stats"][playerNum]["item_6"]["image_url"].stringValue,
-                                    kills: detailJson[game]["team_two"]["players_stats"][playerNum]["kills"].intValue,
-                                    deaths: detailJson[game]["team_two"]["players_stats"][playerNum]["deaths"].intValue,
-                                    assists: detailJson[game]["team_two"]["players_stats"][playerNum]["assists"].intValue,
-                                    gold_Earned: detailJson[game]["team_two"]["players_stats"][playerNum]["gold_earned"].intValue,
-                                    minions_Killed: detailJson[game]["team_two"]["players_stats"][playerNum]["minions_killed"].intValue,
-                                    champ_Level: detailJson[game]["team_two"]["players_stats"][playerNum]["champ_level"].intValue,
-                                    summoner_Name: detailJson[game]["team_two"]["players_stats"][playerNum]["summoner_name"].stringValue
-                                    )
-                                )
-                                
-                            }
+                            )
+                            
                         }
-                        
                     }
+                    
                 }
-                current_game = current_game + 1
             }
-
-            if let matchDets : MatchDetail = self.matchDetail {
-                matchDetailVC.formatDetails(matchDets)
-            }
-           //print(matchDetail?.gameDetail[0].teamTwo?.players[1].summoner_Name)
             
+            current_game = current_game + 1
+            
+            
+            //end
+            let matchDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("MatchDetailViewController") as! MatchDetailViewController
+            matchDetailVC.matchDetails = matchDetail
+            
+            self.navigationController?.pushViewController(matchDetailVC, animated: true)
         })
 
-       self.navigationController?.pushViewController(matchDetailVC, animated: true)
     }
     
     func setSegmentDates() {
@@ -331,7 +330,6 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         for match in matches.sort({ $0.date!.compare($1.date!) == NSComparisonResult.OrderedAscending }) {
             if let date = match.date {
                 let dateString = formatter.stringFromDate(date)
-                print(dateString)
                 if !dates.contains(dateString) {
                     dates.append(dateString)
                 }
@@ -348,7 +346,6 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         filteredMatches = [ScheduleMatch]()
         
         for match in matches {
-            print("MatchDate: \(match.date!)  Date: \(date)")
             if NSCalendar.currentCalendar().isDate(date, inSameDayAsDate: match.date!) {
                 filteredMatches.append(match)
             }

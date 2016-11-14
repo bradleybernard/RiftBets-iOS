@@ -34,9 +34,12 @@ class MatchDateCustomCell: UITableViewCell {
         
         if(match_schedule.match_Best_Of > 1) {
             if let best_of = match_schedule.match_Best_Of {
+                matchName.hidden = false
                 matchName.text = "Best of " + String(best_of)
             }
             
+        }else{
+            matchName.hidden = true
         }
         
         team_one_short.text = match_schedule.team_One_Acronym

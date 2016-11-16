@@ -17,6 +17,8 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var gameNumber: Int = 0
     var segmentedControl: HMSegmentedControl!
     
+    //add pageView 
+    
     //overall match stats
     @IBOutlet weak var teamTwoName: UILabel!
     @IBOutlet weak var teamOneName: UILabel!

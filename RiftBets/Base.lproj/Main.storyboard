@@ -966,5 +966,49 @@
             </objects>
             <point key="canvasLocation" x="2407.5" y="-1160.25"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="yMW-Mt-6dD">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="o4H-Gf-ggb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zwe-xV-Iny" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3088.5" y="-1160.25"/>
+        </scene>
+        <!--PlayerStats View Controller-->
+        <scene sceneID="n6A-iB-6Vl">
+            <objects>
+                <viewController storyboardIdentifier="PlayerStatsViewController" id="mVo-QS-TMT" userLabel="PlayerStats View Controller" customClass="PlayerStatsViewController" customModule="RiftBets" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rnu-bV-qZR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pgc-cz-fnQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hmo-c9-KFv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I9g-nr-Ccp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3894" y="-724.5"/>
+        </scene>
+        <!--MatchStats View Controller-->
+        <scene sceneID="L59-C0-A3P">
+            <objects>
+                <viewController storyboardIdentifier="MatchStatsViewController" id="1tF-0I-4dC" userLabel="MatchStats View Controller" customClass="MatchStatsViewController" customModule="RiftBets" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ygz-jo-y3S"/>
+                        <viewControllerLayoutGuide type="bottom" id="dq5-pV-Rmo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="inw-wO-y5H">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="naB-5P-XUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3894" y="-1560"/>
+        </scene>
     </scenes>
 </document>

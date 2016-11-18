@@ -15,11 +15,11 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var match : ScheduleMatch?
     var matchDetails : MatchDetail?
     var gameNumber: Int = 0
+    
     var segmentedControl: HMSegmentedControl!
+    
     var pageViewController : UIPageViewController!
     var pages = [UIViewController]()
-    
-    //add pageView 
     
     //overall match stats
     @IBOutlet weak var teamTwoName: UILabel!
@@ -60,23 +60,48 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         self.title = (matchDetails?.team_One_Acronym)! + " vs " + (matchDetails?.team_Two_Acronym)!
-        self.formatDetails()
         self.navigationController?.navigationBar.backItem?.title = "Back"
-        self.setupSegmentedControl()
         
-        //self.pageViewController.delegate = self
-        //self.pageViewController.dataSource = self
-        let pageView = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
-        pageView.matchDetails = matchDetails
-        pageView.gameNumber = gameNumber
+        self.formatDetails()
+        self.setupSegmentedControl()
+        self.setupPageVC()
     }
-    
-    
     
     // Segment pressed
     @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {
         gameNumber = segment.selectedSegmentIndex
+        self.updateGameNumber(gameNumber)
         formatDetails()
+    }
+    
+    func setupPageVC() {
+        
+        self.pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+        self.pageViewController.dataSource = self
+        
+        let playerStatsVC : PlayerStatsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerStatsViewController") as! PlayerStatsViewController
+        let matchStatsVC : MatchStatsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MatchStatsViewController") as! MatchStatsViewController
+        
+        playerStatsVC.matchDetails = matchDetails
+        matchStatsVC.matchDetails = matchDetails
+        
+        playerStatsVC.gameNumber = gameNumber
+        matchStatsVC.gameNumber = gameNumber
+        
+        pages.append(playerStatsVC)
+        pages.append(matchStatsVC)
+        
+        self.pageViewController.setViewControllers([playerStatsVC], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 60)
+        
+        self.addChildViewController(self.pageViewController)
+        self.view.addSubview(self.pageViewController.view)
+        self.pageViewController.didMoveToParentViewController(self)
+    }
+    
+    func updateGameNumber(game: Int) {
+        (pages[0] as! PlayerStatsViewController).updateGameNumber(game)
+        (pages[1] as! MatchStatsViewController).updateGameNumber(game)
     }
     
     //formats page for game_one haven't figured out the switch bar at the top
@@ -300,4 +325,27 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+}
+
+extension MatchDetailViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        let currentIndex = pages.indexOf(viewController)!
+        let previousIndex = abs((currentIndex - 1) % pages.count)
+        return pages[previousIndex]
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        let currentIndex = pages.indexOf(viewController)!
+        let nextIndex = abs((currentIndex + 1) % pages.count)
+        return pages[nextIndex]
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return pages.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
 }

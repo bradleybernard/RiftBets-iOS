@@ -27,8 +27,9 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         
         self.dateTable.backgroundColor = UIColor(red: 0.0627, green: 0.0627, blue: 0.0627, alpha: 1)
         self.title = "Schedule"
-        setupSegmentedControl()
-        fetchSchedule()
+        
+        self.setupSegmentedControl()
+        self.fetchSchedule()
     }
     
     @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {

@@ -49,8 +49,9 @@ class MatchStatsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //print(matchDetails)
         self.formatDetails()
+        
     }
     
     func updateGameNumber(number: Int) {
@@ -61,8 +62,9 @@ class MatchStatsViewController: UIViewController{
     func formatDetails() {
         
         //BROKEN for some reason matchDetails? is nil ??>>
-        guard matchDetails == nil else {
-            return
+        //this was the problem
+        guard matchDetails != nil else{
+           return
         }
         
         teamOneName.text = matchDetails?.team_One_Name

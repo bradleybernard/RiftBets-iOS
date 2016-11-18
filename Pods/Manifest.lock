@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (3.5.0)
+  - Alamofire (3.5.1)
   - AlamofireImage (2.5.0):
     - Alamofire (~> 3.5)
   - Crashlytics (3.8.2):
     - Fabric (~> 1.6.3)
   - Device (1.0.3)
   - EasyAnimation (1.0.5)
-  - Fabric (1.6.8)
+  - Fabric (1.6.9)
   - HMSegmentedControl (1.5.3)
   - KeychainSwift (3.0.16)
   - SnapKit (0.22.0)
@@ -25,12 +25,12 @@ DEPENDENCIES:
   - SwiftyJSON (= 2.4.0)
 
 SPEC CHECKSUMS:
-  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
   AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
   Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
   Device: bcf333c7c497edabe6df9560fd64f1e255d45b2b
   EasyAnimation: 32821f37dd39187e7364369a3d8f65d38405cf1d
-  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  Fabric: bc5bec42cef4bcf1ee3ce0e218fc518e4b44dfbb
   HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
   KeychainSwift: a5bb85cd498ce2217b55e055ec59e9268d83384c
   SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
@@ -38,4 +38,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: fd8e5cbcc139c59e295eb55a4ca4563b17a8758e
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

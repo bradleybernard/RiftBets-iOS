@@ -9,20 +9,20 @@
 import Foundation
 
 
-class PlayerStatsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+//class PlayerStatsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+//
+//    var matchDetails: MatchDetail?
+//    var gameNumber: Int = 0
+//    
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
 
-    var matchDetails: MatchDetail?
-    var gameNumber: Int = 0
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        <#code#>
-    }
-}
+//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        
+//    }
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        
+//    }
+//}

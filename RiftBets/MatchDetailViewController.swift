@@ -16,6 +16,8 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var matchDetails : MatchDetail?
     var gameNumber: Int = 0
     var segmentedControl: HMSegmentedControl!
+    var pageViewController : UIPageViewController!
+    var pages = [UIViewController]()
     
     //add pageView 
     
@@ -61,7 +63,15 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.formatDetails()
         self.navigationController?.navigationBar.backItem?.title = "Back"
         self.setupSegmentedControl()
+        
+        //self.pageViewController.delegate = self
+        //self.pageViewController.dataSource = self
+        let pageView = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
+        pageView.matchDetails = matchDetails
+        pageView.gameNumber = gameNumber
     }
+    
+    
     
     // Segment pressed
     @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {

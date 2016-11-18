@@ -10,6 +10,7 @@
 		B17C5E321DDC37E200BF27DC /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C5E311DDC37E200BF27DC /* PlayerStatsViewController.swift */; };
 		B17C5E341DDC387000BF27DC /* MatchStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C5E331DDC387000BF27DC /* MatchStatsViewController.swift */; };
 		B1BF6BD71DD58C2C00F95E60 /* PlayerStatsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BF6BD61DD58C2C00F95E60 /* PlayerStatsCustomCell.swift */; };
+		B1DD8CC21DDED952001654CC /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD8CC11DDED952001654CC /* PageViewController.swift */; };
 		B1E39CA3D240DF34014C0B20 /* Pods_RiftBets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0886AB75FE84F0BCDA8DEF43 /* Pods_RiftBets.framework */; };
 		B1E3FA991DB7177C00592E41 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E3FA981DB7177C00592E41 /* TabbedViewController.swift */; };
 		B1E3FA9D1DB717DE00592E41 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */; };
@@ -41,6 +42,8 @@
 		B17C5E311DDC37E200BF27DC /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		B17C5E331DDC387000BF27DC /* MatchStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchStatsViewController.swift; sourceTree = "<group>"; };
 		B1BF6BD61DD58C2C00F95E60 /* PlayerStatsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatsCustomCell.swift; sourceTree = "<group>"; };
+		B1DD8CC01DDED7FA001654CC /* RiftBets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RiftBets.entitlements; sourceTree = "<group>"; };
+		B1DD8CC11DDED952001654CC /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B1E3FA981DB7177C00592E41 /* TabbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
 		B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		B1E3FA9F1DB7466200592E41 /* ScheduleMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleMatch.swift; sourceTree = "<group>"; };
@@ -177,6 +180,7 @@
 		B87A347C1DAA05F000601B90 /* RiftBets */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD8CC01DDED7FA001654CC /* RiftBets.entitlements */,
 				B8BBBA0C1DC05E950058C470 /* Cells */,
 				B1E3FA9E1DB7465400592E41 /* Models */,
 				B800FBC31DACCE4F002E449F /* Config */,
@@ -211,6 +215,7 @@
 				B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */,
 				B1E3FAA11DB96F9300592E41 /* MatchDateViewController.swift */,
 				B8AF95FE1DC9994B00D87558 /* ScheduleNavigationController.swift */,
+				B1DD8CC11DDED952001654CC /* PageViewController.swift */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -280,6 +285,12 @@
 				TargetAttributes = {
 					B87A34791DAA05F000601B90 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9CFFSQMQBL;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -388,6 +399,7 @@
 				B1E3FA991DB7177C00592E41 /* TabbedViewController.swift in Sources */,
 				B800FBC51DACCE55002E449F /* Config.swift in Sources */,
 				B1E3FAA81DCC8E5800592E41 /* MatchDetail.swift in Sources */,
+				B1DD8CC21DDED952001654CC /* PageViewController.swift in Sources */,
 				B1E3FAA41DBDBF6000592E41 /* MatchDateCustomCell.swift in Sources */,
 				B1E3FAA21DB96F9300592E41 /* MatchDateViewController.swift in Sources */,
 				B87A34801DAA05F000601B90 /* HomeViewController.swift in Sources */,
@@ -516,6 +528,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RiftBets/RiftBets.entitlements;
+				DEVELOPMENT_TEAM = 9CFFSQMQBL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -537,6 +551,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RiftBets/RiftBets.entitlements;
+				DEVELOPMENT_TEAM = 9CFFSQMQBL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

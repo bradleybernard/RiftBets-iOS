@@ -22,8 +22,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
         let page1 : PlayerStatsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerStatsViewController") as! PlayerStatsViewController
         let page2 : MatchStatsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MatchStatsViewController") as! MatchStatsViewController
+        
         page1.matchDetails = matchDetails
         page1.gameNumber = gameNumber
+        
         page2.matchDetails = matchDetails
         page2.gameNumber = gameNumber
 
@@ -36,14 +38,17 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         let previousIndex = abs((currentIndex - 1) % pages.count)
         return pages[previousIndex]
     }
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let currentIndex = pages.indexOf(viewController)!
         let nextIndex = abs((currentIndex + 1) % pages.count)
         return pages[nextIndex]
     }
+    
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return pages.count
     }
+    
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
     }

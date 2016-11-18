@@ -159,6 +159,33 @@
 			name = Twitch;
 			sourceTree = "<group>";
 		};
+		B87379261DDEF95B00259EE0 /* NavVC */ = {
+			isa = PBXGroup;
+			children = (
+				B8AF95FE1DC9994B00D87558 /* ScheduleNavigationController.swift */,
+			);
+			name = NavVC;
+			sourceTree = "<group>";
+		};
+		B87379271DDEF97000259EE0 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				B17C5E301DDC37C800BF27DC /* Stats */,
+				B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */,
+				B1E3FAA11DB96F9300592E41 /* MatchDateViewController.swift */,
+				B1DD8CC11DDED952001654CC /* PageViewController.swift */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
+		B87379281DDEF98E00259EE0 /* TabVC */ = {
+			isa = PBXGroup;
+			children = (
+				B1E3FA981DB7177C00592E41 /* TabbedViewController.swift */,
+			);
+			name = TabVC;
+			sourceTree = "<group>";
+		};
 		B87A34711DAA05F000601B90 = {
 			isa = PBXGroup;
 			children = (
@@ -201,8 +228,8 @@
 		B8BBBA091DC05E470058C470 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				B87379281DDEF98E00259EE0 /* TabVC */,
 				B84CF2121DD83B5400FEA310 /* Twitch */,
-				B1E3FA981DB7177C00592E41 /* TabbedViewController.swift */,
 				B8BBBA0A1DC05E520058C470 /* Schedule */,
 			);
 			name = TabBar;
@@ -211,11 +238,8 @@
 		B8BBBA0A1DC05E520058C470 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				B17C5E301DDC37C800BF27DC /* Stats */,
-				B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */,
-				B1E3FAA11DB96F9300592E41 /* MatchDateViewController.swift */,
-				B8AF95FE1DC9994B00D87558 /* ScheduleNavigationController.swift */,
-				B1DD8CC11DDED952001654CC /* PageViewController.swift */,
+				B87379271DDEF97000259EE0 /* VCs */,
+				B87379261DDEF95B00259EE0 /* NavVC */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";

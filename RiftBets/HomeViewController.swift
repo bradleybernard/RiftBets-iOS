@@ -11,23 +11,12 @@ import FBSDKLoginKit
 import SwiftyJSON
 
 class HomeViewController: UIViewController {
-
-    @IBOutlet weak var matchLabel: UILabel!
-    
-    @IBAction func testButtonPressed(sender: AnyObject) {
-        print(KeychainManager.sharedInstance.getLoggedIn())
-        print(KeychainManager.sharedInstance.getToken())
-       // getData()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
     }
-
-
-
 
     func setup() {
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
@@ -42,21 +31,22 @@ extension HomeViewController: FBSDKLoginButtonDelegate {
 
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
        
-        print("User Logged In")
+        // User logged into Facebook
         
         if error != nil || result.isCancelled {
-            print("ERROR")
             print(error); return
         }
         
         guard result.token != nil else {
-            print("Error"); return
+            print("Error: Facebook token nil"); return
         }
         
         KeychainManager.sharedInstance.setFacebookToken(result.token.tokenString!)
+        
         RemoteManager.sharedInstance.facebook({ (json, error) in
+            
             if error != nil {
-                print("Errror")
+                print(error); return
             }
             
             (UIApplication.sharedApplication().delegate as! AppDelegate).mainTabbar()
@@ -66,6 +56,6 @@ extension HomeViewController: FBSDKLoginButtonDelegate {
     }
 
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User Logged Out")
+        // User logged out of Facebook
     }
 }

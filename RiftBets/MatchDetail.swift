@@ -34,6 +34,7 @@ struct MatchDetail{
     var team_Two_Acronym        : String?
     var team_Two_Alt_Logo_Url   : String?
     var team_Two_Slug           : String?
+    var bettable                : String?
     
     init(api_Id_Long            : String,
          name                   : String,
@@ -90,7 +91,8 @@ struct GameDetail{
     var generated_Name  : String?
     var teamOne         : TeamOne?
     var teamTwo         : TeamTwo?
-    
+    var locale          = [String]()
+    var vidLink         = [String]()
 
     init(game_Name      : String,
          game_Id        : String,

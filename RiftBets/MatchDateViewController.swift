@@ -226,10 +226,14 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
                                 ban_2: json[game]["team_two"]["ban_2"]["image_url"].stringValue,
                                 ban_3: json[game]["team_two"]["ban_3"]["image_url"].stringValue
                             )
+                        
                         )
                         
                     )
-        
+                    for(_,vidJson) in json[game]["videos"]{
+                        matchDetail.gameDetail[current_game-1].locale.append(vidJson["locale"].stringValue)
+                        matchDetail.gameDetail[current_game-1].vidLink.append(vidJson["source"].stringValue)
+                    }
                     for playerNumber in 1...10 {
                         
                         if(playerNumber == 1) {

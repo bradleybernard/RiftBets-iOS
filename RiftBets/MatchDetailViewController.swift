@@ -11,10 +11,13 @@ import UIKit
 import HMSegmentedControl
 
 class MatchDetailViewController: UIViewController {
+    @IBOutlet weak var gameOverView: UILabel!
     
     var match : ScheduleMatch?
     var matchDetails : MatchDetail?
     var gameNumber: Int = 0
+    
+    @IBOutlet weak var webView: UIWebView!
     
     var segmentedControl: HMSegmentedControl!
     
@@ -29,10 +32,44 @@ class MatchDetailViewController: UIViewController {
         
         self.setupSegmentedControl()
         self.setupPageVC()
+        
+        self.vidPlayer(gameNumber)
+        
+    }
+    
+    func vidPlayer(game: Int){
+
+        var youtubeLink : String = " "
+        for index in 0 ... 3 {
+            if(matchDetails?.gameDetail[game].locale[index] == "en"){
+                if let link : String = matchDetails?.gameDetail[game].vidLink[index]{
+            youtubeLink = link
+                }
+            }
+        }
+        
+        
+        let width = 390
+        let height = 200
+        let frame = 10
+        
+        let code:NSString = "<iframe width=\(width) height=\(height) src=\(youtubeLink) frameborder=\(frame) allowfullscreen></ iframe>" as NSString;
+        
+        self.webView.scrollView.scrollEnabled = false
+        self.webView.scrollView.bounces = false
+        self.webView.loadHTMLString(code as String, baseURL: nil)
+        
+        if(matchDetails?.gameDetail[game].teamOne?.win == 0){
+            gameOverView.text = (matchDetails?.team_Two_Name)! + " Win"
+        }else{
+            gameOverView.text = (matchDetails?.team_One_Name)! + " Win"
+        }
+        
     }
     
     @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {
         gameNumber = segment.selectedSegmentIndex
+        self.vidPlayer(gameNumber)
         self.updateGameNumber(gameNumber)
     }
     

@@ -26,7 +26,7 @@ class PlayerStatsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return matchDetails!.gameDetail[0].teamOne!.players.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -35,6 +35,7 @@ class PlayerStatsViewController: UIViewController, UITableViewDelegate, UITableV
         if let t1player : Players = matchDetails?.gameDetail[gameNumber].teamOne?.players[indexPath.item] {
         
             cell.teamOnePlayerName.text = t1player.summoner_Name
+            cell.teamOnePlayerCS.text = String(t1player.minions_Killed!)
             
             if let kills : Int = t1player.kills {
                 if let deaths : Int = t1player.deaths {
@@ -82,6 +83,7 @@ class PlayerStatsViewController: UIViewController, UITableViewDelegate, UITableV
         if let t2player : Players = matchDetails?.gameDetail[gameNumber].teamTwo?.players[indexPath.item] {
             
             cell.teamTwoPlayerName.text = t2player.summoner_Name
+            cell.teamTwoPlayerCS.text = String(t2player.minions_Killed!)
             
             if let kills : Int = t2player.kills {
                 if let deaths : Int = t2player.deaths {
@@ -127,6 +129,5 @@ class PlayerStatsViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         return cell
-
    }
 }

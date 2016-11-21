@@ -91,6 +91,11 @@ class MatchDetailViewController: UIViewController {
         
         self.view.addSubview(segmentedControl)
         self.view.bringSubviewToFront(segmentedControl)
+        
+        if(tiles.count == 1) {
+            segmentedControl.hidden = true
+        }
+        
         self.constraintsSegment()
     }
     

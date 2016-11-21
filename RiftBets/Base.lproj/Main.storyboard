@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zpe-n9-0Va">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zpe-n9-0Va">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -351,8 +351,8 @@
                                                     <rect key="frame" x="147" y="59" width="20" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="K" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnK-Jq-cdQ" userLabel="T1PKills">
-                                                    <rect key="frame" x="97" y="3" width="70" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="K" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnK-Jq-cdQ" userLabel="T1PKills">
+                                                    <rect key="frame" x="83" y="0.0" width="50" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.99721711869999996" green="0.99718725679999998" blue="0.99720418450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -363,7 +363,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKh-0t-eKP" userLabel="Team1PlayerName">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="16.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="82" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.99261867999999998" green="0.99258887770000004" blue="0.99260580539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -398,14 +398,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaN-eP-msZ" userLabel="Team2PlayerName">
-                                                    <rect key="frame" x="302" y="0.0" width="110" height="16.5"/>
+                                                    <rect key="frame" x="331" y="0.0" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="K" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z74-1d-kwo" userLabel="T2PKills">
-                                                    <rect key="frame" x="245" y="3" width="70" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="K" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z74-1d-kwo" userLabel="T2PKills">
+                                                    <rect key="frame" x="279" y="-1" width="52" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -427,6 +427,20 @@
                                                     <rect key="frame" x="331" y="56" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqN-Hp-oNM">
+                                                    <rect key="frame" x="137" y="2" width="46" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-9g-6zP">
+                                                    <rect key="frame" x="234" y="0.0" width="42" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -483,6 +497,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.05324686319" green="0.059664390980000002" blue="0.1192801818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="teamOnePlayerCS" destination="vqN-Hp-oNM" id="dpe-0F-MRO"/>
                                             <outlet property="teamOnePlayerChamp" destination="cK8-sb-F6k" id="MUZ-gg-e1X"/>
                                             <outlet property="teamOnePlayerItem1" destination="baX-oT-g72" id="Xwy-MC-gWx"/>
                                             <outlet property="teamOnePlayerItem2" destination="NpR-wD-o6O" id="cTE-Ez-ab2"/>
@@ -494,6 +509,7 @@
                                             <outlet property="teamOnePlayerName" destination="LKh-0t-eKP" id="3He-F6-lw6"/>
                                             <outlet property="teamOnePlayerSS1" destination="Rej-Yh-xqN" id="B6K-h0-pWE"/>
                                             <outlet property="teamOnePlayerSS2" destination="E18-X8-uJq" id="xO5-EK-dww"/>
+                                            <outlet property="teamTwoPlayerCS" destination="vdf-9g-6zP" id="VKu-D6-tet"/>
                                             <outlet property="teamTwoPlayerChamp" destination="3o4-4G-e70" id="0OI-Ri-oJM"/>
                                             <outlet property="teamTwoPlayerItem1" destination="Xeg-RL-WtM" id="XMO-ZF-X9K"/>
                                             <outlet property="teamTwoPlayerItem2" destination="34K-ff-Ht6" id="FtO-VG-zhu"/>
@@ -522,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9g-nr-Ccp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3142" y="-1162"/>
+            <point key="canvasLocation" x="3140.579710144928" y="-1162.5"/>
         </scene>
         <!--MatchStats View Controller-->
         <scene sceneID="L59-C0-A3P">

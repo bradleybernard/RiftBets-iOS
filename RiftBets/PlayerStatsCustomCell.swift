@@ -11,8 +11,10 @@ import UIKit
 
 class PlayerStatsCustomCell : UITableViewCell {
     //Team One
+    
     @IBOutlet weak var teamOnePlayerName: UILabel!
     @IBOutlet weak var teamOnePlayerKills: UILabel!
+    @IBOutlet weak var teamOnePlayerCS: UILabel!
     @IBOutlet weak var teamOnePlayerChamp: UIImageView!
     @IBOutlet weak var teamOnePlayerItem1: UIImageView!
     @IBOutlet weak var teamOnePlayerItem2: UIImageView!
@@ -26,6 +28,7 @@ class PlayerStatsCustomCell : UITableViewCell {
     //Team Two
     @IBOutlet weak var teamTwoPlayerName: UILabel!
     @IBOutlet weak var teamTwoPlayerKills: UILabel!
+    @IBOutlet weak var teamTwoPlayerCS: UILabel!
     @IBOutlet weak var teamTwoPlayerChamp: UIImageView!
     @IBOutlet weak var teamTwoPlayerItem1: UIImageView!
     @IBOutlet weak var teamTwoPlayerItem2: UIImageView!

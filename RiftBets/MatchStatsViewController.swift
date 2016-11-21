@@ -61,14 +61,13 @@ class MatchStatsViewController: UIViewController{
     
     func formatDetails() {
         
-        //BROKEN for some reason matchDetails? is nil ??>>
-        //this was the problem
-        guard matchDetails != nil else{
+        guard teamOneName != nil else {
            return
         }
+
         
-        teamOneName.text = matchDetails?.team_One_Name
-        teamTwoName.text = matchDetails?.team_Two_Name
+        teamOneName.text = matchDetails!.team_One_Name!
+        teamTwoName.text = matchDetails!.team_Two_Name!
         
         //if let scoreOne : Int = matchDetails?.score_One {
         //score_One.text = String(scoreOne)

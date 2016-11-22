@@ -31,11 +31,22 @@ class MatchDetailViewController: UIViewController {
         
         self.navigationController!.navigationItem.backBarButtonItem?.title = "WTF"
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Place Bet", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MatchDetailViewController.betTapped))
         self.setupSegmentedControl()
         self.setupPageVC()
         
         self.vidPlayer(gameNumber)
         self.whoWon()
+    }
+    
+    func betTapped(item: UIBarButtonItem){
+        let betsVC = self.storyboard?.instantiateViewControllerWithIdentifier("PlaceBets")as! PlaceBetsViewController
+        
+        betsVC.matchTitle = (matchDetails?.team_One_Name)! + " vs " + (matchDetails?.team_Two_Name)!
+        betsVC.gameNumber = gameNumber
+        self.presentViewController(betsVC, animated: true, completion: nil)
+        
+        
     }
     
     @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {

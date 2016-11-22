@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B12319691DE40CAA00D58389 /* PlaceBetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12319681DE40CAA00D58389 /* PlaceBetsViewController.swift */; };
+		B13287E31DE419C300754748 /* PlaceBetsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13287E21DE419C300754748 /* PlaceBetsCustomCell.swift */; };
 		B17C5E321DDC37E200BF27DC /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C5E311DDC37E200BF27DC /* PlayerStatsViewController.swift */; };
 		B17C5E341DDC387000BF27DC /* MatchStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C5E331DDC387000BF27DC /* MatchStatsViewController.swift */; };
 		B1BF6BD71DD58C2C00F95E60 /* PlayerStatsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BF6BD61DD58C2C00F95E60 /* PlayerStatsCustomCell.swift */; };
@@ -37,6 +39,8 @@
 		0886AB75FE84F0BCDA8DEF43 /* Pods_RiftBets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RiftBets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		789A826A52746D1540EC8CDD /* Pods-RiftBets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiftBets.release.xcconfig"; path = "Pods/Target Support Files/Pods-RiftBets/Pods-RiftBets.release.xcconfig"; sourceTree = "<group>"; };
 		813FDC87E746BC4944072101 /* Pods-RiftBets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiftBets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RiftBets/Pods-RiftBets.debug.xcconfig"; sourceTree = "<group>"; };
+		B12319681DE40CAA00D58389 /* PlaceBetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceBetsViewController.swift; sourceTree = "<group>"; };
+		B13287E21DE419C300754748 /* PlaceBetsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceBetsCustomCell.swift; sourceTree = "<group>"; };
 		B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RiftBets-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		B17C5E311DDC37E200BF27DC /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		B17C5E331DDC387000BF27DC /* MatchStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchStatsViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				B17C5E301DDC37C800BF27DC /* Stats */,
 				B1E3FA9C1DB717DE00592E41 /* MatchDetailViewController.swift */,
 				B1E3FAA11DB96F9300592E41 /* MatchDateViewController.swift */,
+				B12319681DE40CAA00D58389 /* PlaceBetsViewController.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			children = (
 				B1E3FAA31DBDBF6000592E41 /* MatchDateCustomCell.swift */,
 				B1BF6BD61DD58C2C00F95E60 /* PlayerStatsCustomCell.swift */,
+				B13287E21DE419C300754748 /* PlaceBetsCustomCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -422,9 +428,11 @@
 				B1E3FAA81DCC8E5800592E41 /* MatchDetail.swift in Sources */,
 				B1E3FAA41DBDBF6000592E41 /* MatchDateCustomCell.swift in Sources */,
 				B1E3FAA21DB96F9300592E41 /* MatchDateViewController.swift in Sources */,
+				B12319691DE40CAA00D58389 /* PlaceBetsViewController.swift in Sources */,
 				B87A34801DAA05F000601B90 /* HomeViewController.swift in Sources */,
 				B1BF6BD71DD58C2C00F95E60 /* PlayerStatsCustomCell.swift in Sources */,
 				B800FBC21DACCE2A002E449F /* Device.swift in Sources */,
+				B13287E31DE419C300754748 /* PlaceBetsCustomCell.swift in Sources */,
 				B1E3FA9D1DB717DE00592E41 /* MatchDetailViewController.swift in Sources */,
 				B8AF95FF1DC9994B00D87558 /* ScheduleNavigationController.swift in Sources */,
 				B800FBC71DACCE73002E449F /* Keychain.swift in Sources */,

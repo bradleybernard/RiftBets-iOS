@@ -79,16 +79,10 @@ class MatchDetailViewController: UIViewController {
             }
         }
         
-        let width = 390
-        let height = 200
-        let frame = 10
-        
-        let code : NSString = "<iframe width=\(width) height=\(height) src=\(youtubeLink) frameborder=\(frame) allowfullscreen></ iframe>" as NSString
-        
+        self.webView.hidden = true
+        self.webView.loadRequest(NSURLRequest(URL: NSURL(string: youtubeLink)!))
         self.webView.scrollView.scrollEnabled = false
         self.webView.scrollView.bounces = false
-        self.webView.loadHTMLString(code as String, baseURL: nil)
-        
     }
     
     func setupPageVC() {
@@ -189,5 +183,15 @@ extension MatchDetailViewController: UIPageViewControllerDataSource, UIPageViewC
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
+    }
+}
+
+extension MatchDetailViewController: UIWebViewDelegate {
+    func webViewDidStartLoad(webView : UIWebView) {
+//        println("AA")
+    }
+    
+    func webViewDidFinishLoad(webView : UIWebView) {
+        webView.hidden = false
     }
 }

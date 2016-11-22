@@ -53,7 +53,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Twitch" id="bt0-Ak-Mf6"/>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="bt0-Ak-Mf6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjT-Xk-rSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,9 +70,8 @@
                     <view key="view" contentMode="scaleToFill" id="J9c-vA-Vm1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="9NR-3P-mPj"/>
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="9NR-3P-mPj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMJ-o4-Jyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,7 +98,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uF8-g7-Hkf" id="wan-bb-ADv">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="82.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LOd-3d-W6z">
@@ -210,8 +209,8 @@
                             <bool key="isElement" value="NO"/>
                         </accessibility>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Schedule" id="yPv-xp-VFj" userLabel="Match Dates"/>
-                    <navigationItem key="navigationItem" id="iTA-t7-J60"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="yPv-xp-VFj" userLabel="Match Dates"/>
+                    <navigationItem key="navigationItem" title="Schedule" id="iTA-t7-J60"/>
                     <connections>
                         <outlet property="dateTable" destination="X6I-iA-yO7" id="3hx-bi-hyL"/>
                     </connections>
@@ -220,11 +219,11 @@
             </objects>
             <point key="canvasLocation" x="1702.8985507246377" y="-1160.8695652173915"/>
         </scene>
-        <!--Schedule-->
+        <!--Schedule Navigation Controller-->
         <scene sceneID="hTN-Yg-HBu">
             <objects>
                 <navigationController id="A57-Cr-4KB" customClass="ScheduleNavigationController" customModule="RiftBets" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" id="Tba-HW-f2M"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Tba-HW-f2M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hmr-nj-qNs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -270,7 +269,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Leaderboards" id="u6Y-Fg-GOc"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="u6Y-Fg-GOc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Hn-gO-1gM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -288,31 +287,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W7W-vM-R9J" userLabel="throwaway">
-                                <rect key="frame" x="0.0" y="137" width="414" height="238"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <dataDetectorType key="dataDetectorTypes"/>
-                            </webView>
-                            <webView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ixi-ON-rEV">
-                                <rect key="frame" x="0.0" y="137" width="414" height="238"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.04677833616733551" green="0.050069741904735565" blue="0.09152095764875412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUs-Yy-rcq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Overview" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUs-Yy-rcq">
                                 <rect key="frame" x="0.0" y="108" width="414" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.92538958787918091" green="0.92554813623428345" blue="0.92537957429885864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nK-em-TbA">
+                                <rect key="frame" x="7" y="136" width="400" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="FvR-kc-tbo" id="L66-fQ-mZi"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="0.04872710257768631" green="0.05132642388343811" blue="0.090649507939815521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="gameOverView" destination="RUs-Yy-rcq" id="EG9-4n-ttY"/>
-                        <outlet property="webView" destination="ixi-ON-rEV" id="H9c-vT-fqv"/>
+                        <outlet property="webView" destination="6nK-em-TbA" id="Yct-Ds-vVD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3P-hr-vSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -348,7 +344,7 @@
                                         <rect key="frame" x="0.0" y="49" width="414" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xyx-Jm-sXi" id="4y0-Yt-vWP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="82.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baX-oT-g72" userLabel="Team1Item1">

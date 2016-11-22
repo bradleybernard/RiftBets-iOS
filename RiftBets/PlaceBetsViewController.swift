@@ -13,22 +13,33 @@ class PlaceBetsViewController: UIViewController{
     
     @IBOutlet weak var collectView: UICollectionView!
     @IBOutlet weak var game: UILabel!
-    @IBOutlet weak var navBar: UINavigationBar!
+
+    @IBOutlet weak var timerLabel: UILabel!
     
     var matchTitle : String?
     var gameNumber : Int = 0
+    //var targetTime = NSDate()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let navTitle = matchTitle {
+            self.navigationItem.title = navTitle
+        }
+       // var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: #selector(PlaceBetsViewController.timerUpdate), userInfo: nil, repeats: true)
+        
+        game.text = "Game " + String(gameNumber)
+    }
     
     @IBAction func cancelPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if let navTitle = matchTitle {
-            self.navigationItem.title = navTitle
-        }
-        
-        game.text = "Game " + String(gameNumber)
+    func timerUpdate(){
+      //  var diff : NSTimeInterval = targetTime.timeIntervalSinceNow
+       // if(diff > 0){
+       //     timerLabel.text = String(diff)
+        //}
     }
+    
+
 }

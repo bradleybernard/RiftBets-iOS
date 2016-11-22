@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIView.transitionWithView(self.window!, duration: 0.5, options: .TransitionCrossDissolve, animations: {
             let oldState: Bool = UIView.areAnimationsEnabled()
             UIView.setAnimationsEnabled(false)
-            self.window!.rootViewController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("InitialViewController") )
+            self.window!.rootViewController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TabbedViewController") )
             UIView.setAnimationsEnabled(oldState)
             }, completion: { (finished: Bool) -> () in
                 
@@ -89,8 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var viewController : UIViewController = storyboard.instantiateViewControllerWithIdentifier("HomeView") as! HomeViewController
         
         if (KeychainManager.sharedInstance.getLoggedIn()) {
-            viewController = storyboard.instantiateViewControllerWithIdentifier("InitialViewController") as! TabbedViewController
-           
+            viewController = storyboard.instantiateViewControllerWithIdentifier("TabbedViewController") as! TabbedViewController
         }
         
         window?.rootViewController = viewController

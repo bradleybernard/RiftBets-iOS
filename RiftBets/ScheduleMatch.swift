@@ -72,6 +72,7 @@ struct ScheduleMatch {
     {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(name: "GMT")
         
         self.name                       = name
         self.date                       = dateFormatter.dateFromString(date)

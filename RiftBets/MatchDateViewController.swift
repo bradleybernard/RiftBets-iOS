@@ -33,6 +33,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {
+        segment.setSelectedSegmentIndex(UInt(segment.selectedSegmentIndex), animated: true)
         filterMatches(getDateFromSegment())
     }
     
@@ -315,8 +316,6 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
             
             current_game = current_game + 1
             
-            
-            //end
             let matchDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("MatchDetailViewController") as! MatchDetailViewController
             matchDetailVC.matchDetails = matchDetail
             
@@ -363,27 +362,26 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         
         segmentedControl = HMSegmentedControl(sectionTitles: ["DatesList"])
         segmentedControl.addTarget(self, action: #selector(MatchDateViewController.segmentedControlChangedValue(_:)), forControlEvents: .AllEvents)
-        segmentedControl.frame = CGRectMake(0, 0, view.frame.width, 55)
+        segmentedControl.frame = CGRectMake(0, 0, view.frame.width, 60)
         segmentedControl.selectionIndicatorHeight = 5.0
-        segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.grayColor(), NSFontAttributeName: UIFont(name: "Avenir-Heavy", size: 20)!]
+        segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.grayColor(), NSFontAttributeName: UIFont(name: "Avenir-Heavy", size: 17)!]
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0,10,0,10)
         segmentedControl.selectionIndicatorColor = UIColor(red: 253.0/255.0, green: 81.0/255.0, blue: 116.0/255.0, alpha: 0.8)
-        segmentedControl.selectionIndicatorColor = UIColor.redColor()
         segmentedControl.selectionStyle = .FullWidthStripe
         segmentedControl.selectionIndicatorLocation = .Down
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.backgroundColor = UIColor(red: 74.0/255.0, green: 106.0/255.0, blue: 145.0/255.0, alpha: 0.3)
         segmentedControl.hidden = true
+        segmentedControl.shouldAnimateUserSelection = true
         
         self.view.addSubview(segmentedControl)
-        self.view.bringSubviewToFront(segmentedControl)
         self.constraintsSegment()
         self.constraintsTableView()
     }
     
     func constraintsTableView() {
         dateTable.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(segmentedControl.snp_bottom)
+            make.top.equalTo(segmentedControl.snp_top)
             make.left.equalTo(view)
             make.bottom.equalTo(view)
             make.right.equalTo(view)
@@ -392,7 +390,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
     
     func constraintsSegment() {
         segmentedControl.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(view).offset(self.navigationController!.navigationBar.frame.height + segmentedControl.frame.height/2)
+            make.top.equalTo(view).offset(self.navigationController!.navigationBar.frame.height + (segmentedControl.frame.height/2) - 10)
             make.left.equalTo(view)
             make.bottom.equalTo(view.snp_top).offset(self.navigationController!.navigationBar.frame.height  + segmentedControl.frame.height)
             make.right.equalTo(view)

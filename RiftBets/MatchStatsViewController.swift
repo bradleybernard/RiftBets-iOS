@@ -49,9 +49,7 @@ class MatchStatsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(matchDetails)
         self.formatDetails()
-        
     }
     
     func updateGameNumber(number: Int) {
@@ -65,31 +63,8 @@ class MatchStatsViewController: UIViewController{
            return
         }
 
-        
         teamOneName.text = matchDetails!.team_One_Name!
         teamTwoName.text = matchDetails!.team_Two_Name!
-        
-        //if let scoreOne : Int = matchDetails?.score_One {
-        //score_One.text = String(scoreOne)
-        //}
-        
-        //if let scoreTwo : Int = matchDetails?.score_Two {
-        //score_Two.text = String(scoreTwo)
-        //}
-        
-        //let teamOneUrl = NSURL(string: (matchDetails?.team_One_Logo_Url!)!)
-        //let teamTwoUrl = NSURL(string: (matchDetails?.team_Two_Logo_Url!)!)
-        
-        //teamOneLogo.af_setImageWithURL(teamOneUrl!)
-        //teamTwoLogo.af_setImageWithURL(teamTwoUrl!)
-        
-        //picks and bans
-        //pBTeamOne.text = matchDetails?.team_One_Acronym
-        //pBTeamTwo.text = matchDetails?.team_Two_Acronym
-        
-        //match stats
-        //mSTeamOne.text = matchDetails?.team_One_Acronym
-        //mSTeamTwo.text = matchDetails?.team_Two_Acronym
         
         if let t1drag : Int = matchDetails?.gameDetail[gameNumber].teamOne?.dragon_Kills {
             teamOneDragons.text = String(t1drag)

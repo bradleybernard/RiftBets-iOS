@@ -18,4 +18,18 @@ class TeamAnswersCustomCell : UICollectionViewCell{
     @IBOutlet weak var teamTwoCheckBox: UIButton!
     
     @IBOutlet weak var teamTwoLabel: UILabel!
+    
+    @IBAction func teamOneChecked(sender: AnyObject) {
+        teamOneCheckBox.backgroundColor = UIColor.blueColor()
+        
+    }
+    
+    @IBAction func teamTwoChecked(sender: AnyObject) {
+        teamTwoCheckBox.backgroundColor = UIColor.blueColor()
+        
+    }
+    
+    
+    
+    
 }

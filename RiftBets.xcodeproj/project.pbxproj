@@ -12,6 +12,7 @@
 		B13287E51DE4357300754748 /* TeamAnswersCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13287E41DE4357300754748 /* TeamAnswersCustomCell.swift */; };
 		B13287E91DE4366700754748 /* SummonerSkillsAnswerCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13287E81DE4366700754748 /* SummonerSkillsAnswerCustomCell.swift */; };
 		B13287EB1DE436CC00754748 /* ItemBuildAnswerCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13287EA1DE436CC00754748 /* ItemBuildAnswerCustomCell.swift */; };
+		B13287ED1DE55FD800754748 /* StandardAnswerCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13287EC1DE55FD800754748 /* StandardAnswerCustomCell.swift */; };
 		B17C5E321DDC37E200BF27DC /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C5E311DDC37E200BF27DC /* PlayerStatsViewController.swift */; };
 		B17C5E341DDC387000BF27DC /* MatchStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C5E331DDC387000BF27DC /* MatchStatsViewController.swift */; };
 		B1BF6BD71DD58C2C00F95E60 /* PlayerStatsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BF6BD61DD58C2C00F95E60 /* PlayerStatsCustomCell.swift */; };
@@ -47,6 +48,7 @@
 		B13287E41DE4357300754748 /* TeamAnswersCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamAnswersCustomCell.swift; sourceTree = "<group>"; };
 		B13287E81DE4366700754748 /* SummonerSkillsAnswerCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerSkillsAnswerCustomCell.swift; sourceTree = "<group>"; };
 		B13287EA1DE436CC00754748 /* ItemBuildAnswerCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBuildAnswerCustomCell.swift; sourceTree = "<group>"; };
+		B13287EC1DE55FD800754748 /* StandardAnswerCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardAnswerCustomCell.swift; sourceTree = "<group>"; };
 		B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RiftBets-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		B17C5E311DDC37E200BF27DC /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		B17C5E331DDC387000BF27DC /* MatchStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchStatsViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				B13287E41DE4357300754748 /* TeamAnswersCustomCell.swift */,
 				B13287E81DE4366700754748 /* SummonerSkillsAnswerCustomCell.swift */,
 				B13287EA1DE436CC00754748 /* ItemBuildAnswerCustomCell.swift */,
+				B13287EC1DE55FD800754748 /* StandardAnswerCustomCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				B1E3FA9D1DB717DE00592E41 /* MatchDetailViewController.swift in Sources */,
 				B8AF95FF1DC9994B00D87558 /* ScheduleNavigationController.swift in Sources */,
 				B800FBC71DACCE73002E449F /* Keychain.swift in Sources */,
+				B13287ED1DE55FD800754748 /* StandardAnswerCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

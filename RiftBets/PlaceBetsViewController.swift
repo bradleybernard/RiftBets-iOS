@@ -24,6 +24,9 @@ class PlaceBetsViewController: UIViewController{
     var gameNumber : Int = 0
     var targetTime = NSDate()
     var rerollCount : Int = 3
+    
+    @IBAction func betPlacePressed(sender: AnyObject) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

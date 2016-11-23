@@ -13,8 +13,11 @@ class PlaceBetsCustomCell: UICollectionViewCell{
     
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var difficulty: UILabel!
-
     @IBOutlet weak var wagerText: UITextField!
     @IBOutlet weak var possibleWin: UILabel!
+    var betQuestion : BetQuestion?
     
+    func getWager() -> Int{
+       return Int(wagerText.text!)!
+    }
 }

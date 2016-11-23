@@ -41,10 +41,10 @@ class MatchDetailViewController: UIViewController {
     
     func betTapped(item: UIBarButtonItem){
         let betsVC = self.storyboard?.instantiateViewControllerWithIdentifier("PlaceBets")as! PlaceBetsViewController
-        
         betsVC.matchTitle = (matchDetails?.team_One_Acronym)! + " vs " + (matchDetails?.team_Two_Acronym)!
-        print(gameNumber)
         betsVC.gameNumber = gameNumber
+        
+        //get questions here
         
         self.presentViewController(betsVC, animated: true, completion: nil)
         

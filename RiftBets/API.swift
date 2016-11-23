@@ -143,23 +143,6 @@ class RemoteManager {
         return completion(json: json, error: nil)
     }
     
-    // Public
-    func facebook(completion: JSONCompletion) {
-        
-        guard let facebookToken = KeychainManager.sharedInstance.getFacebookToken() else {
-            return completion(json: nil, error: NSError(domain: again("No Facebook token set."), code: 10005, userInfo: nil))
-        }
-        
-        var params = ["facebook_access_token": facebookToken]
-        withDevice(&params)
-        
-        post("auth/facebook", parameters: params, completion: { (json, error) -> Void in
-            
-            self.afterFacebook(json, error: error, completion: completion)
-            
-        })
-    }
-    
     private func afterMatchSchedule(json: JSON, error: NSError?, completion: JSONCompletion){
         
         if let error = error {
@@ -178,6 +161,32 @@ class RemoteManager {
         return completion(json: json, error: nil)
     }
     
+    private func afterBetCard(json: JSON, error: NSError?, completion: JSONCompletion){
+        
+        if let error = error {
+            return completion(json: json, error: error)
+        }
+        
+        return completion(json: json, error: nil)
+    }
+    
+    // Public
+    func facebook(completion: JSONCompletion) {
+        
+        guard let facebookToken = KeychainManager.sharedInstance.getFacebookToken() else {
+            return completion(json: nil, error: NSError(domain: again("No Facebook token set."), code: 10005, userInfo: nil))
+        }
+        
+        var params = ["facebook_access_token": facebookToken]
+        withDevice(&params)
+        
+        post("auth/facebook", parameters: params, completion: { (json, error) -> Void in
+            
+            self.afterFacebook(json, error: error, completion: completion)
+            
+        })
+    }
+    
     func matchSchedule(completion: JSONCompletion){
         
         get("schedule", parameters: [:], completion: { (json, error) -> Void in
@@ -185,17 +194,22 @@ class RemoteManager {
             self.afterMatchSchedule(json, error: error, completion: completion)
         })
     }
-    func matchDetail(matchid:String, completion: JSONCompletion){
-        let params = [
-            "match_id": matchid
-        ]
-        print(params)
-        get("match", parameters: params, completion: { (json, error) -> Void in
+    
+    func matchDetail(matchId:String, completion: JSONCompletion){
+        
+        get("match", parameters: ["match_id": matchId], completion: { (json, error) -> Void in
             
             self.afterMatchDetail(json, error: error, completion: completion)
         })
     }
     
-    
+    func betCard(params: [String:String], completion: JSONCompletion) {
+        
+        post("cards/create", parameters: params, completion: { (json, error) -> Void in
+            
+            self.afterBetCard(json, error: error, completion: completion)
+        })
+        
+    }
     
 }

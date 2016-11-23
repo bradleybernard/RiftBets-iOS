@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import HMSegmentedControl
+import SwiftyJSON
 
 class MatchDetailViewController: UIViewController {
     
@@ -23,7 +24,7 @@ class MatchDetailViewController: UIViewController {
     
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var gameOverView: UILabel!
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,9 +47,39 @@ class MatchDetailViewController: UIViewController {
         
         //get questions here
         
-        self.presentViewController(betsVC, animated: true, completion: nil)
+        let params = [
+            "api_game_id": "eddd9430-f53c-4227-8b5f-bf4fb7b39f05",
+            "question_count": "3",
+            "difficulty": "",
+            ]
         
-        
+        RemoteManager.sharedInstance.betCard(params, completion: { (json, error) -> Void in
+            
+            if error != nil {
+                return print("Error: " + error!.description)
+            }
+            
+            var betQuestions : [BetQuestion] = []
+            
+            for (_, js) : (String, JSON) in json["questions"] {
+                betQuestions.append(
+                    BetQuestion(
+                        questionId: js["question_id"].stringValue,
+                        slug: js["slug"].stringValue,
+                        difficulty: js["difficulty"].stringValue,
+                        multiplier: js["multiplier"].stringValue,
+                        type: js["type"].stringValue,
+                        description: js["description"].stringValue
+                    )
+                )
+            }
+            
+            print(betQuestions.count)
+            
+            betsVC.betQuestions = betQuestions
+            
+            self.presentViewController(betsVC, animated: true, completion: nil)
+        })
     }
     
     @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {
@@ -147,7 +178,7 @@ class MatchDetailViewController: UIViewController {
         segmentedControl.selectionStyle = .FullWidthStripe
         segmentedControl.selectionIndicatorLocation = .Down
         segmentedControl.backgroundColor = UIColor(red: 74.0/255.0, green: 106.0/255.0, blue: 145.0/255.0, alpha: 0.3)
-
+        
         if(tiles.count == 1) {
             segmentedControl.hidden = true
         }
@@ -201,7 +232,7 @@ extension MatchDetailViewController: UIPageViewControllerDataSource, UIPageViewC
 
 extension MatchDetailViewController: UIWebViewDelegate {
     func webViewDidStartLoad(webView : UIWebView) {
-//        println("AA")
+        //        println("AA")
     }
     
     func webViewDidFinishLoad(webView : UIWebView) {

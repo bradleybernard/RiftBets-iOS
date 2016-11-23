@@ -14,5 +14,7 @@ class StandardAnswerCustomCell : UICollectionViewCell{
     
     @IBOutlet weak var answerText: UITextField!
     
-    
+    func getAnswer()->String{
+        return answerText.text!
+    }
 }

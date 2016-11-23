@@ -15,4 +15,10 @@ class SummonerSkillsAnswerCustomCell: UICollectionViewCell{
     
     
     @IBOutlet weak var summonerSkill2Answer: UITextField!
+    
+    func getAnswer()->String{
+        return summonerSkill1Answer.text! + "," + summonerSkill2Answer.text!
+    }
+
+    
 }

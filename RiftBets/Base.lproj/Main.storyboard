@@ -527,8 +527,58 @@
                                             <outlet property="teamTwoLabel" destination="ehb-qp-OLY" id="yWO-d1-EjC"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YesNoCustomCell" id="H0n-sF-Mhd" userLabel="YesNo Custom Cell" customClass="YesNoCustomCell" customModule="RiftBets" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="229" width="412" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51k-pK-gaf">
+                                                    <rect key="frame" x="8" y="8" width="72" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJR-5t-4xU">
+                                                    <rect key="frame" x="115" y="8" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="yesPressed:" destination="H0n-sF-Mhd" eventType="touchUpInside" id="AXl-4e-0xW"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-7M-ZnT">
+                                                    <rect key="frame" x="243" y="8" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="noPressed:" destination="H0n-sF-Mhd" eventType="touchUpInside" id="yAh-r2-QXS"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGg-0G-w60">
+                                                    <rect key="frame" x="278" y="8" width="53" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvl-ly-1Mv">
+                                                    <rect key="frame" x="150" y="8" width="56" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="412" height="58"/>
+                                        <connections>
+                                            <outlet property="noButton" destination="zbU-7M-ZnT" id="kDh-It-ySW"/>
+                                            <outlet property="yesButton" destination="iJR-5t-4xU" id="QQP-ad-tOd"/>
+                                        </connections>
+                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SummonerSkillsAnswerCustomCell" id="5nZ-PK-5mq" userLabel="SummonerSkill Custom Cell" customClass="SummonerSkillsAnswerCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="229" width="412" height="109"/>
+                                        <rect key="frame" x="1" y="297" width="412" height="109"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="412" height="109"/>
@@ -577,7 +627,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemBuildAnswerCustomCell" id="zia-2N-GzL" userLabel="ItemBuild View Cell" customClass="ItemBuildAnswerCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="348" width="412" height="215"/>
+                                        <rect key="frame" x="1" y="416" width="412" height="215"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="412" height="215"/>
@@ -678,7 +728,6 @@
                                         </view>
                                         <size key="customSize" width="412" height="215"/>
                                         <connections>
-                                            <outlet property="answerText" destination="uFr-LP-5JL" id="pSa-LE-Gti"/>
                                             <outlet property="item1Answer" destination="uFr-LP-5JL" id="ewB-bL-2zr"/>
                                             <outlet property="item2Answer" destination="Tde-pc-SJe" id="Eg3-Vs-Xui"/>
                                             <outlet property="item3Answer" destination="oTo-x5-VUR" id="DiP-2x-X9a"/>
@@ -688,7 +737,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BanAnswersCustomCell" id="Oxx-EW-epQ" customClass="BanAnswersCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="573" width="412" height="128"/>
+                                        <rect key="frame" x="1" y="641" width="412" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="412" height="128"/>
@@ -740,14 +789,13 @@
                                         </view>
                                         <size key="customSize" width="412" height="128"/>
                                         <connections>
-                                            <outlet property="answerText" destination="dfp-yz-Xjt" id="fBe-NI-jQq"/>
-                                            <outlet property="banOne" destination="dfp-yz-Xjt" id="d1t-eL-IDO"/>
+                                            <outlet property="banOne" destination="dfp-yz-Xjt" id="TI8-np-Bzb"/>
                                             <outlet property="banThree" destination="745-hb-UM4" id="zna-tv-noX"/>
                                             <outlet property="banTwo" destination="Cyb-AT-GcP" id="t1T-WF-umI"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicksAnswersCustomCell" id="u5c-3h-0QU" customClass="PicksAnswersCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="711" width="412" height="171"/>
+                                        <rect key="frame" x="1" y="779" width="412" height="171"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="412" height="171"/>
@@ -828,7 +876,6 @@
                                         <size key="customSize" width="412" height="171"/>
                                         <connections>
                                             <outlet property="adcPick" destination="vNj-uR-Kgs" id="pzK-HK-YR3"/>
-                                            <outlet property="answerText" destination="Kh5-cr-Vqi" id="Wgc-qT-t6c"/>
                                             <outlet property="junglePick" destination="VtU-PG-Yg7" id="NdZ-Mh-i17"/>
                                             <outlet property="midPick" destination="m28-Lg-o68" id="2i1-O2-lVV"/>
                                             <outlet property="supportPick" destination="Ax3-gh-0wC" id="oX9-Kf-CRg"/>
@@ -836,6 +883,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="SGp-H7-kFd" id="in0-98-V7E"/>
+                                    <outlet property="delegate" destination="SGp-H7-kFd" id="Ib0-rr-LgB"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

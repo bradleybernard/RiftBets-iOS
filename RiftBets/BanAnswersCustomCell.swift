@@ -17,4 +17,9 @@ class BanAnswersCustomCell: UICollectionViewCell {
     
     @IBOutlet weak var banThree: UITextField!
     
+    func getAnswer()->String{
+        return banOne.text! + "," + banTwo.text! + "," + banThree.text!
+    }
+
+    
 }

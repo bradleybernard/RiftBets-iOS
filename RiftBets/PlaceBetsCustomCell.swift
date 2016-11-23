@@ -20,4 +20,8 @@ class PlaceBetsCustomCell: UICollectionViewCell{
     func getWager() -> Int{
        return Int(wagerText.text!)!
     }
+    
+    func formatCell(){
+        
+    }
 }

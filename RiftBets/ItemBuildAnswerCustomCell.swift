@@ -24,4 +24,8 @@ class ItemBuildAnswerCustomCell: UICollectionViewCell{
     @IBOutlet weak var item6Answer: UITextField!
     
     
+    func getAnswer()->String{
+        return item1Answer.text! + "," + item2Answer.text! + "," + item3Answer.text! + "," + item4Answer.text! + "," + item5Answer.text! + "," + item6Answer.text!
+    }
+    
 }

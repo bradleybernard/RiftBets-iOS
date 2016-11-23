@@ -19,16 +19,32 @@ class TeamAnswersCustomCell : UICollectionViewCell{
     
     @IBOutlet weak var teamTwoLabel: UILabel!
     
+    var teamOnePressed : Bool = false
+    var teamTwoPressed : Bool = false
+    
     @IBAction func teamOneChecked(sender: AnyObject) {
         teamOneCheckBox.backgroundColor = UIColor.blueColor()
+        teamOnePressed = true
         
     }
     
     @IBAction func teamTwoChecked(sender: AnyObject) {
         teamTwoCheckBox.backgroundColor = UIColor.blueColor()
+        teamTwoPressed = true
         
     }
     
+    func getAnswer()->String{
+        if(teamOnePressed){
+            return "100"
+        }
+        if(teamTwoPressed){
+            return "200"
+        }
+        else{
+            return "error"
+        }
+    }
     
     
     

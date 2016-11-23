@@ -21,4 +21,8 @@ class PicksAnswersCustomCell: UICollectionViewCell {
     
     @IBOutlet weak var supportPick: UITextField!
     
+    func getAnswer()->String{
+        return topPick.text! + ",'" + junglePick.text! + "," + midPick.text! + "," + adcPick.text! + "," + supportPick.text!
+    }
+    
 }

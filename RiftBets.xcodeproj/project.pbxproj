@@ -17,6 +17,7 @@
 		B13287F31DE5772700754748 /* BanAnswersCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13287F21DE5772700754748 /* BanAnswersCustomCell.swift */; };
 		B13287F51DE5774200754748 /* PicksAnswersCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13287F41DE5774200754748 /* PicksAnswersCustomCell.swift */; };
 		B13287F71DE57A5100754748 /* QuestionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13287F61DE57A5100754748 /* QuestionAnswer.swift */; };
+		B13287F91DE581DC00754748 /* YesNoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13287F81DE581DC00754748 /* YesNoCustomCell.swift */; };
 		B17C5E321DDC37E200BF27DC /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C5E311DDC37E200BF27DC /* PlayerStatsViewController.swift */; };
 		B17C5E341DDC387000BF27DC /* MatchStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C5E331DDC387000BF27DC /* MatchStatsViewController.swift */; };
 		B1BF6BD71DD58C2C00F95E60 /* PlayerStatsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BF6BD61DD58C2C00F95E60 /* PlayerStatsCustomCell.swift */; };
@@ -57,6 +58,7 @@
 		B13287F21DE5772700754748 /* BanAnswersCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanAnswersCustomCell.swift; sourceTree = "<group>"; };
 		B13287F41DE5774200754748 /* PicksAnswersCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicksAnswersCustomCell.swift; sourceTree = "<group>"; };
 		B13287F61DE57A5100754748 /* QuestionAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
+		B13287F81DE581DC00754748 /* YesNoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesNoCustomCell.swift; sourceTree = "<group>"; };
 		B16F9C811DAA0D3800ED03D7 /* RiftBets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RiftBets-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		B17C5E311DDC37E200BF27DC /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		B17C5E331DDC387000BF27DC /* MatchStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchStatsViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				B13287EC1DE55FD800754748 /* StandardAnswerCustomCell.swift */,
 				B13287F21DE5772700754748 /* BanAnswersCustomCell.swift */,
 				B13287F41DE5774200754748 /* PicksAnswersCustomCell.swift */,
+				B13287F81DE581DC00754748 /* YesNoCustomCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				B13287E31DE419C300754748 /* PlaceBetsCustomCell.swift in Sources */,
 				B1E3FA9D1DB717DE00592E41 /* MatchDetailViewController.swift in Sources */,
 				B13287F71DE57A5100754748 /* QuestionAnswer.swift in Sources */,
+				B13287F91DE581DC00754748 /* YesNoCustomCell.swift in Sources */,
 				B8AF95FF1DC9994B00D87558 /* ScheduleNavigationController.swift in Sources */,
 				B13287EF1DE5709C00754748 /* BetQuestion.swift in Sources */,
 				B800FBC71DACCE73002E449F /* Keychain.swift in Sources */,

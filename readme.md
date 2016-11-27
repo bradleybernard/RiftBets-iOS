@@ -1,5 +1,6 @@
-# RiftBets-iOS [![Build Status](https://travis-ci.com/bradbernard/RiftBets-Web.svg?token=vRwpWWwPmX6jqztpXACx&branch=master)](https://travis-ci.com/bradbernard/RiftBets-Web)
-A JSON RESTful API created to serve our iPhone client. We are using the Laravel framework v5.3 (PHP 7.0) with MySQL 5.7 for most of our data and Redis 3.0, an in-memory database, for our leaderboards. We have automated builds/continuous integration via [Travis CI](https://travis-ci.com) that runs our test suite, PHPUnit.
+# RiftBets-iOS
+An iPhone client built to consume the RiftBets RESTful JSON API. The application is written in Swift 2.3 with the Facebook, Bolts, and Fabric SDK. 
+We are using cocoapods v1.1.1 for our package manger to community code packages from GitHub and other sources. We save user state to the iCloud Keychain and use Alamofire v3 to send our HTTP requests to our API. 
 
 ### Team Members:
 - [Bradley Bernard](https://github.com/bradbernard/), bmbernar@ucsc.edu

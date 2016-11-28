@@ -389,10 +389,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlaceBetsCustomCell" id="f2G-yJ-Cp4" customClass="PlaceBetsCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="0.0" width="412" height="83"/>
+                                        <rect key="frame" x="1" y="0.0" width="412" height="69"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="83"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUZ-15-8Hn">
@@ -439,7 +439,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="412" height="83"/>
+                                        <size key="customSize" width="412" height="69"/>
                                         <connections>
                                             <outlet property="difficulty" destination="QZ1-wW-uOM" id="Dzb-bo-YVk"/>
                                             <outlet property="possibleWin" destination="1iu-LB-ZM1" id="Yy2-5W-zIY"/>
@@ -448,10 +448,10 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StandardAnswerCustomCell" id="rx0-b7-yI5" customClass="StandardAnswerCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="93" width="412" height="58"/>
+                                        <rect key="frame" x="1" y="79" width="412" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qkO-S3-ZMp">
@@ -470,16 +470,16 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="412" height="58"/>
+                                        <size key="customSize" width="412" height="44"/>
                                         <connections>
                                             <outlet property="answerText" destination="qkO-S3-ZMp" id="n9H-j5-hfe"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TeamAnswersCustomCell" id="3dQ-5g-bxw" userLabel="TeamAnswer Custom Cell" customClass="TeamAnswersCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="161" width="412" height="58"/>
+                                        <rect key="frame" x="1" y="133" width="412" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYB-aN-PLc">
@@ -519,7 +519,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="412" height="58"/>
+                                        <size key="customSize" width="412" height="35"/>
                                         <connections>
                                             <outlet property="teamOneCheckBox" destination="aL3-hf-gW4" id="E4R-Ye-ksJ"/>
                                             <outlet property="teamOneLabel" destination="mrO-bc-Xev" id="ZDe-Zl-naw"/>
@@ -528,10 +528,10 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YesNoCustomCell" id="H0n-sF-Mhd" userLabel="YesNo Custom Cell" customClass="YesNoCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="229" width="412" height="58"/>
+                                        <rect key="frame" x="1" y="178" width="412" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="29"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51k-pK-gaf">
@@ -571,17 +571,17 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="412" height="58"/>
+                                        <size key="customSize" width="412" height="29"/>
                                         <connections>
                                             <outlet property="noButton" destination="zbU-7M-ZnT" id="kDh-It-ySW"/>
                                             <outlet property="yesButton" destination="iJR-5t-4xU" id="QQP-ad-tOd"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SummonerSkillsAnswerCustomCell" id="5nZ-PK-5mq" userLabel="SummonerSkill Custom Cell" customClass="SummonerSkillsAnswerCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="297" width="412" height="109"/>
+                                        <rect key="frame" x="1" y="217" width="412" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YM9-OE-GdE">
@@ -621,16 +621,17 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <size key="customSize" width="412" height="107"/>
                                         <connections>
                                             <outlet property="summonerSkill1Answer" destination="lYi-N5-q98" id="D6V-Ka-r8y"/>
                                             <outlet property="summonerSkill2Answer" destination="pmG-Ra-gDz" id="8w7-YN-CTX"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemBuildAnswerCustomCell" id="zia-2N-GzL" userLabel="ItemBuild View Cell" customClass="ItemBuildAnswerCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="416" width="412" height="215"/>
+                                        <rect key="frame" x="1" y="334" width="412" height="176"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="215"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="176"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uFr-LP-5JL">
@@ -726,7 +727,7 @@
                                                 </textField>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="412" height="215"/>
+                                        <size key="customSize" width="412" height="176"/>
                                         <connections>
                                             <outlet property="item1Answer" destination="uFr-LP-5JL" id="ewB-bL-2zr"/>
                                             <outlet property="item2Answer" destination="Tde-pc-SJe" id="Eg3-Vs-Xui"/>
@@ -737,10 +738,10 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BanAnswersCustomCell" id="Oxx-EW-epQ" customClass="BanAnswersCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="641" width="412" height="128"/>
+                                        <rect key="frame" x="1" y="520" width="412" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-yz-Xjt">
@@ -787,7 +788,7 @@
                                                 </textField>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="412" height="128"/>
+                                        <size key="customSize" width="412" height="107"/>
                                         <connections>
                                             <outlet property="banOne" destination="dfp-yz-Xjt" id="TI8-np-Bzb"/>
                                             <outlet property="banThree" destination="745-hb-UM4" id="zna-tv-noX"/>
@@ -795,10 +796,10 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicksAnswersCustomCell" id="u5c-3h-0QU" customClass="PicksAnswersCustomCell" customModule="RiftBets" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="779" width="412" height="171"/>
+                                        <rect key="frame" x="1" y="637" width="412" height="153"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="171"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="153"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kh5-cr-Vqi">
@@ -873,7 +874,7 @@
                                                 </textField>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="412" height="171"/>
+                                        <size key="customSize" width="412" height="153"/>
                                         <connections>
                                             <outlet property="adcPick" destination="vNj-uR-Kgs" id="pzK-HK-YR3"/>
                                             <outlet property="junglePick" destination="VtU-PG-Yg7" id="NdZ-Mh-i17"/>

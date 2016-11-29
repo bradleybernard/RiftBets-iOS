@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// Structure used to hold data from a JSON regarding individual match and game detail.
 //All IDs are set to String because I figured it would be easier to send network requests.
 struct MatchDetail{
     var gameDetail              = [GameDetail]()

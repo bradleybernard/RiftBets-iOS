@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import HMSegmentedControl
 import SwiftyJSON
-
+// This View controller manages the mach details screen
 class MatchDetailViewController: UIViewController {
     
     var match : ScheduleMatch?
@@ -39,7 +39,7 @@ class MatchDetailViewController: UIViewController {
         self.vidPlayer(gameNumber)
         self.whoWon()
     }
-    
+    // Function when Place bets is pressed a JSON request for the questions are made
     func betTapped(item: UIBarButtonItem){
         let betsVC = self.storyboard?.instantiateViewControllerWithIdentifier("PlaceBets")as! PlaceBetsViewController
         betsVC.matchTitle = (matchDetails?.team_One_Acronym)! + " vs " + (matchDetails?.team_Two_Acronym)!
@@ -81,19 +81,19 @@ class MatchDetailViewController: UIViewController {
             self.presentViewController(betsVC, animated: true, completion: nil)
         })
     }
-    
+    // Function detects when a different game is selected
     @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {
         gameNumber = segment.selectedSegmentIndex
         self.vidPlayer(gameNumber)
         self.updateGameNumber(gameNumber)
     }
-    
+    // Fucntion updates gameNumber
     func test(index: Int) {
         gameNumber = index
         self.vidPlayer(gameNumber)
         self.updateGameNumber(gameNumber)
     }
-    
+    // Function detects who won for the game
     func whoWon() {
         if(matchDetails?.score_One > matchDetails?.score_Two) {
             gameOverView.text = (matchDetails?.team_One_Name)! + " Won"
@@ -111,7 +111,7 @@ class MatchDetailViewController: UIViewController {
             gameOverView.text = gameOverView.text! + " (" + String(maxScore) + "-" + String(minScore) + ")"
         }
     }
-    
+    // Function adds a youtube video of the game
     func vidPlayer(game: Int) {
         
         var youtubeLink : String = " "
@@ -128,7 +128,7 @@ class MatchDetailViewController: UIViewController {
         self.webView.scrollView.scrollEnabled = false
         self.webView.scrollView.bounces = false
     }
-    
+    // Function sets up switching from game stats to player stats
     func setupPageVC() {
         
         self.pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
@@ -155,7 +155,7 @@ class MatchDetailViewController: UIViewController {
         self.pageViewController.didMoveToParentViewController(self)
         self.constraintsPageVC()
     }
-    
+    // Function send game number to playerstats and matchstats VCs
     func updateGameNumber(game: Int) {
         (pages[0] as! PlayerStatsViewController).updateGameNumber(game)
         (pages[1] as! MatchStatsViewController).updateGameNumber(game)
@@ -206,7 +206,7 @@ class MatchDetailViewController: UIViewController {
     }
     
 }
-
+// extension adds in the pageView controller
 extension MatchDetailViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {

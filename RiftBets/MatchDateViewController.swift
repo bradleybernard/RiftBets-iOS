@@ -13,7 +13,7 @@ import AlamofireImage
 import HMSegmentedControl
 import SnapKit
 import EasyAnimation
-
+// This view controller manages the match schedule screen in the app
 class MatchDateViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var dateTable: UITableView!
@@ -31,12 +31,12 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         self.setupSegmentedControl()
         self.fetchSchedule()
     }
-    
+    //function detects when the date is changed on the selector and calls of the appropriate matches to be shown
     @IBAction func segmentedControlChangedValue(segment: HMSegmentedControl) {
         segment.setSelectedSegmentIndex(UInt(segment.selectedSegmentIndex), animated: true)
         filterMatches(getDateFromSegment())
     }
-    
+    //funtion splits the time and date recieved in the JSON
     func getDateFromSegment() -> NSDate {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "MMM d"
@@ -51,7 +51,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         
         return date
     }
-    
+    // Function makes a JSON request and populates the matches variable
     func fetchSchedule() {
         
         RemoteManager.sharedInstance.matchSchedule({ (json, error) -> Void in
@@ -116,11 +116,11 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         })
         
     }
-    
+    // Function formats tableView rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredMatches.count
     }
-    
+    // Function formats tableView cells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell : MatchDateCustomCell = tableView.dequeueReusableCellWithIdentifier("MatchDateCustomCell") as! MatchDateCustomCell
@@ -130,7 +130,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         
         return cell
     }
-    
+    // Function for the selected a cell an JSON request is made for the match details for the match displayed on the selected cell, matchDetail variable is populated
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let match_Detail = filteredMatches[indexPath.row]
@@ -323,7 +323,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         })
 
     }
-    
+    // Function sets up the segemented dates controller
     func setSegmentDates() {
         
         let formatter = NSDateFormatter()
@@ -344,7 +344,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         // FIX: Needs to select the one closest to todays date instead of last one
         segmentedControl.setSelectedSegmentIndex(UInt(dates.count - 1), animated: true)
     }
-    
+    // Function filters matches based on date
     func filterMatches(date: NSDate = NSDate()) {
         
         filteredMatches = [ScheduleMatch]()
@@ -357,7 +357,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         
         self.dateTable.reloadData()
     }
-    
+    // Function sets up the segmented controller
     func setupSegmentedControl() {
         
         segmentedControl = HMSegmentedControl(sectionTitles: ["DatesList"])
@@ -378,7 +378,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
         self.constraintsSegment()
         self.constraintsTableView()
     }
-    
+    // Function adds constraints to tableView
     func constraintsTableView() {
         dateTable.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(segmentedControl.snp_top)
@@ -387,7 +387,7 @@ class MatchDateViewController : UIViewController, UITableViewDelegate, UITableVi
             make.right.equalTo(view)
         }
     }
-    
+    // Function adds contraints to segemented controller
     func constraintsSegment() {
         segmentedControl.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(view).offset(self.navigationController!.navigationBar.frame.height + (segmentedControl.frame.height/2) - 10)

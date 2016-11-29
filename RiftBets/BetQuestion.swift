@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// Structure used to hold questions for placed bets.
 
 struct BetQuestion {
     

@@ -10,6 +10,8 @@ import UIKit
 import FBSDKLoginKit
 import SwiftyJSON
 
+//HomeViewController sets up the facebook login
+
 class HomeViewController: UIViewController {
     
     override func viewDidLoad() {

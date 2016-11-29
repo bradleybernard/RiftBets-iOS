@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Class used to customize a yes/no answer collectionView cell
+
 class YesNoCustomCell: UICollectionViewCell {
     
     

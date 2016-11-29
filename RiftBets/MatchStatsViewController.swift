@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+// Class used to manage the match stats per game
 class MatchStatsViewController: UIViewController{
     
     var matchDetails : MatchDetail?
@@ -51,12 +51,12 @@ class MatchStatsViewController: UIViewController{
         super.viewDidLoad()
         self.formatDetails()
     }
-    
+    // Function updates the current game number
     func updateGameNumber(number: Int) {
         gameNumber = number
         self.formatDetails()
     }
-    
+    // Function updates details for the corresponding game number
     func formatDetails() {
         
         guard teamOneName != nil else {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+// Class used to customize the a two checkbox answer in the collectionView
 class TeamAnswersCustomCell : UICollectionViewCell{
     
     @IBOutlet weak var teamOneCheckBox: UIButton!
@@ -34,6 +34,7 @@ class TeamAnswersCustomCell : UICollectionViewCell{
         
     }
     
+    // Function returns the team id that was selected
     func getAnswer()->String{
         if(teamOnePressed){
             return "100"

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Class used to customize the question collectionView cell 
 class PlaceBetsCustomCell: UICollectionViewCell{
     
     @IBOutlet weak var question: UILabel!
@@ -17,6 +18,7 @@ class PlaceBetsCustomCell: UICollectionViewCell{
     @IBOutlet weak var possibleWin: UILabel!
     var betQuestion : BetQuestion?
     
+    // Function returns the wagered amount entered by the user. 
     func getWager() -> Int{
        return Int(wagerText.text!)!
     }

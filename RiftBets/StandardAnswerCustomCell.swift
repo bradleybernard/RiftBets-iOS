@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+// Class used to customize a single answer collectionView cell
 class StandardAnswerCustomCell : UICollectionViewCell{
     
     

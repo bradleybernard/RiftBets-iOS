@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+// Class  used to manage the player stats per game
 class PlayerStatsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var matchDetails: MatchDetail?

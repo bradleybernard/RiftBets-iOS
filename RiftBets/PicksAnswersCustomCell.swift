@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Class used to customize the picks answer collectionView cell
+
 class PicksAnswersCustomCell: UICollectionViewCell {
     
     

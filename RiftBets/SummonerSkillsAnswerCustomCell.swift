@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Class used to customize a two answer collectioView cell
 class SummonerSkillsAnswerCustomCell: UICollectionViewCell{
     
     
@@ -16,6 +17,7 @@ class SummonerSkillsAnswerCustomCell: UICollectionViewCell{
     
     @IBOutlet weak var summonerSkill2Answer: UITextField!
     
+    // Fucntion returns the summoner skills the user entered.
     func getAnswer()->String{
         return summonerSkill1Answer.text! + "," + summonerSkill2Answer.text!
     }

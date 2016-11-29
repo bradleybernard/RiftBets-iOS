@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Class used to manage the place bets screen
 class PlaceBetsViewController: UIViewController {
     
     @IBOutlet weak var collectView: UICollectionView!
@@ -31,11 +32,11 @@ class PlaceBetsViewController: UIViewController {
     @IBAction func betPlacePressed(sender: AnyObject) {
         
     }
-    
+    // Fucntion cancels the place bets and returns to match details screen 
     @IBAction func cancelPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+    // Function if the reroll button is pressed the count will decrease.
     @IBAction func rerollPressed(sender: AnyObject) {
         if(rerollCount>0){
             rerollCount -= 1
@@ -46,7 +47,7 @@ class PlaceBetsViewController: UIViewController {
             rerollButton.userInteractionEnabled = false
         }
     }
-    
+    // Function sets up the all of the page excluding the collectionView
     func setup() {
         
         if let navTitle = matchTitle {
@@ -67,7 +68,7 @@ class PlaceBetsViewController: UIViewController {
         }
     }
 }
-
+// Collection has question and answers cell, depending on what type of question a corresponding answer type is selected and displayed.
 extension PlaceBetsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

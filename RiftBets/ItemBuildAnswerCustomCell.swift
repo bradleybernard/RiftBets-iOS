@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Class used to customize the item build answers collectionView cell
 class ItemBuildAnswerCustomCell: UICollectionViewCell{
     
     

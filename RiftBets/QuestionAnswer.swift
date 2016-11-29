@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//Structure used to hold answers for placed bets
 struct QuestionAnswer{
     var answer : String = ""
     var wager : Int = 0

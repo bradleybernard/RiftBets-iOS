@@ -7,6 +7,7 @@
 //
 
 import Foundation
+// Structure used to hold data receieved from JSON regarding the match schedule
 
 struct ScheduleMatch {
     var name                    : String? 

@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+// Class is used to customize the tableView in the MatchDateViewController.
+
+
 class MatchDateCustomCell: UITableViewCell {
     
     @IBOutlet weak var team_two_score: UILabel!
@@ -24,6 +27,7 @@ class MatchDateCustomCell: UITableViewCell {
     @IBOutlet weak var team_one_logo: UIImageView!
     @IBOutlet weak var team_two_logo: UIImageView!
     
+    // Function fills the variables above with data from our JSON request.
     func formatCell(match_schedule: ScheduleMatch) {
         
         let formatter = NSDateFormatter()
